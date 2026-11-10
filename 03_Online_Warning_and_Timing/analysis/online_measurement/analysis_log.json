@@ -1,0 +1,202 @@
+{
+  "status": "complete",
+  "sample_runs": 132,
+  "serial_timing_runs": 24,
+  "performance_N_unchanged": 2340,
+  "method_overview": [
+    {
+      "method": "Ours_rollout",
+      "reference_threats": 87,
+      "information_on_time": 87,
+      "policy_on_time": 87,
+      "policy_implemented": true,
+      "policy_projected_lead_median_s": 11.284605344619898,
+      "policy_projected_lead_min_s": 7.3815228981181065,
+      "contacts_with_policy_lead": 42,
+      "policy_actual_contact_lead_median_s": 12.773422605555627,
+      "policy_actual_contact_lead_min_s": 8.322110754650836,
+      "serial_timing_runs": 8,
+      "step_over_50ms": 10,
+      "cycle_over_100ms": 0,
+      "maximum_cycle_ms": 93.752122
+    },
+    {
+      "method": "B1",
+      "reference_threats": 87,
+      "information_on_time": 87,
+      "policy_on_time": 0,
+      "policy_implemented": false,
+      "policy_projected_lead_median_s": null,
+      "policy_projected_lead_min_s": null,
+      "contacts_with_policy_lead": 0,
+      "policy_actual_contact_lead_median_s": null,
+      "policy_actual_contact_lead_min_s": null,
+      "serial_timing_runs": 8,
+      "step_over_50ms": 3,
+      "cycle_over_100ms": 0,
+      "maximum_cycle_ms": 69.659238
+    },
+    {
+      "method": "B2",
+      "reference_threats": 87,
+      "information_on_time": 87,
+      "policy_on_time": 87,
+      "policy_implemented": true,
+      "policy_projected_lead_median_s": 1.0646807562111604,
+      "policy_projected_lead_min_s": 0.3737831879506359,
+      "contacts_with_policy_lead": 77,
+      "policy_actual_contact_lead_median_s": 1.7932332674456575,
+      "policy_actual_contact_lead_min_s": 0.7514843907745643,
+      "serial_timing_runs": 8,
+      "step_over_50ms": 3,
+      "cycle_over_100ms": 1,
+      "maximum_cycle_ms": 208.226114
+    }
+  ],
+  "seeds": [
+    3000,
+    3029
+  ],
+  "full_trajectory_and_command_parity_runs": 9,
+  "legacy_warning_audit": {
+    "nonfinite_total": 1328,
+    "by_method": {
+      "B2": 660,
+      "B1": 660,
+      "Ours_rollout": 8
+    },
+    "original_definition": "truth distance threshold onset minus truth TTC threshold onset, only if controller exposes t_pre",
+    "not_a_delivery_warning_metric": true
+  },
+  "validation": {
+    "protocol_and_observer_hash_match": true,
+    "expected_unique_runs": 132,
+    "raw_bitmask_counts_match_summary": true,
+    "formal_data_unchanged": true,
+    "formal_scalar_parity_runs": 132,
+    "full_trajectory_and_command_parity_runs": 9,
+    "serial_timing_scalar_parity_runs": 24,
+    "serial_event_full_trajectory_command_parity_runs": 24,
+    "concurrent_event_timings_excluded_from_latency": true,
+    "all_potential_encounters_retained": 264,
+    "reference_threat_events": 261,
+    "censored_sources_not_counted_as_misses": true,
+    "max_censor_count": 168
+  },
+  "all_steps": {
+    "n": 85293,
+    "median": 3.44606,
+    "p95": 11.276297799999998,
+    "p99": 14.947825240000002,
+    "maximum": 206.615815,
+    "mean": 5.053008618491552
+  },
+  "all_cycles": {
+    "n": 42641,
+    "median": 9.386973999999999,
+    "p95": 14.742102,
+    "p99": 21.131905399999948,
+    "maximum": 208.226114,
+    "mean": 10.105461875729931
+  },
+  "steps_over_50ms": 16,
+  "cycles_over_100ms": 1,
+  "including_warmup_steps_over_50ms": 16,
+  "including_warmup_cycles_over_100ms": 1,
+  "including_warmup_max_step_ms": 206.615815,
+  "including_warmup_max_cycle_ms": 208.226114,
+  "warning_status": {
+    "on_time": 261,
+    "no_reference_threat": 3
+  },
+  "caveat": "measurement sample only; information availability is separate from actual policy response; host software timing is not hardware WCET",
+  "targeted_timing_checks": {
+    "status": "complete",
+    "targeted_replays": 2,
+    "not_pooled_with_prespecified_timing_panel": true,
+    "frozen_source_unchanged": true,
+    "results": [
+      {
+        "method": "B2",
+        "scenario": "V2S3",
+        "factor": "blackout_1p0",
+        "seed": 3000,
+        "performance_scalar_parity": true,
+        "dense_state_retention": false,
+        "diagnostic_event_arrays": false,
+        "garbage_collection_enabled": true,
+        "steps": 4213,
+        "step_over_50ms": 1,
+        "step_p99_ms": 11.819249639999997,
+        "step_max_ms": 71.180938,
+        "cycle_max_ms": 72.650389,
+        "cycle_over_100ms": 0,
+        "worst_step": 3692,
+        "worst_t": 184.60000000000002,
+        "worst_step_cpu_ms": 71.165655,
+        "worst_step_gc_ms": 0.0,
+        "max_observed_gc_pause_ms": 23.380302,
+        "total_gc_count_by_generation": [
+          95,
+          9,
+          1
+        ],
+        "worst_step_phases_ms": {
+          "sense_update": 0.264571,
+          "sense_publish": 0.102462,
+          "controller": 1.285349,
+          "fleet_total": 69.528556,
+          "feasibility": 3.025709,
+          "rs_safety": 65.263868,
+          "rollout_native": 0.0,
+          "rs_native": 65.019757
+        },
+        "native_rs_max_ms": 65.019757,
+        "native_rollout_max_ms": 0.0
+      },
+      {
+        "method": "Ours_rollout",
+        "scenario": "V2S3",
+        "factor": "blackout_1p0",
+        "seed": 3000,
+        "performance_scalar_parity": true,
+        "dense_state_retention": false,
+        "diagnostic_event_arrays": false,
+        "garbage_collection_enabled": true,
+        "steps": 4290,
+        "step_over_50ms": 0,
+        "step_p99_ms": 33.24964328000017,
+        "step_max_ms": 45.103819,
+        "cycle_max_ms": 47.609881,
+        "cycle_over_100ms": 0,
+        "worst_step": 2780,
+        "worst_t": 139.0,
+        "worst_step_cpu_ms": 45.095942,
+        "worst_step_gc_ms": 0.0,
+        "max_observed_gc_pause_ms": 23.990884,
+        "total_gc_count_by_generation": [
+          97,
+          9,
+          1
+        ],
+        "worst_step_phases_ms": {
+          "sense_update": 0.22994,
+          "sense_publish": 0.146506,
+          "controller": 35.24028,
+          "fleet_total": 9.487093,
+          "feasibility": 3.758171,
+          "rs_safety": 4.192322,
+          "rollout_native": 28.649767,
+          "rs_native": 3.916344
+        },
+        "native_rs_max_ms": 6.033412,
+        "native_rollout_max_ms": 30.054841
+      }
+    ],
+    "limits": [
+      "Targeted followup of observed peaks, not an independent worst-case bound",
+      "Different GC/retention conditions can change timing; original panel is retained",
+      "Even these measurements include nonzero recorder overhead"
+    ]
+  }
+}

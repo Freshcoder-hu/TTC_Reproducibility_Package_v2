@@ -1,0 +1,55 @@
+{
+  "addendum_date": "2026-10-29",
+  "audit_timing": "after_completed_evaluation",
+  "new_performance_runs_this_update": 0,
+  "information_boundary": {
+    "status": "pass_within_tested_scope",
+    "paired_checks": 144,
+    "universal_proof": false,
+    "source_unchanged": true
+  },
+  "physical_safety": {
+    "status": "residual_contacts_and_tradeoffs_remain",
+    "nominal_ours": {
+      "archive": {
+        "n": 60,
+        "rs_contact_runs": 60,
+        "animal_obstacle_contact_fraction": 0.02037037037037037,
+        "joint_completion": 54
+      },
+      "strict": {
+        "n": 60,
+        "rs_contact_runs": 60,
+        "animal_obstacle_contact_fraction": 0.02037037037037037,
+        "joint_completion": 54
+      },
+      "safe": {
+        "n": 60,
+        "rs_contact_runs": 15,
+        "animal_obstacle_contact_fraction": 0.054629629629629625,
+        "joint_completion": 54
+      }
+    },
+    "all_safe_rs_contact_runs": 287
+  },
+  "perception_matrix": {
+    "status": "computed_but_expanded_acceptance_metrics_incomplete",
+    "main_runs": 1980,
+    "decomposition_runs": 360,
+    "new_batch_authorized_or_started": false
+  },
+  "metrics_coverage": {
+    "animal_obstacle_fraction": "available per run; distinct animals, not run incidence",
+    "true_minimum_clearances": "available, offline truth metrics",
+    "joint_completion": "available for all runs including failures",
+    "robot_animal_contacts": "available, continuous swept geometry",
+    "predicted_candidate_infeasibility": "rs_no_safe_candidate is available; not a physical-unavoidability certificate",
+    "miss_rate": "not validated; empty observation ticks and mean visible count are not false-negative rate with eligible-target denominator",
+    "warning_lead": "partial legacy ttc_lead; not validated as actual delivered-warning lead for every threat event",
+    "control_compute_time": "ctrl_ms covers controller.step only; excludes sensor fusion, feasibility and new RS supervisor",
+    "wall_time": "wall_s recorded per run in a concurrent batch; not a serial per-cycle latency benchmark"
+  },
+  "formal_data_sha256": "d8523bd9e2349cc68576454429ffd3638c4b5f1f918649b2fcee5ef8d062496d",
+  "frozen_source_sha256": "1d77b886e81a5138efb01b92bb20c7cbbdc3d216082fc2dda96b5b25b024f34f",
+  "legacy_ttc_lead_nonfinite_runs": 1328
+}

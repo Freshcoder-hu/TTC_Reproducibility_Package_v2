@@ -1,0 +1,78 @@
+V2 Stage-2 acceptance tests
+shipped parameters: {"m1_decay": "linear", "m1_decay_len": 2.0, "m1_gain": 3.0, "m1_sense_range": 6.0, "m2_gain_sigma": 0.2, "m2_react_delay": 0.3, "m2_slow_gain": 0.5, "m_v_max": 2.0}
+python 3.13.7, numpy 2.5.2
+==============================================================================
+A. M0 inertness: whole-trajectory bit-exactness against the Stage-1 code
+  [PASS] A/S3_s200_v2 M0 == Stage-1 (whole trajectory, 496496 values)
+  [PASS] A/S3_s200_v1compat M0 == Stage-1 (whole trajectory, 523280 values)
+  [PASS] A/S3_s200_v1compat V1 archive row reproduced (41 of 43 archived columns; ctrl_ms/seed excluded)
+  [PASS] A/S1_s201_v2 M0 == Stage-1 (whole trajectory, 299112 values)
+  [PASS] A/S3_s200_v2_seq M0 == Stage-1 (whole trajectory, 520552 values)
+  layer inertness (the added terms are inactive => exactly the layer below)
+  [PASS] A/M1(m1_gain=0) == M0, bit-exact
+  [PASS] A/M2(sigma=0, delay=0, no speed-up) == M1, bit-exact
+==============================================================================
+B. M1 actually avoids: corridor crossing, NO robots, seeds 1000-1019
+  M0       contact=0.300+-0.045  episodes=11.1  mean_clr=  1.44  worst= -1.45  speed[p95]=1.00/1.00  omega[p95]=3.00/3.00  flips=7.76/s  eff=0.92
+  M1_R3    contact=0.093+-0.049  episodes=3.8  mean_clr=  2.35  worst= -0.70  speed[p95]=1.00/1.00  omega[p95]=3.00/3.00  flips=7.26/s  eff=0.83
+  M1_R6    contact=0.000+-0.000  episodes=0.0  mean_clr=  4.54  worst=  1.44  speed[p95]=1.00/1.00  omega[p95]=3.00/3.00  flips=7.37/s  eff=0.85
+  M1_R9    contact=0.000+-0.000  episodes=0.0  mean_clr=  5.98  worst=  2.53  speed[p95]=1.00/1.00  omega[p95]=3.00/3.00  flips=7.51/s  eff=0.88
+  [PASS] B/M1 beats M0 at every sensing range  -- contact 0.300 -> 0.093, 0.000, 0.000
+  [PASS] B/contact rate monotone non-increasing in range  -- R3:0.093, R6:0.000, R9:0.000
+  [PASS] B/mean clearance monotone non-decreasing in range  -- R3:2.35, R6:4.54, R9:5.98
+  [PASS] B/M1 mean clearance beats M0 at the widest range  -- 1.44 -> 5.98
+  [PASS] B/no heading-rate explosion (|dtheta|/dt <= omega_s)  -- worst omega 3.000
+  [PASS] B/no speed explosion (s <= m_v_max)  -- worst speed 1.000
+  [PASS] B/no spatial explosion (finite states, group p95 radius < 25 m)  -- p95 radius max M0:4.9, M1_R3:6.9, M1_R6:4.8, M1_R9:4.8
+  [PASS] B/oscillation bounded (heading-rate sign flips < 12 /s)  -- M0:7.8, M1_R3:7.3, M1_R6:7.4, M1_R9:7.5
+==============================================================================
+C. reaction delay and gain heterogeneity are real (corridor)
+  delay=0.00 s  latency=2.541+-0.754  first-response paired +0.000 (505 animals)  contact=0.0056+-0.0145  clearance=2.477
+  delay=0.15 s  latency=2.642+-0.498  first-response paired +0.115 (475 animals)  contact=0.0083+-0.0159  clearance=2.442
+  delay=0.30 s  latency=2.817+-0.593  first-response paired +0.296 (477 animals)  contact=0.0069+-0.0123  clearance=2.415
+  delay=0.45 s  latency=2.834+-0.573  first-response paired +0.374 (490 animals)  contact=0.0208+-0.0236  clearance=2.293
+  animal-paired first-response gain per unit delay: [0.769, 0.988, 0.832]
+  animal-paired first-response shift minus the delay [s]: [-0.035, -0.004, -0.076] (2 ticks = 0.10 s)
+  [PASS] C/animal-paired first response is shifted by the reaction delay (within 2 ticks)  -- shift-minus-delay=[-0.035, -0.004, -0.076] s, gains=[0.769, 0.988, 0.832]
+  [PASS] C/latency monotone non-decreasing in delay  -- [2.541, 2.642, 2.817, 2.834]
+  dynamic consequence at R=3: contact 0.0056 (no delay) -> 0.0208 (0.45 s delay)
+  [PASS] C/delay degrades the avoidance outcome (0.45 s vs 0 s)  -- contacts 0.0056 -> 0.0208
+  gains: mean=1.0000 sd=0.1889 min=0.5894 max=1.7335 p5/25/50/75/95=[0.736, 0.851, 0.986, 1.117, 1.307]
+  [PASS] C/gain spread is applied (sd > 0, min < 1 < max)  -- sd=0.1889 range=[0.589,1.733]
+  [PASS] C/gain mean is 1 (same total gain as M1)  -- mean=1.000000
+  [PASS] C/gains are seed-dependent  -- first two animals seed 1000: [1.1803, 1.16] vs [1.2969, 0.9931]
+  hetero sigma=0.20  contact=0.0069+-0.0123  clearance=2.415+-0.122
+  homo   sigma=0.00  contact=0.0097+-0.0136  clearance=2.435+-0.143
+  paired clearance difference hetero-homo = -0.0204 m (sd 0.1460, 20/20 seeds differ), permutation p=0.5582
+  [PASS] C/removing heterogeneity changes the outcome distribution  -- paired clearance diff -0.0204 m, sd 0.1460, p=0.5582; contact 0.0069 vs 0.0097
+==============================================================================
+D. predictor / environment decoupling
+  M0 engine agreement, 8 prediction steps (DLL vs NumPy): max rel=2.671e-14  max abs=1.776e-15
+  full 80-step horizon: 3/7 candidate offsets agree to 1e-12; the rest diverge through a discrete slot-spacing / contact test flipping (chaotic amplification of a 1e-16 summation-order difference), max abs=2.995e-01
+  [PASS] D/NumPy engine reproduces the V1 DLL on M0 (8 steps, <=1e-8 rel)  -- max rel=2.671e-14
+  shadow runs: 1503 ticks, environment trajectory identical = True
+  predictions: 35 planning calls, 26 differ; max|dpred|=9.208e+00, max rel (|a|>1e-6)=3.737e+05
+  per-column max |difference| (contacted, pressure, outside, centre, spread, progress, worst): [0.4167, 1.2805, 9.2078, 0.8802, 2.165, 5.8347, 3.1536]
+  predicted worst margin at offset +3.6 m: M0 first/last=0.282/23.166  M2 first/last=1.625/23.166
+  [PASS] D/shadow: environment trajectory identical (bit-exact)  -- []
+  [PASS] D/shadow: predictions differ between predictor models  -- 26/35 calls differ
+  live mode: 20 vs 21 plans; offsets M0-predictor [1.35, 1.35, 0.0, -2.4, -2.4, -2.4, -1.35, -2.4] ...
+             offsets M2-predictor [1.35, 1.35, 1.35, 0.0, 1.35, 0.0, 2.4, 1.35] ...
+  [PASS] D/live: a different predictor model changes the actuated plan  -- 20 vs 21 plans
+==============================================================================
+E. determinism
+  [PASS] E/repeat run identical (S3, seed 1000, 2911 ticks)  -- []
+  [PASS] E/repeat run identical (S2, seed 1001, 1464 ticks)  -- []
+  jobs=1 vs jobs=4: 2 rows x 164 columns (ctrl_ms excluded), mismatches=0
+  [PASS] E/jobs=1 == jobs=4, every non-timing column  -- 0 mismatches
+==============================================================================
+F. joint limits still hold (and bind) in M1/M2
+  M1 seed 1000: C3=0 R4=0 lat=0 C1low=0 C1high=0 | bind C3=23153 R4=23529 lat=10347 | speed 1.134/1.500 | v_allow 3.4685091379708965 (min 2.8289149391063133) | animal contacts 0 | task success True (goal) rho 0.973672899204814
+  M1 seed 1001: C3=0 R4=0 lat=0 C1low=0 C1high=0 | bind C3=21887 R4=23908 lat=10915 | speed 1.129/1.500 | v_allow 3.567396864069046 (min 2.8284293045999807) | animal contacts 0 | task success True (goal) rho 0.9843833708346726
+  M2 seed 1000: C3=0 R4=0 lat=0 C1low=0 C1high=0 | bind C3=55478 R4=32680 lat=13361 | speed 1.041/2.000 | v_allow 3.5848902185737974 (min 2.8284271664979572) | animal contacts 1 | task success True (goal) rho 0.7932528628907459
+  M2 seed 1001: C3=0 R4=0 lat=0 C1low=0 C1high=0 | bind C3=49188 R4=30191 lat=12854 | speed 1.021/2.000 | v_allow 3.369259488717233 (min 2.8284398637092707) | animal contacts 3 | task success True (goal) rho 0.7676994835915375
+  [PASS] F/C3, R4, lateral and C1-band violations are 0 in M1 and M2
+  [PASS] F/C3 and R4 and the lateral cap still bind (non-vacuous)
+  [PASS] F/speed policy applied during pre/divert  -- 4/4 runs with bounded ticks
+==============================================================================
+SUMMARY: 32/32 checks passed (646.0 s)

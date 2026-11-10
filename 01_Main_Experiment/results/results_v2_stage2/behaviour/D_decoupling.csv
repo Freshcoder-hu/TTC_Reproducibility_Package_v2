@@ -1,0 +1,2 @@
+﻿env_model,predictor_a,predictor_b,ticks,env_identical,planning_calls,calls_that_differ,max_abs_diff,max_rel_diff_gt1e6,col0_maxdiff,col1_maxdiff,col2_maxdiff,col3_maxdiff,col4_maxdiff,col5_maxdiff,col6_maxdiff,worst_M0_first,worst_M2_first
+M2,M0,M2,1503,True,35,26,9.207830647100234,373720.3818152708,0.4166666666666667,1.2804659820762256,9.207830647100234,0.8801672921307413,2.16502527509435,5.834736932766141,3.153565316453929,0.2819686692655121,1.6248188688197993

@@ -1,0 +1,89 @@
+{
+  "status": "complete",
+  "targeted_replays": 2,
+  "not_pooled_with_prespecified_timing_panel": true,
+  "frozen_source_unchanged": true,
+  "results": [
+    {
+      "method": "B2",
+      "scenario": "V2S3",
+      "factor": "blackout_1p0",
+      "seed": 3000,
+      "performance_scalar_parity": true,
+      "dense_state_retention": false,
+      "diagnostic_event_arrays": false,
+      "garbage_collection_enabled": true,
+      "steps": 4213,
+      "step_over_50ms": 1,
+      "step_p99_ms": 11.819249639999997,
+      "step_max_ms": 71.180938,
+      "cycle_max_ms": 72.650389,
+      "cycle_over_100ms": 0,
+      "worst_step": 3692,
+      "worst_t": 184.60000000000002,
+      "worst_step_cpu_ms": 71.165655,
+      "worst_step_gc_ms": 0.0,
+      "max_observed_gc_pause_ms": 23.380302,
+      "total_gc_count_by_generation": [
+        95,
+        9,
+        1
+      ],
+      "worst_step_phases_ms": {
+        "sense_update": 0.264571,
+        "sense_publish": 0.102462,
+        "controller": 1.285349,
+        "fleet_total": 69.528556,
+        "feasibility": 3.025709,
+        "rs_safety": 65.263868,
+        "rollout_native": 0.0,
+        "rs_native": 65.019757
+      },
+      "native_rs_max_ms": 65.019757,
+      "native_rollout_max_ms": 0.0
+    },
+    {
+      "method": "Ours_rollout",
+      "scenario": "V2S3",
+      "factor": "blackout_1p0",
+      "seed": 3000,
+      "performance_scalar_parity": true,
+      "dense_state_retention": false,
+      "diagnostic_event_arrays": false,
+      "garbage_collection_enabled": true,
+      "steps": 4290,
+      "step_over_50ms": 0,
+      "step_p99_ms": 33.24964328000017,
+      "step_max_ms": 45.103819,
+      "cycle_max_ms": 47.609881,
+      "cycle_over_100ms": 0,
+      "worst_step": 2780,
+      "worst_t": 139.0,
+      "worst_step_cpu_ms": 45.095942,
+      "worst_step_gc_ms": 0.0,
+      "max_observed_gc_pause_ms": 23.990884,
+      "total_gc_count_by_generation": [
+        97,
+        9,
+        1
+      ],
+      "worst_step_phases_ms": {
+        "sense_update": 0.22994,
+        "sense_publish": 0.146506,
+        "controller": 35.24028,
+        "fleet_total": 9.487093,
+        "feasibility": 3.758171,
+        "rs_safety": 4.192322,
+        "rollout_native": 28.649767,
+        "rs_native": 3.916344
+      },
+      "native_rs_max_ms": 6.033412,
+      "native_rollout_max_ms": 30.054841
+    }
+  ],
+  "limits": [
+    "Targeted followup of observed peaks, not an independent worst-case bound",
+    "Different GC/retention conditions can change timing; original panel is retained",
+    "Even these measurements include nonzero recorder overhead"
+  ]
+}

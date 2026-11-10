@@ -1,0 +1,93 @@
+{
+  "config_id": "89fe865b2e1d",
+  "scenes": [
+    "V2S2R2",
+    "V2S3"
+  ],
+  "seeds": [
+    2000,
+    2001,
+    2002,
+    2003,
+    2004,
+    2005,
+    2006,
+    2007,
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026,
+    2027,
+    2028,
+    2029
+  ],
+  "rungs": [
+    "R0_four_state",
+    "R1_handover",
+    "R2_event",
+    "R3_rollout"
+  ],
+  "jobs": 12,
+  "batches": [
+    {
+      "rung": "R0_four_state",
+      "cached": false,
+      "n": 60,
+      "wall_s": 239.8687529000017,
+      "jobs": 12
+    },
+    {
+      "rung": "R1_handover",
+      "cached": false,
+      "n": 60,
+      "wall_s": 239.36595079999825,
+      "jobs": 12
+    },
+    {
+      "rung": "R2_event",
+      "cached": false,
+      "n": 60,
+      "wall_s": 240.6192141999927,
+      "jobs": 12
+    },
+    {
+      "rung": "R3_rollout",
+      "cached": false,
+      "n": 60,
+      "wall_s": 239.67629300001136,
+      "jobs": 12
+    },
+    {
+      "rung": "R3_no_speed_policy",
+      "cached": false,
+      "n": 60,
+      "wall_s": 268.7810446999938,
+      "jobs": 12
+    }
+  ],
+  "total_wall_s": 1228.370216846466,
+  "n_rows": 300,
+  "labels": {
+    "R0_four_state": "R0 four-state only (no handover, no event, no rollout)",
+    "R1_handover": "R1 + handover of the avoidance slot",
+    "R2_event": "R2 + event layer (= 'w/o rollout', Ours_event)",
+    "R3_rollout": "R3 + rollout planner (= Ours_rollout, the shipped method)"
+  },
+  "python": "3.13.7",
+  "numpy": "2.5.2"
+}

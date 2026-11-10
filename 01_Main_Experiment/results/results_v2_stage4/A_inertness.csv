@@ -1,0 +1,7 @@
+﻿arm,cell,ticks,values,identical,detail
+A1_v1eq_vs_stage3_archive,S3_s1000,2108,522784,True,[]
+A1_v1eq_vs_stage3_archive,S2_s1000,1244,303536,True,[]
+A1_v1eq_vs_stage3_archive,S1_s1002,1188,287496,True,[]
+A2_shipped_vs_pre_edit_capture,stage3_S3_s1000,2148,532704,True,[]
+A2_shipped_vs_pre_edit_capture,stage3_S2_s1000,1274,310856,True,[]
+A2_shipped_vs_pre_edit_capture,stage3_S1_s1002,1189,287738,True,[]

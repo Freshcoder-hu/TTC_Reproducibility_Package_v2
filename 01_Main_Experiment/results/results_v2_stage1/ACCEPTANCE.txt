@@ -1,0 +1,171 @@
+V2 Stage-1 acceptance -- 2026-10-27 14:42:20
+python 3.13.7  numpy 2.5.2
+V2 config_id = 9cc9fb5ec136   sha256 = 9cc9fb5ec136d5b4cece08b21d90fff6529fa05c0bb23c74434bfa7c3118db8e
+V1 compat config_id = 8c3540a831a8
+==============================================================================
+A. INERTNESS  (r_robot->0, caps off, feasibility bypassed)
+==============================================================================
+A1  cell S3/Ours_rollout/seed 200: 38 non-timing columns
+A2  V1 run_scene vs V2-compat: 1055 logged ticks, 0 difference(s)
+==============================================================================
+B. JOINT LIMITS  (C3 / R4 / lateral must be zero AND binding)
+==============================================================================
+B  seed 200: ticks=72072 wall=14.7s  viol C3/R4/lat = 0/0/0
+B  seed 201: ticks=77292 wall=17.5s  viol C3/R4/lat = 0/0/0
+B  totals over 2 seeds: violation_C1_low=0, violation_C2=0, violation_C3=0, violation_R1=0, violation_R2=0, violation_R3=0, violation_R4=0, violation_lat=0
+
+B  binding frequency (how often each bound had to clip):
+    bound                       clips  opportunities      rate
+    C2 sheep turn              104848         149364    0.7020
+    C3 sheep vector accel       37612         149364    0.2518
+      ... of which turn         13787         149364    0.0923
+      ... of which speed        37612         149364    0.2518
+    C1 sheep lower (relaxed)          0         149364    0.0000
+    R1 robot speed                  0          49788    0.0000
+    R2 robot turn rate          40957          49788    0.8226
+    R3 robot linear accel       24384          49788    0.4898
+    R4 robot angular accel      47004          49788    0.9441
+    LAT |v*omega|               23092          49788    0.4638
+==============================================================================
+C. NON-PENETRATION  (continuous surface clearance, per pair class)
+==============================================================================
+    class             hard d    min clr            ~seed  events  preexist   any
+    robot-robot         0.90    -0.4014   [0.26, -0.401]       2         0  True
+    robot-obstacle      1.65    -1.3016 [-1.302, -1.091]      21         0  True
+    robot-sheep         0.80    -0.6368  [-0.637, -0.47]      23         0  True
+    sheep-sheep         0.70    -0.6986 [-0.682, -0.699]     375        67  True
+    sheep-obstacle      1.55    -1.2305 [-0.611, -1.231]       7         0  True
+
+    Cause census for the infeasibility layer (S != unavoidable):
+      seed 200: n_infeasible=178 S=104 P=74 resolved=0 contact_C=12
+      seed 201: n_infeasible=223 S=125 P=98 resolved=0 contact_C=21
+    Interpretation is in V2_STAGE1_REPORT.md §6 (test C); contacts are reported, never tuned away.
+
+    FINDING: worst robot-robot surface clearance = -0.401 m against the 0.90 m hard limit (2 contact episode(s) over 2 runs), at the shipped d_rr_safe = 2.00 m.
+    The hard limit is therefore NOT held in every run. The same
+    runs at the author-proposed d_rr_safe = 1.2 m give 69 episodes
+    and -0.457 m (v2/diag_v2.py, 3 seeds). Reported, not tuned
+    (brief: 'do not silently tune to zero'); see report §6.4/§9.
+==============================================================================
+D. CONTACT-DETECTION ACCURACY  (analytic grazing scenarios)
+==============================================================================
+D1a closest approach of a swept segment to a point: d=0.40000000000000002 (exact 0.4), tau=0.8333333333 (exact 5/6=0.8333333333)
+D1b moving pair, exact entry tau = 0.50029201607433349 vs analytic 0.50029201607433349  (|diff| = 0.00e+00, start clearance = +0.0696 m)
+D2  monitor, 2 robots closing at 3 m/s, lateral offset 0.5 m, r_rr = 0.90:
+    reported min surface clearance = -0.40000000000000002  (analytic 0.5-0.9 = -0.4)
+    reported first contact time    = 1.4172228408817358  (analytic 1.4172228408817373)
+    |error| = 1.55e-15 s   events=1
+D3  one integration step, v=1.5, omega=3.0, dt=0.05, N_sub=8; probes 0.02 m from the arc mid-point:
+    exact sagitta R(1-cos(omega dt/2))        = 1.406e-03 m
+    sub-chord resolution R(1-cos(omega dt/2N)) = 2.197e-05 m
+    probe           dense arc    chord err   arc-N8 err
+    +y         0.019941437217   -1.403e-03   -1.259e-05
+    -y         0.019945936040   +1.403e-03   +1.101e-05
+    => the single chord errs by the sagitta (1.4e-3 m, sign depends on which side the partner is);
+       arc mode with 8 sub-chords is within 4.4e-05 m of the exact arc.
+==============================================================================
+E. DETERMINISM  (repeat, and jobs=1 vs jobs=4)
+==============================================================================
+E1  repeat run: 0 differing columns 
+E2  jobs=1 vs jobs=4: 2 rows, 0 differing cells
+==============================================================================
+F. SEPARATE CLIPPING vs JOINT PROJECTION  (reviewer comment 4)
+==============================================================================
+F1  counterexample: v=1.5 m/s, omega=3.0 rad/s -> |v*omega| = 4.50 m/s^2, which already exceeds both the lateral cap (2.0) and the 4.0 m/s^2 acceleration scale.
+    separate clipping : turn kept 0.15 rad -> |dv| = 0.2248 m/s over one step = 4.50 m/s^2 (LIMIT 4.0)
+    joint projection  : turn 0.133732 rad, speed 1.486607 -> |dv| = 0.2000 -> 4.00 m/s^2
+
+F2  same short runs, projection=joint vs projection=sequential
+    arm           seed   viol_C3   bind_C3  collision_rate  rho_avg
+    joint          200         0     18888          0.0278   0.9872
+    joint          201         0     18724          0.1667   0.9772
+    sequential     200     33752     16876          0.1389   0.9747
+    sequential     201     33442     16721          0.1667   0.9792
+==============================================================================
+G. V1 CRITERION / V1-TRAJECTORY SOLID RE-CHECK / V2 SOLID CONTACT
+==============================================================================
+G1  archive: 2400 runs = 8 methods x 10 scenarios x 30 seeds; risk subset = 1920 runs (8 x 8 x 30)
+    V1 criterion   dmin_robot_obs < r_o        = 1.20 m : 1269/1920 = 66.1%
+    same trajectories, solid re-check < r_robot + r_o = 1.65 m : 1356/1920 = 70.6%
+    contacts added purely by the criterion change : 87 runs (+4.5 pp)
+    (1509/2160 belongs to the 9-method results_v9_noB3 lineage, which is not present in this workspace -> 待确认)
+
+G2  per scenario (V1 runs, n=240 each):
+    scenario   <1.20   <1.65   added
+    S2           158     170      12
+    S2R3         179     183       4
+    S2R2         158     172      14
+    S2R1         129     151      22
+    S3           174     178       4
+    S4S          134     152      18
+    S4M          165     172       7
+    S4L          172     178       6
+
+G3  per method (V1 runs, n=240 each):
+    method             <1.20   <1.65   added
+    B-Outmost              0       0       0
+    B-PCBF                64      70       6
+    B1                   230     231       1
+    B2                   228     235       7
+    Ours_rollout         198     207       9
+    VH-Danger            141     171      30
+    VH-Danger-path       201     223      22
+    VH-Path              207     219      12
+
+G4  continuous swept re-check of the *V1* trajectory (8 risk scenarios, seed 200, Ours_rollout):
+    scenario  archive dmin   swept min clr ro  step min clr  events_ro
+    S2              0.6529            -0.5410       -0.9971          2
+    S2R3            0.1478            -1.1036       -1.5022          3
+    S2R2            0.9262            -0.2382       -0.7238          2
+    S2R1            2.5091             1.3875        0.8591          0
+    S3              0.2942            -0.9134       -1.3558          8
+    S4S             0.3109            -0.8992       -1.3391          2
+    S4M             0.1482            -1.0828       -1.5018          3
+    S4L             0.0553            -1.1684       -1.5947          3
+    'archive dmin' is a *lagged* statistic: the V1 loop measures the
+    robot at t+dt against the obstacle at t, so the archived number is
+    not the synchronised closest approach. The swept column is.
+==============================================================================
+H. NOMINAL SPACING vs BRAKING DISTANCE vs REQUIRED SPACING
+==============================================================================
+    d_ro_safe (nominal, author) = 2.00 m; hard body limit r_robot + r_o = 1.65 m; static surface margin = 0.35 m
+    t_delay (one control period) = 0.10 s
+        v  d_stop a=3.0  d_stop a=4.0  d_delay  d_req(3.0)  d_req(4.0)  vs 2.0 m
+      1.0         0.167         0.125    0.100       2.017       1.975    +0.017
+      2.0         0.667         0.500    0.200       2.617       2.450    +0.617
+      2.6         1.127         0.845    0.260       3.137       2.855    +1.137
+      3.5         2.042         1.531    0.350       4.142       3.631    +2.142
+      4.5         3.375         2.531    0.450       5.575       4.731    +3.575
+    => at v = 4.5 m/s the stopping distance alone (2.53 m at a_lin =
+       4.0, 3.375 m de-rated to 3.0) exceeds the whole 2.0 m nominal
+       target, so a static target cannot be a high-speed guarantee.
+    => the supervisor plans with a_dec = 3.0 m/s^2 (= 75% of a_lin) and limits the *approach* component accordingly.
+==============================================================================
+I. INFEASIBILITY CAUSE CENSUS  (S / P / C)
+==============================================================================
+     seed   infeasibleinfeasible_Sinfeasible_Pinfeasible_resolved   contact_Cbrake_events
+      200          178         104          74           0          12        4595
+      201          223         125          98           0          21        5253
+    S = solver-infeasible (NOT a claim of physical unavoidability)
+    P = certified unavoidable under the stated assumptions
+    C = a safe action existed (post-hoc oracle) but was not taken
+
+wall = 289.2 s
+SUMMARY: 17/17 checks passed
+  PASS  A1 V2-compat == archived V1 cell (bit-exact, non-timing)  (0 mismatch(es))
+  PASS  A2 V2-compat == V1 run_scene (whole trajectory, bit-exact)  (0 difference(s))
+  PASS  B1 zero C3 / R4 / lateral violations  (C3=0, R4=0, lat=0)
+  PASS  B2 the caps are actually binding (test is not vacuous)  (C3_sheep=37612, R4=47004, LAT=23092)
+  PASS  C1 per-class clearances and contact counts reported  (all five classes measured on every run)
+  PASS  C2 every contact is attributed to S / P / C (no silent tuning)
+  PASS  D1a linear sweep exact (closest approach)
+  PASS  D1b linear sweep exact (entry time)
+  PASS  D2 monitor min clearance + first-contact time exact
+  PASS  D3 arc mode within the stated sub-chord resolution
+  PASS  E1 two identical runs give identical results  (0 diff)
+  PASS  E2 jobs=1 == jobs=4 (bit-exact, deterministic reduction order)  (0 differing cells)
+  PASS  F1 joint projection satisfies the vector bound where separate clipping violates it
+  PASS  F2 joint projection has strictly fewer C3 violations than separate clipping  (joint=0, sequential=67194)
+  PASS  G1 1269/1920 reproduced exactly  (1269/1920)
+  PASS  H1 nominal target is below the 4.5 m/s stopping distance (documented, not hidden)
+  PASS  I1 all three cause codes are populated and the S!=P distinction is reported  (S=229, P=172, C=33)

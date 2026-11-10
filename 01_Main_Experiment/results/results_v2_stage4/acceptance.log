@@ -1,0 +1,44 @@
+﻿V2 Stage-4 acceptance tests
+python 3.13.7, numpy 2.5.2
+shipped Stage-3 configuration (reused unchanged): config_id=89fe865b2e1d
+geometry: W=8 m half-width (16 m total), 140 m / 220 m, R_obs=70 m
+==============================================================================
+A. inertness: the V1 scene definitions through the Stage-4 runner
+  A1 config (V1-equivalent sensing + Stage-2 tuple): config_id=6bc790decc06
+  [PASS] A1/S3_s1000: V1 scene + Stage-4 runner == Stage-3 archive (522784 values)  -- []
+  [PASS] A1/S2_s1000: V1 scene + Stage-4 runner == Stage-3 archive (303536 values)  -- []
+  [PASS] A1/S1_s1002: V1 scene + Stage-4 runner == Stage-3 archive (287496 values)  -- []
+  A2 config (shipped Stage-3, 70 m, frozen tuple): config_id=89fe865b2e1d
+  [PASS] A2/stage3_S3_s1000: V1 scene + Stage-4 runner == pre-edit Stage-3 capture (532704 values)  -- trace [] summary []
+  [PASS] A2/stage3_S2_s1000: V1 scene + Stage-4 runner == pre-edit Stage-3 capture (310856 values)  -- trace [] summary []
+  [PASS] A2/stage3_S1_s1002: V1 scene + Stage-4 runner == pre-edit Stage-3 capture (287738 values)  -- trace [] summary []
+  [PASS] A3/no V1 or Stage-3 source file changed since the pre-Stage-4 hash snapshot  -- 0 moved
+==============================================================================
+B. the 140/220 m geometry exercises the sensing range (40/70/100 m sweep)
+  V2S2 R=   40: first detect 58.999999999998785, PRE nan, DIVERT 58.999999999998785, C=0.000, min_dist=2.1874450742034632, 2580 ticks
+  V2S2 R=   70: first detect 52.89999999999913, PRE 53.899999999999075, DIVERT 57.99999999999884, C=0.000, min_dist=1.7314267966399124, 2554 ticks
+  V2S2 R=  100: first detect 46.74999999999948, PRE 53.899999999999075, DIVERT 57.99999999999884, C=0.000, min_dist=1.7314267966399124, 2554 ticks
+    V2S2 40 vs 70 m: 263439 differing state values, first difference at tick 1098 (t=54.90 s), max |delta| 15.58
+    V2S2 70 vs 100 m: trajectories BIT-IDENTICAL
+    V2S2 40 vs 100 m: 263439 differing state values, first difference at tick 1098 (t=54.90 s), max |delta| 15.58
+  S3 R=   40: first detect 10.85000000000002, PRE 17.20000000000011, DIVERT 21.40000000000017, C=0.028, min_dist=1.539590941407454, 2148 ticks
+  S3 R=   70: first detect 2.000000000000001, PRE 17.20000000000011, DIVERT 21.40000000000017, C=0.028, min_dist=1.539590941407454, 2148 ticks
+    S3 40 vs 70 m: trajectories BIT-IDENTICAL
+  V2S3 R=   40: first detect 57.64999999999886, PRE 58.19999999999883, DIVERT 59.59999999999875, C=0.056, min_dist=0.6434344307080144, 4194 ticks
+  V2S3 R=   70: first detect 49.09999999999935, PRE 54.39999999999905, DIVERT 59.29999999999877, C=0.028, min_dist=1.4351703145229284, 4220 ticks
+  V2S3 R=  100: first detect 41.949999999999754, PRE 54.39999999999905, DIVERT 59.29999999999877, C=0.000, min_dist=2.154574928950001, 4177 ticks
+    V2S3 40 vs 70 m: 556947 differing state values, first difference at tick 1136 (t=56.80 s), max |delta| 25.98
+    V2S3 70 vs 100 m: 510867 differing state values, first difference at tick 1382 (t=69.10 s), max |delta| 22.07
+    V2S3 40 vs 100 m: 554701 differing state values, first difference at tick 1136 (t=56.80 s), max |delta| 28.26
+
+  first-detection delta (40 m - 70 m): V2S2 +6.10 s, V1 S3 +8.85 s
+  [PASS] B/on the new 140 m scene the 40 m run detects strictly later than the 70 m run  -- V2S2 70 m 52.90 s -> 40 m 59.00 s (+6.10 s)
+  [FAIL] B/and the trajectories differ (Stage-3 on the V1 geometry: bit-identical)  -- 40/70: 263439 values; 70/100: 0 values; 40/100: 263439 values
+  [PASS] B/the contrast holds for the 220 m sequential scene too  -- 40/70: 556947 values; 70/100: 510867 values; 40/100: 554701 values
+  [PASS] B/the Stage-3 finding is reproduced on the V1 geometry (40 m == 70 m, bit-identical), so the contrast is the geometry, not the code  -- 40/70: 0 values
+==============================================================================
+C. false-trigger control on the no-obstacle scenes
+  V2S1   B1            : PRE=nan, DIVERT=nan, states fired: none, switches=nan, C=0.000, goal
+  V2S1   B2            : PRE=nan, DIVERT=nan, states fired: none, switches=0, C=0.000, goal
+  V2S1   Ours_event    : PRE=nan, DIVERT=nan, states fired: none, switches=0, C=0.000, goal
+  V2S1   Ours_rollout  : PRE=nan, DIVERT=nan, states fired: none, switches=0, C=0.000, goal

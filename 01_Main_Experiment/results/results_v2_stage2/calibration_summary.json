@@ -1,0 +1,36 @@
+{
+  "M1": {
+    "decay": "linear",
+    "gain": 3.0,
+    "sense_range": 6.0,
+    "J": 0.0,
+    "best_J": 0.0,
+    "n_within_tie": 2,
+    "rule": "best J, then parsimony (linear<quadratic<exp, then smaller gain) within TIE_TOL"
+  },
+  "M2": {
+    "m2_react_delay": 0.3,
+    "m2_gain_sigma": 0.2,
+    "m_v_max": 2.0,
+    "m2_slow_gain": 0.5
+  },
+  "M2_notes": {
+    "m2_react_delay": "flat objective -> middle of the searched physiological band 0.15/0.30/0.45 s (J range 0.000-0.000)",
+    "m2_gain_sigma": "flat objective -> middle of the searched spread 0.10/0.20/0.30 (20% coefficient of variation) (J range 0.000-0.000)",
+    "m_v_max": "flat objective -> the author's exploratory upper reference (1.8-2.0 m/s) (J range 0.000-0.000)",
+    "m2_slow_gain": "design override: makes the admissible lower speed reachable (J cost 0.55, reported) (J range 0.000-0.568)"
+  },
+  "objective": "J = 100*contact + 10*max(0,-worst_clearance) + 5*max(0,0.5-path_eff) + 2*max(0,latency-2) + 2*max(0,0.3-latency)",
+  "budget": {
+    "runs": 230,
+    "core_seconds": 218.58000016212463,
+    "wall_seconds": 218.64219689369202,
+    "seeds": [
+      1000,
+      1001,
+      1002,
+      1003,
+      1004
+    ]
+  }
+}

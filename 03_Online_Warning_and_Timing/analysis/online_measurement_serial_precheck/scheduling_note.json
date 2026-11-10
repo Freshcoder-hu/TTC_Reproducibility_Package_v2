@@ -1,0 +1,6 @@
+{
+  "status": "interrupted_scheduling_precheck",
+  "completed_serial_replays": 4,
+  "reason": "Separate parallel event acquisition from an independent serial latency panel; no metric definitions, strategy or scene parameters changed. Incomplete precheck is retained but not pooled with the final measurement sample.",
+  "ReadOnlyProbe_class_sha256": "513e1fa557a856302291a37b72b13c15d43680e966356c30031e7c8bee87c35f"
+}

@@ -1,0 +1,21 @@
+{
+  "cells": [
+    [
+      "V2S2",
+      "B2",
+      2000
+    ],
+    [
+      "V2S3",
+      "Ours_rollout",
+      2000
+    ]
+  ],
+  "repeat_diffs": 0,
+  "jobs_diffs": 0,
+  "diff_detail": [],
+  "timing_excluded": [
+    "ctrl_ms",
+    "wall_s"
+  ]
+}

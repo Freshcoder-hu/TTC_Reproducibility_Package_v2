@@ -1,0 +1,10 @@
+{
+  "nonfinite_total": 1328,
+  "by_method": {
+    "B2": 660,
+    "B1": 660,
+    "Ours_rollout": 8
+  },
+  "original_definition": "truth distance threshold onset minus truth TTC threshold onset, only if controller exposes t_pre",
+  "not_a_delivery_warning_metric": true
+}

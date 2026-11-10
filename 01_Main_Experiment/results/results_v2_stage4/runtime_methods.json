@@ -1,0 +1,221 @@
+{
+  "config_id": "89fe865b2e1d",
+  "rows": [
+    {
+      "scenario": "V2S2",
+      "alg": "Ours_rollout",
+      "seed": 1000,
+      "wall_s": 17.787352200000896,
+      "n_ctrl_ticks": 1277,
+      "sim_s": 127.59999999999489,
+      "ms_per_ctrl_tick": 13.929015035239543,
+      "ms_per_sim_second": 139.39931191223832,
+      "ended": "goal",
+      "source": "runtime_s4 (reused)"
+    },
+    {
+      "scenario": "V2S2",
+      "alg": "B1",
+      "seed": 1000,
+      "wall_s": 17.149880299999495,
+      "n_ctrl_ticks": 1290,
+      "sim_s": 128.89999999999506,
+      "ms_per_ctrl_tick": 13.294480852712788,
+      "ended": "goal",
+      "collision_rate": 0.027777777777777776,
+      "source": "measured here"
+    },
+    {
+      "scenario": "V2S2",
+      "alg": "B2",
+      "seed": 1000,
+      "wall_s": 17.191237300008652,
+      "n_ctrl_ticks": 1300,
+      "sim_s": 129.8999999999953,
+      "ms_per_ctrl_tick": 13.224028692314347,
+      "ms_per_sim_second": 132.3420885297096,
+      "ended": "goal",
+      "source": "runtime_s4 (reused)"
+    },
+    {
+      "scenario": "V2S2",
+      "alg": "B3",
+      "seed": 1000,
+      "wall_s": 19.085414799992577,
+      "n_ctrl_ticks": 1406,
+      "sim_s": 140.4999999999977,
+      "ms_per_ctrl_tick": 13.5742637268795,
+      "ended": "goal",
+      "collision_rate": 0.027777777777777776,
+      "source": "measured here"
+    },
+    {
+      "scenario": "V2S2",
+      "alg": "VH-Path",
+      "seed": 1000,
+      "wall_s": 22.337796699997853,
+      "n_ctrl_ticks": 1439,
+      "sim_s": 143.79999999999845,
+      "ms_per_ctrl_tick": 15.52313877692693,
+      "ended": "goal",
+      "collision_rate": 0.25,
+      "source": "measured here"
+    },
+    {
+      "scenario": "V2S2",
+      "alg": "VH-Danger",
+      "seed": 1000,
+      "wall_s": 27.498595199998817,
+      "n_ctrl_ticks": 2000,
+      "sim_s": 199.9000000000112,
+      "ms_per_ctrl_tick": 13.749297599999409,
+      "ended": "time",
+      "collision_rate": 0.08333333333333333,
+      "source": "measured here"
+    },
+    {
+      "scenario": "V2S2",
+      "alg": "B-Outmost",
+      "seed": 1000,
+      "wall_s": 19.27990169999248,
+      "n_ctrl_ticks": 1568,
+      "sim_s": 156.70000000000138,
+      "ms_per_ctrl_tick": 12.295855676015611,
+      "ended": "goal",
+      "collision_rate": 0.0,
+      "source": "measured here"
+    },
+    {
+      "scenario": "V2S2",
+      "alg": "B-PCBF",
+      "seed": 1000,
+      "wall_s": 58.58577150000201,
+      "n_ctrl_ticks": 2000,
+      "sim_s": 199.9000000000112,
+      "ms_per_ctrl_tick": 29.292885750001005,
+      "ended": "time",
+      "collision_rate": 0.0,
+      "source": "measured here"
+    },
+    {
+      "scenario": "V2S3",
+      "alg": "Ours_rollout",
+      "seed": 1000,
+      "wall_s": 30.646551300000283,
+      "n_ctrl_ticks": 2110,
+      "sim_s": 210.9000000000137,
+      "ms_per_ctrl_tick": 14.52443189573473,
+      "ms_per_sim_second": 145.313187766706,
+      "ended": "goal",
+      "source": "runtime_s4 (reused)"
+    },
+    {
+      "scenario": "V2S3",
+      "alg": "B1",
+      "seed": 1000,
+      "wall_s": 28.929652999999234,
+      "n_ctrl_ticks": 2070,
+      "sim_s": 206.9000000000128,
+      "ms_per_ctrl_tick": 13.975677777777408,
+      "ended": "goal",
+      "collision_rate": 0.16666666666666666,
+      "source": "measured here"
+    },
+    {
+      "scenario": "V2S3",
+      "alg": "B2",
+      "seed": 1000,
+      "wall_s": 28.76414489999297,
+      "n_ctrl_ticks": 2079,
+      "sim_s": 207.800000000013,
+      "ms_per_ctrl_tick": 13.835567532464152,
+      "ms_per_sim_second": 138.4222564965889,
+      "ended": "goal",
+      "source": "runtime_s4 (reused)"
+    },
+    {
+      "scenario": "V2S3",
+      "alg": "B3",
+      "seed": 1000,
+      "wall_s": 44.246744100004435,
+      "n_ctrl_ticks": 3200,
+      "sim_s": 319.90000000003846,
+      "ms_per_ctrl_tick": 13.827107531251386,
+      "ended": "time",
+      "collision_rate": 0.2777777777777778,
+      "source": "measured here"
+    },
+    {
+      "scenario": "V2S3",
+      "alg": "VH-Path",
+      "seed": 1000,
+      "wall_s": 48.247853000008035,
+      "n_ctrl_ticks": 2938,
+      "sim_s": 293.7000000000325,
+      "ms_per_ctrl_tick": 16.422005786251884,
+      "ended": "goal",
+      "collision_rate": 0.3611111111111111,
+      "source": "measured here"
+    },
+    {
+      "scenario": "V2S3",
+      "alg": "VH-Danger",
+      "seed": 1000,
+      "wall_s": 36.0977009999915,
+      "n_ctrl_ticks": 2498,
+      "sim_s": 249.70000000002253,
+      "ms_per_ctrl_tick": 14.450640912726783,
+      "ended": "goal",
+      "collision_rate": 0.5833333333333334,
+      "source": "measured here"
+    },
+    {
+      "scenario": "V2S3",
+      "alg": "B-Outmost",
+      "seed": 1000,
+      "wall_s": 27.312111099992762,
+      "n_ctrl_ticks": 2128,
+      "sim_s": 212.70000000001411,
+      "ms_per_ctrl_tick": 12.834638674808629,
+      "ended": "goal",
+      "collision_rate": 0.4444444444444444,
+      "source": "measured here"
+    },
+    {
+      "scenario": "V2S3",
+      "alg": "B-PCBF",
+      "seed": 1000,
+      "wall_s": 90.13193730000057,
+      "n_ctrl_ticks": 3200,
+      "sim_s": 319.90000000003846,
+      "ms_per_ctrl_tick": 28.16623040625018,
+      "ended": "time",
+      "collision_rate": 0.0,
+      "source": "measured here"
+    }
+  ],
+  "ratios": {
+    "V2S2": {
+      "Ours_rollout": 1.0,
+      "B1": 0.9544451505780256,
+      "B2": 0.9493872078433669,
+      "B3": 0.9745314864358647,
+      "VH-Path": 1.1144462646967035,
+      "VH-Danger": 0.9870976207014308,
+      "B-Outmost": 0.8827512674017409,
+      "B-PCBF": 2.1030119987588374
+    },
+    "V2S3": {
+      "Ours_rollout": 1.0,
+      "B1": 0.9622185485878817,
+      "B2": 0.9525720270358476,
+      "B3": 0.9519895601088452,
+      "VH-Path": 1.1306470300621119,
+      "VH-Danger": 0.994919527074266,
+      "B-Outmost": 0.8836585669541863,
+      "B-PCBF": 1.9392311250756404
+    }
+  },
+  "wall_s": 438.9144953000068,
+  "seed": 1000
+}

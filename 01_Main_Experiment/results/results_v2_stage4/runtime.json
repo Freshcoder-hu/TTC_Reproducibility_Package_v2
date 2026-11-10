@@ -1,0 +1,171 @@
+{
+  "measured": [
+    {
+      "scenario": "V2S1",
+      "alg": "Ours_rollout",
+      "seed": 1000,
+      "wall_s": 15.915594799997052,
+      "n_ctrl_ticks": 1270,
+      "sim_s": 126.89999999999493,
+      "ms_per_ctrl_tick": 12.531964409446498,
+      "ms_per_sim_second": 125.41839873914648,
+      "ended": "goal"
+    },
+    {
+      "scenario": "V2S1N",
+      "alg": "Ours_rollout",
+      "seed": 1000,
+      "wall_s": 9.888713400010602,
+      "n_ctrl_ticks": 771,
+      "sim_s": 76.99999999999777,
+      "ms_per_ctrl_tick": 12.825828015577953,
+      "ms_per_sim_second": 128.42484935079077,
+      "ended": "goal"
+    },
+    {
+      "scenario": "V2S2",
+      "alg": "Ours_rollout",
+      "seed": 1000,
+      "wall_s": 17.787352200000896,
+      "n_ctrl_ticks": 1277,
+      "sim_s": 127.59999999999489,
+      "ms_per_ctrl_tick": 13.929015035239543,
+      "ms_per_sim_second": 139.39931191223832,
+      "ended": "goal"
+    },
+    {
+      "scenario": "V2S2R3",
+      "alg": "Ours_rollout",
+      "seed": 1000,
+      "wall_s": 17.707978200007346,
+      "n_ctrl_ticks": 1288,
+      "sim_s": 128.69999999999501,
+      "ms_per_ctrl_tick": 13.74843027950881,
+      "ms_per_sim_second": 137.5911282051906,
+      "ended": "goal"
+    },
+    {
+      "scenario": "V2S2R2",
+      "alg": "Ours_rollout",
+      "seed": 1000,
+      "wall_s": 17.606583800006774,
+      "n_ctrl_ticks": 1298,
+      "sim_s": 129.69999999999524,
+      "ms_per_ctrl_tick": 13.564394298926636,
+      "ms_per_sim_second": 135.74852582889298,
+      "ended": "goal"
+    },
+    {
+      "scenario": "V2S2R1",
+      "alg": "Ours_rollout",
+      "seed": 1000,
+      "wall_s": 17.521974899995257,
+      "n_ctrl_ticks": 1299,
+      "sim_s": 129.79999999999526,
+      "ms_per_ctrl_tick": 13.488818244800044,
+      "ms_per_sim_second": 134.99210246529967,
+      "ended": "goal"
+    },
+    {
+      "scenario": "V2S3",
+      "alg": "Ours_rollout",
+      "seed": 1000,
+      "wall_s": 30.646551300000283,
+      "n_ctrl_ticks": 2110,
+      "sim_s": 210.9000000000137,
+      "ms_per_ctrl_tick": 14.52443189573473,
+      "ms_per_sim_second": 145.313187766706,
+      "ended": "goal"
+    },
+    {
+      "scenario": "V2S4S",
+      "alg": "Ours_rollout",
+      "seed": 1000,
+      "wall_s": 8.93819380000059,
+      "n_ctrl_ticks": 1307,
+      "sim_s": 130.59999999999545,
+      "ms_per_ctrl_tick": 6.838709869931591,
+      "ms_per_sim_second": 68.43946248086449,
+      "ended": "goal"
+    },
+    {
+      "scenario": "V2S4M",
+      "alg": "Ours_rollout",
+      "seed": 1000,
+      "wall_s": 17.507358500006376,
+      "n_ctrl_ticks": 1277,
+      "sim_s": 127.59999999999489,
+      "ms_per_ctrl_tick": 13.709756068916505,
+      "ms_per_sim_second": 137.20500391855074,
+      "ended": "goal"
+    },
+    {
+      "scenario": "V2S4L",
+      "alg": "Ours_rollout",
+      "seed": 1000,
+      "wall_s": 37.39665609999793,
+      "n_ctrl_ticks": 1375,
+      "sim_s": 137.399999999997,
+      "ms_per_ctrl_tick": 27.197568072725765,
+      "ms_per_sim_second": 272.17362518194136,
+      "ended": "goal"
+    },
+    {
+      "scenario": "V2S2",
+      "alg": "B2",
+      "seed": 1000,
+      "wall_s": 17.191237300008652,
+      "n_ctrl_ticks": 1300,
+      "sim_s": 129.8999999999953,
+      "ms_per_ctrl_tick": 13.224028692314347,
+      "ms_per_sim_second": 132.3420885297096,
+      "ended": "goal"
+    },
+    {
+      "scenario": "V2S3",
+      "alg": "B2",
+      "seed": 1000,
+      "wall_s": 28.76414489999297,
+      "n_ctrl_ticks": 2079,
+      "sim_s": 207.800000000013,
+      "ms_per_ctrl_tick": 13.835567532464152,
+      "ms_per_sim_second": 138.4222564965889,
+      "ended": "goal"
+    }
+  ],
+  "mean_wall_s_planning_method": 19.09169570000231,
+  "mean_wall_s_baseline_method": 22.97769110000081,
+  "per_seed_all_10_scenes_s": 168.2775472000125,
+  "matrices": {
+    "screening_4x3x30": {
+      "n_runs": 360,
+      "s": 3786.2448120002814,
+      "projection": {
+        "workers_1": 15144.979248001124,
+        "workers_4": 3786.244812000281,
+        "workers_8": 1893.1224060001405,
+        "workers_16": 946.5612030000702
+      }
+    },
+    "formal_8x10x30": {
+      "n_runs": 2400,
+      "s": 5048.326416000375,
+      "projection": {
+        "workers_1": 403866.11328002997,
+        "workers_4": 100966.52832000749,
+        "workers_8": 50483.264160003746,
+        "workers_16": 25241.632080001873
+      }
+    },
+    "ablation_300": {
+      "n_runs": 300,
+      "s": 5727.508710000693,
+      "projection": {
+        "workers_1": 5727.508710000693,
+        "workers_4": 1431.8771775001733,
+        "workers_8": 715.9385887500866,
+        "workers_16": 357.9692943750433
+      }
+    }
+  }
+}

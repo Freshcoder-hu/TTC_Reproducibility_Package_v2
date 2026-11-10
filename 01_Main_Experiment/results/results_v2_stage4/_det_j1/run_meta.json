@@ -1,0 +1,18 @@
+{
+  "config_id": "89fe865b2e1d",
+  "compat": false,
+  "projection": "joint",
+  "scenarios": [
+    "V2S2"
+  ],
+  "algs": [
+    "B2"
+  ],
+  "seeds": 1,
+  "seed_offset": 1000,
+  "jobs": 1,
+  "t_max": null,
+  "wall_s": 17.217385292053223,
+  "python": "3.13.7",
+  "numpy": "2.5.2"
+}

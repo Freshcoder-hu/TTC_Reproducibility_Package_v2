@@ -1,0 +1,4 @@
+﻿method,reference_threats,information_on_time,policy_on_time,policy_implemented,policy_projected_lead_median_s,policy_projected_lead_min_s,contacts_with_policy_lead,policy_actual_contact_lead_median_s,policy_actual_contact_lead_min_s,serial_timing_runs,step_over_50ms,cycle_over_100ms,maximum_cycle_ms
+Ours_rollout,87,87,87,True,11.284605344619898,7.3815228981181065,42,12.773422605555627,8.322110754650836,8,10,0,93.752122
+B1,87,87,0,False,,,0,,,8,3,0,69.659238
+B2,87,87,87,True,1.0646807562111604,0.3737831879506359,77,1.7932332674456575,0.7514843907745643,8,3,1,208.226114

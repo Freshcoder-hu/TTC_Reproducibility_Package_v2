@@ -1,0 +1,17 @@
+{
+  "status": "measurement_evidence_complete_within_declared_sample",
+  "primary_performance_N": 2340,
+  "measurement_event_replays": 132,
+  "independent_serial_timing_replays": 24,
+  "targeted_low_allocation_timing_replays": 2,
+  "controller_or_execution_changes": false,
+  "source_hash_unchanged": true,
+  "evidence": "Online_Evidence_Measurement_ZH.txt",
+  "limits": [
+    "Two seeds per event cell; one seed per serial timing cell",
+    "Latency measured only for exact, animal_pos_0p5, delay_0p5, blackout_1p0",
+    "No hardware real-time or real-animal guarantee",
+    "Residual robot-animal contacts and animal-obstacle safety tradeoffs remain"
+  ],
+  "previous_acceptance_status": "The earlier acceptance_status.json describes the pre-measurement stage and is not rewritten retrospectively"
+}

@@ -1,0 +1,18 @@
+{
+  "config_id": "014ff8f7f576",
+  "config_sha256": "014ff8f7f576d663148266c17ece1b9626e293237d61b6e3f64ccd3f7b7162c0",
+  "compat": false,
+  "projection": "joint",
+  "scenarios": [
+    "S3"
+  ],
+  "algs": [
+    "Ours_rollout"
+  ],
+  "seeds": 2,
+  "seed_offset": 1000,
+  "jobs": 1,
+  "wall_s": 44.85338521003723,
+  "python": "3.13.7",
+  "numpy": "2.5.2"
+}

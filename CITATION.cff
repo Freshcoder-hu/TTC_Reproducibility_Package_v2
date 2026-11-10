@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this software or its data, please cite it as below."
+title: "Animal contact-risk prediction and action-conditioned rollout for multi-robot shepherding — reproducibility package (v2)"
+type: software
+authors:
+  - family-names: Wang
+    given-names: Shuaihu
+  - family-names: Zhang
+    given-names: Gaowei
+  - family-names: Xu
+    given-names: Zehao
+  - family-names: Huang
+    given-names: Yun
+year: 2026
+version: "2"
+abstract: >-
+  Reproducibility package for a simulation study of animal contact-risk
+  prediction and action-conditioned rollout for multi-robot shepherding.
+  Code is licensed under the MIT License; data, results, tables, figures and
+  documentation are licensed under CC BY 4.0. See LICENSING.md.
+keywords:
+  - multi-robot shepherding
+  - animal contact risk
+  - time-to-collision
+  - action-conditioned rollout
+  - reproducibility
+repository-code: "TODO(URL)"

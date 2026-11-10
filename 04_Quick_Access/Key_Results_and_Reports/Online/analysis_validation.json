@@ -1,0 +1,15 @@
+{
+  "protocol_and_observer_hash_match": true,
+  "expected_unique_runs": 132,
+  "raw_bitmask_counts_match_summary": true,
+  "formal_data_unchanged": true,
+  "formal_scalar_parity_runs": 132,
+  "full_trajectory_and_command_parity_runs": 9,
+  "serial_timing_scalar_parity_runs": 24,
+  "serial_event_full_trajectory_command_parity_runs": 24,
+  "concurrent_event_timings_excluded_from_latency": true,
+  "all_potential_encounters_retained": 264,
+  "reference_threat_events": 261,
+  "censored_sources_not_counted_as_misses": true,
+  "max_censor_count": 168
+}

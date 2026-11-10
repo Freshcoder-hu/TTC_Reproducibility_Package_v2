@@ -1,0 +1,29 @@
+[
+  {
+    "cell": "V2S2/Ours_rollout/1000",
+    "n_runs": 8,
+    "jobs": 1,
+    "wall_s": 139.62871639999503,
+    "s_per_run": 17.45358954999938,
+    "speedup": 1.0,
+    "efficiency": 1.0
+  },
+  {
+    "cell": "V2S2/Ours_rollout/1000",
+    "n_runs": 8,
+    "jobs": 4,
+    "wall_s": 36.947615099998075,
+    "s_per_run": 4.618451887499759,
+    "speedup": 3.779099571706925,
+    "efficiency": 0.9447748929267312
+  },
+  {
+    "cell": "V2S2/Ours_rollout/1000",
+    "n_runs": 8,
+    "jobs": 12,
+    "wall_s": 25.02213309999206,
+    "s_per_run": 3.1277666374990076,
+    "speedup": 5.580208363612266,
+    "efficiency": 0.46501736363435553
+  }
+]

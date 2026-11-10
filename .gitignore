@@ -1,0 +1,53 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Build artefacts (keep shipped native kernels: _rollout.dll, _rs_safety.dll)
+build/
+dist/
+*.egg-info/
+*.o
+*.obj
+*.so
+*.lib
+*.exp
+*.pdb
+*.ilk
+
+# Test / coverage artefacts
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+# OS noise
+.DS_Store
+._*
+Thumbs.db
+desktop.ini
+
+# Editor / crash leftovers
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+~$*
+.#*
+.idea/
+.vscode/
+
+# NOTE: data and results (*.csv, *.jsonl, *.json, *.npz, figures, tables)
+# are intentionally NOT ignored — they are part of the reproducibility record.

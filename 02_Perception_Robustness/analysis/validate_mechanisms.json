@@ -1,0 +1,7 @@
+{
+  "native_projection_cases": 2000,
+  "native_projection_max_abs_error": 8.881784197001252e-15,
+  "delayed_track_survives_0p5s": true,
+  "empty_observation_no_truth": true,
+  "poisoned_unseen_truth_cannot_change_publication": true
+}

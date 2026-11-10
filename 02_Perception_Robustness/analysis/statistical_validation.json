@@ -1,0 +1,5 @@
+{
+  "exact_small_signflip_cases": 3,
+  "known_holm_case": true,
+  "degenerate_bootstrap_case": true
+}

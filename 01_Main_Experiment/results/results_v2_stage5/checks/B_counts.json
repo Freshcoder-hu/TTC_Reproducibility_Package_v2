@@ -1,0 +1,119 @@
+{
+  "total_matrix": 2400,
+  "total_ablation": 240,
+  "per_method": {
+    "Ours_rollout": {
+      "n_rows": 300,
+      "n_cells": 300,
+      "missing": 0,
+      "extra": 0,
+      "duplicate": 0,
+      "n_error": 0,
+      "n_censored": 0,
+      "config_ids": [
+        "06897595d088",
+        "61dc9fae2dff",
+        "89fe865b2e1d"
+      ]
+    },
+    "B1": {
+      "n_rows": 300,
+      "n_cells": 300,
+      "missing": 0,
+      "extra": 0,
+      "duplicate": 0,
+      "n_error": 0,
+      "n_censored": 0,
+      "config_ids": [
+        "06897595d088",
+        "61dc9fae2dff",
+        "89fe865b2e1d"
+      ]
+    },
+    "B2": {
+      "n_rows": 300,
+      "n_cells": 300,
+      "missing": 0,
+      "extra": 0,
+      "duplicate": 0,
+      "n_error": 0,
+      "n_censored": 0,
+      "config_ids": [
+        "06897595d088",
+        "61dc9fae2dff",
+        "89fe865b2e1d"
+      ]
+    },
+    "VH-Path": {
+      "n_rows": 300,
+      "n_cells": 300,
+      "missing": 0,
+      "extra": 0,
+      "duplicate": 0,
+      "n_error": 0,
+      "n_censored": 39,
+      "config_ids": [
+        "06897595d088",
+        "61dc9fae2dff",
+        "89fe865b2e1d"
+      ]
+    },
+    "VH-Danger": {
+      "n_rows": 300,
+      "n_cells": 300,
+      "missing": 0,
+      "extra": 0,
+      "duplicate": 0,
+      "n_error": 0,
+      "n_censored": 25,
+      "config_ids": [
+        "06897595d088",
+        "61dc9fae2dff",
+        "89fe865b2e1d"
+      ]
+    },
+    "VH-Danger-path": {
+      "n_rows": 300,
+      "n_cells": 300,
+      "missing": 0,
+      "extra": 0,
+      "duplicate": 0,
+      "n_error": 0,
+      "n_censored": 15,
+      "config_ids": [
+        "06897595d088",
+        "61dc9fae2dff",
+        "89fe865b2e1d"
+      ]
+    },
+    "B-Outmost": {
+      "n_rows": 300,
+      "n_cells": 300,
+      "missing": 0,
+      "extra": 0,
+      "duplicate": 0,
+      "n_error": 0,
+      "n_censored": 23,
+      "config_ids": [
+        "06897595d088",
+        "61dc9fae2dff",
+        "89fe865b2e1d"
+      ]
+    },
+    "B-PCBF": {
+      "n_rows": 300,
+      "n_cells": 300,
+      "missing": 0,
+      "extra": 0,
+      "duplicate": 0,
+      "n_error": 0,
+      "n_censored": 275,
+      "config_ids": [
+        "06897595d088",
+        "61dc9fae2dff",
+        "89fe865b2e1d"
+      ]
+    }
+  },
+  "ok": true
+}

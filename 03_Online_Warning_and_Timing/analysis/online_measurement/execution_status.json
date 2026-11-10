@@ -1,0 +1,12 @@
+{
+  "status": "complete",
+  "measurement_replays": 132,
+  "errors": 0,
+  "serial_timing_replays": 24,
+  "formal_scalar_parity_runs": 132,
+  "full_trajectory_and_command_parity_runs": 9,
+  "frozen_source_sha256": "1d77b886e81a5138efb01b92bb20c7cbbdc3d216082fc2dda96b5b25b024f34f",
+  "source_unchanged": true,
+  "formal_data_sha256": "d8523bd9e2349cc68576454429ffd3638c4b5f1f918649b2fcee5ef8d062496d",
+  "wall_s": 1529.8124442100525
+}

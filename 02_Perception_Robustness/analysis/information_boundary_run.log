@@ -1,0 +1,97 @@
+CHECKED V2S2R2__Ours_rollout__strict__partial_fresh pairs 3
+CHECKED V2S2R2__Ours_rollout__strict__partial_delayed_noisy pairs 6
+CHECKED V2S2R2__Ours_rollout__strict__partial_blackout_expiry pairs 9
+CHECKED V2S2R2__Ours_rollout__strict__empty pairs 12
+CHECKED V2S2R2__Ours_rollout__safe__partial_fresh pairs 15
+CHECKED V2S2R2__Ours_rollout__safe__partial_delayed_noisy pairs 18
+CHECKED V2S2R2__Ours_rollout__safe__partial_blackout_expiry pairs 21
+CHECKED V2S2R2__Ours_rollout__safe__empty pairs 24
+CHECKED V2S2R2__B1__strict__partial_fresh pairs 27
+CHECKED V2S2R2__B1__strict__partial_delayed_noisy pairs 30
+CHECKED V2S2R2__B1__strict__partial_blackout_expiry pairs 33
+CHECKED V2S2R2__B1__strict__empty pairs 36
+CHECKED V2S2R2__B1__safe__partial_fresh pairs 39
+CHECKED V2S2R2__B1__safe__partial_delayed_noisy pairs 42
+CHECKED V2S2R2__B1__safe__partial_blackout_expiry pairs 45
+CHECKED V2S2R2__B1__safe__empty pairs 48
+CHECKED V2S2R2__B2__strict__partial_fresh pairs 51
+CHECKED V2S2R2__B2__strict__partial_delayed_noisy pairs 54
+CHECKED V2S2R2__B2__strict__partial_blackout_expiry pairs 57
+CHECKED V2S2R2__B2__strict__empty pairs 60
+CHECKED V2S2R2__B2__safe__partial_fresh pairs 63
+CHECKED V2S2R2__B2__safe__partial_delayed_noisy pairs 66
+CHECKED V2S2R2__B2__safe__partial_blackout_expiry pairs 69
+CHECKED V2S2R2__B2__safe__empty pairs 72
+CHECKED V2S3__Ours_rollout__strict__partial_fresh pairs 75
+CHECKED V2S3__Ours_rollout__strict__partial_delayed_noisy pairs 78
+CHECKED V2S3__Ours_rollout__strict__partial_blackout_expiry pairs 81
+CHECKED V2S3__Ours_rollout__strict__empty pairs 84
+CHECKED V2S3__Ours_rollout__safe__partial_fresh pairs 87
+CHECKED V2S3__Ours_rollout__safe__partial_delayed_noisy pairs 90
+CHECKED V2S3__Ours_rollout__safe__partial_blackout_expiry pairs 93
+CHECKED V2S3__Ours_rollout__safe__empty pairs 96
+CHECKED V2S3__B1__strict__partial_fresh pairs 99
+CHECKED V2S3__B1__strict__partial_delayed_noisy pairs 102
+CHECKED V2S3__B1__strict__partial_blackout_expiry pairs 105
+CHECKED V2S3__B1__strict__empty pairs 108
+CHECKED V2S3__B1__safe__partial_fresh pairs 111
+CHECKED V2S3__B1__safe__partial_delayed_noisy pairs 114
+CHECKED V2S3__B1__safe__partial_blackout_expiry pairs 117
+CHECKED V2S3__B1__safe__empty pairs 120
+CHECKED V2S3__B2__strict__partial_fresh pairs 123
+CHECKED V2S3__B2__strict__partial_delayed_noisy pairs 126
+CHECKED V2S3__B2__strict__partial_blackout_expiry pairs 129
+CHECKED V2S3__B2__strict__empty pairs 132
+CHECKED V2S3__B2__safe__partial_fresh pairs 135
+CHECKED V2S3__B2__safe__partial_delayed_noisy pairs 138
+CHECKED V2S3__B2__safe__partial_blackout_expiry pairs 141
+CHECKED V2S3__B2__safe__empty pairs 144
+{
+  "status": "pass",
+  "audit_kind": "post_evaluation_counterfactual_acceptance_not_new_performance_runs",
+  "frozen_source_sha256": "1d77b886e81a5138efb01b92bb20c7cbbdc3d216082fc2dda96b5b25b024f34f",
+  "current_source_sha256": "1d77b886e81a5138efb01b92bb20c7cbbdc3d216082fc2dda96b5b25b024f34f",
+  "source_unchanged": true,
+  "strict_safe_pairs": 144,
+  "strict_safe_world_replays": 192,
+  "steps_per_replay": 30,
+  "hidden_variants": [
+    "far_reposition",
+    "near_intercept",
+    "reverse_velocity"
+  ],
+  "comparison_rule": "bit-exact np.array_equal, no numerical tolerance",
+  "failed_pairs": 0,
+  "max_execution_abs_delta": 0.0,
+  "positive_archive_control": {
+    "robot_before_max_abs_delta": 0.0,
+    "robot_before_exact_equal": true,
+    "robot_after_max_abs_delta": 0.5,
+    "robot_after_exact_equal": false,
+    "pending_max_abs_delta": 0.0,
+    "pending_exact_equal": true,
+    "feasibility_max_abs_delta": 6.6090953379455915,
+    "feasibility_exact_equal": false,
+    "rs_safety_max_abs_delta": 0.0,
+    "rs_safety_exact_equal": true,
+    "execution_max_abs_delta": 6.6090953379455915,
+    "execution_exact_equal": false,
+    "prediction_max_abs_delta": 0.0,
+    "prediction_exact_equal": true,
+    "controller_max_abs_delta": 0.0,
+    "controller_exact_equal": true,
+    "same_observations": true,
+    "detected_truth_sensitive_execution": true
+  },
+  "total_native_rollout_predictions": 80,
+  "safe_supervisor_changed_ticks": 1008,
+  "wall_s": 43.18342399597168,
+  "scope": "2 scenes x 3 controllers x 2 repaired execution versions x 4 observation profiles x 3 hidden interventions; fixed population 36, 12 robots",
+  "limits": [
+    "Finite regression evidence, not a universal noninterference proof",
+    "Fixed sensor-stream and hidden-state interventions are causal test fixtures, not physical trial trajectories",
+    "Robot states and pending lower-layer commands are reset to the reference at each tick; actual outputs are checked before reset",
+    "No claim that stopping prevents all contacts with unobserved animals",
+    "This audit was added after the 2340-run evaluation; it was not a pre-evaluation gate"
+  ]
+}

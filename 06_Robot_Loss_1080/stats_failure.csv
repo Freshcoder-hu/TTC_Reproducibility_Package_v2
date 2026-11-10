@@ -1,0 +1,119 @@
+﻿family,endpoint,kind,baseline,unit,n,n01,n10,n11,n00,median_diff,p,better,p_holm,n_better,n_worse
+Ours_vs_baselines/F0,arrival,mcnemar,B1,seed(all 3 scenes),30,0,0,30,0,nan,1.0,higher,1.0,,
+Ours_vs_baselines/F0,arrival,mcnemar,B2,seed(all 3 scenes),30,0,0,30,0,nan,1.0,higher,1.0,,
+Ours_vs_baselines/F0,joint_completion,mcnemar,B1,seed(all 3 scenes),30,3,3,18,6,nan,1.0,higher,1.0,,
+Ours_vs_baselines/F0,joint_completion,mcnemar,B2,seed(all 3 scenes),30,3,6,15,6,nan,0.5078125,higher,1.0,,
+Ours_vs_baselines/F0,contact_any,mcnemar,B1,seed(all 3 scenes),30,0,0,30,0,nan,1.0,lower,1.0,,
+Ours_vs_baselines/F0,contact_any,mcnemar,B2,seed(all 3 scenes),30,0,0,30,0,nan,1.0,lower,1.0,,
+Ours_vs_baselines/F0,epi_total,wilcoxon,B1,seed(all 3 scenes),30,nan,nan,nan,nan,4.5,0.1385755962821709,lower,1.0,12,18
+Ours_vs_baselines/F0,epi_total,wilcoxon,B2,seed(all 3 scenes),30,nan,nan,nan,nan,1.3333333333333428,0.7265161838905396,lower,1.0,13,17
+Ours_vs_baselines/F0,epi_rs,wilcoxon,B1,seed(all 3 scenes),30,nan,nan,nan,nan,0.5,0.0003185000219674795,lower,0.004777500329512192,2,24
+Ours_vs_baselines/F0,epi_rs,wilcoxon,B2,seed(all 3 scenes),30,nan,nan,nan,nan,-0.3333333333333339,0.10680903784197325,lower,1.0,17,10
+Ours_vs_baselines/F0,clr_rs,wilcoxon,B1,seed(all 3 scenes),30,nan,nan,nan,nan,0.0,0.0663160312989308,higher,0.7294763442882387,8,1
+Ours_vs_baselines/F0,clr_rs,wilcoxon,B2,seed(all 3 scenes),30,nan,nan,nan,nan,0.0,0.3454475304692258,higher,1.0,5,8
+Ours_vs_baselines/F0,rho_avg,wilcoxon,B1,seed(all 3 scenes),30,nan,nan,nan,nan,-9.084381391699647e-05,0.03692078702122782,higher,0.44304944425473386,22,7
+Ours_vs_baselines/F0,rho_avg,wilcoxon,B2,seed(all 3 scenes),30,nan,nan,nan,nan,-0.00012843022022779316,0.00416911599547412,higher,0.05419850794116356,23,6
+Ours_vs_baselines/F0,max_dev_norm,wilcoxon,B1,seed(all 3 scenes),30,nan,nan,nan,nan,0.06296132931837714,0.00010387197393854371,lower,0.0016619515830166994,3,26
+Ours_vs_baselines/F0,max_dev_norm,wilcoxon,B2,seed(all 3 scenes),30,nan,nan,nan,nan,0.033956786119164195,0.0004071685035218594,lower,0.005700359049306032,6,23
+Ours_vs_baselines/F1,arrival,mcnemar,B1,seed(all 3 scenes),30,0,0,30,0,nan,1.0,higher,1.0,,
+Ours_vs_baselines/F1,arrival,mcnemar,B2,seed(all 3 scenes),30,0,0,30,0,nan,1.0,higher,1.0,,
+Ours_vs_baselines/F1,joint_completion,mcnemar,B1,seed(all 3 scenes),30,4,3,17,6,nan,1.0,higher,1.0,,
+Ours_vs_baselines/F1,joint_completion,mcnemar,B2,seed(all 3 scenes),30,4,6,14,6,nan,0.75390625,higher,1.0,,
+Ours_vs_baselines/F1,contact_any,mcnemar,B1,seed(all 3 scenes),30,0,0,30,0,nan,1.0,lower,1.0,,
+Ours_vs_baselines/F1,contact_any,mcnemar,B2,seed(all 3 scenes),30,0,0,30,0,nan,1.0,lower,1.0,,
+Ours_vs_baselines/F1,epi_total,wilcoxon,B1,seed(all 3 scenes),30,nan,nan,nan,nan,1.8333333333333286,0.29409550502380966,lower,1.0,14,16
+Ours_vs_baselines/F1,epi_total,wilcoxon,B2,seed(all 3 scenes),30,nan,nan,nan,nan,-1.6666666666666572,0.9426089975796718,lower,1.0,16,14
+Ours_vs_baselines/F1,epi_rs,wilcoxon,B1,seed(all 3 scenes),30,nan,nan,nan,nan,0.6666666666666663,0.0002796220457043807,lower,0.004473952731270091,2,21
+Ours_vs_baselines/F1,epi_rs,wilcoxon,B2,seed(all 3 scenes),30,nan,nan,nan,nan,-0.33333333333333326,0.04311782392853415,lower,0.5174138871424099,19,7
+Ours_vs_baselines/F1,clr_rs,wilcoxon,B1,seed(all 3 scenes),30,nan,nan,nan,nan,0.0,0.40081416938293446,higher,1.0,6,2
+Ours_vs_baselines/F1,clr_rs,wilcoxon,B2,seed(all 3 scenes),30,nan,nan,nan,nan,0.0,0.021943664659377984,higher,0.2852676405719138,3,11
+Ours_vs_baselines/F1,rho_avg,wilcoxon,B1,seed(all 3 scenes),30,nan,nan,nan,nan,-6.577021687581563e-05,0.14501397079599412,higher,1.0,18,10
+Ours_vs_baselines/F1,rho_avg,wilcoxon,B2,seed(all 3 scenes),30,nan,nan,nan,nan,-8.324714973528824e-05,0.32461181114807214,higher,1.0,18,9
+Ours_vs_baselines/F1,max_dev_norm,wilcoxon,B1,seed(all 3 scenes),30,nan,nan,nan,nan,0.06002250281190677,0.0005628738896812305,lower,0.008443108345218458,8,21
+Ours_vs_baselines/F1,max_dev_norm,wilcoxon,B2,seed(all 3 scenes),30,nan,nan,nan,nan,0.02623331630771672,0.017897082542391966,lower,0.2505591555934875,8,21
+Ours_vs_baselines/F2,arrival,mcnemar,B1,seed(all 3 scenes),30,0,0,30,0,nan,1.0,higher,1.0,,
+Ours_vs_baselines/F2,arrival,mcnemar,B2,seed(all 3 scenes),30,0,0,30,0,nan,1.0,higher,1.0,,
+Ours_vs_baselines/F2,joint_completion,mcnemar,B1,seed(all 3 scenes),30,2,3,15,10,nan,1.0,higher,1.0,,
+Ours_vs_baselines/F2,joint_completion,mcnemar,B2,seed(all 3 scenes),30,3,8,10,9,nan,0.2265625,higher,1.0,,
+Ours_vs_baselines/F2,contact_any,mcnemar,B1,seed(all 3 scenes),30,0,0,30,0,nan,1.0,lower,1.0,,
+Ours_vs_baselines/F2,contact_any,mcnemar,B2,seed(all 3 scenes),30,0,0,30,0,nan,1.0,lower,1.0,,
+Ours_vs_baselines/F2,epi_total,wilcoxon,B1,seed(all 3 scenes),30,nan,nan,nan,nan,-0.1666666666666714,0.6582882141987811,lower,1.0,15,15
+Ours_vs_baselines/F2,epi_total,wilcoxon,B2,seed(all 3 scenes),30,nan,nan,nan,nan,-0.8333333333333286,0.8035960318652883,lower,1.0,15,14
+Ours_vs_baselines/F2,epi_rs,wilcoxon,B1,seed(all 3 scenes),30,nan,nan,nan,nan,0.5,0.0008934832953339729,lower,0.014295732725343567,4,24
+Ours_vs_baselines/F2,epi_rs,wilcoxon,B2,seed(all 3 scenes),30,nan,nan,nan,nan,-0.33333333333333326,0.010122047900586371,lower,0.1417086706082092,21,5
+Ours_vs_baselines/F2,clr_rs,wilcoxon,B1,seed(all 3 scenes),30,nan,nan,nan,nan,0.0,0.49896229860376107,higher,1.0,5,2
+Ours_vs_baselines/F2,clr_rs,wilcoxon,B2,seed(all 3 scenes),30,nan,nan,nan,nan,0.0,0.1688069535565081,higher,1.0,3,7
+Ours_vs_baselines/F2,rho_avg,wilcoxon,B1,seed(all 3 scenes),30,nan,nan,nan,nan,-3.140466758172478e-05,0.7703529786474997,higher,1.0,16,13
+Ours_vs_baselines/F2,rho_avg,wilcoxon,B2,seed(all 3 scenes),30,nan,nan,nan,nan,-8.07731290113356e-05,0.6575663850187541,higher,1.0,18,11
+Ours_vs_baselines/F2,max_dev_norm,wilcoxon,B1,seed(all 3 scenes),30,nan,nan,nan,nan,0.05988173229844357,0.0027652741969916386,lower,0.04147911295487458,8,22
+Ours_vs_baselines/F2,max_dev_norm,wilcoxon,B2,seed(all 3 scenes),30,nan,nan,nan,nan,0.02692875371881337,0.24519030932096386,lower,1.0,9,21
+Ours_vs_baselines/F3,arrival,mcnemar,B1,seed(all 3 scenes),30,0,0,30,0,nan,1.0,higher,1.0,,
+Ours_vs_baselines/F3,arrival,mcnemar,B2,seed(all 3 scenes),30,0,0,30,0,nan,1.0,higher,1.0,,
+Ours_vs_baselines/F3,joint_completion,mcnemar,B1,seed(all 3 scenes),30,4,6,12,8,nan,0.75390625,higher,1.0,,
+Ours_vs_baselines/F3,joint_completion,mcnemar,B2,seed(all 3 scenes),30,0,7,11,12,nan,0.015625,higher,0.21875,,
+Ours_vs_baselines/F3,contact_any,mcnemar,B1,seed(all 3 scenes),30,0,0,30,0,nan,1.0,lower,1.0,,
+Ours_vs_baselines/F3,contact_any,mcnemar,B2,seed(all 3 scenes),30,0,0,30,0,nan,1.0,lower,1.0,,
+Ours_vs_baselines/F3,epi_total,wilcoxon,B1,seed(all 3 scenes),30,nan,nan,nan,nan,4.666666666666657,0.08400198215533343,lower,1.0,10,20
+Ours_vs_baselines/F3,epi_total,wilcoxon,B2,seed(all 3 scenes),30,nan,nan,nan,nan,1.8333333333333286,0.43437860298701436,lower,1.0,12,18
+Ours_vs_baselines/F3,epi_rs,wilcoxon,B1,seed(all 3 scenes),30,nan,nan,nan,nan,0.5,0.0006687349375207394,lower,0.01069975900033183,3,19
+Ours_vs_baselines/F3,epi_rs,wilcoxon,B2,seed(all 3 scenes),30,nan,nan,nan,nan,-0.3333333333333339,0.02334494581497197,lower,0.30348429559463563,21,7
+Ours_vs_baselines/F3,clr_rs,wilcoxon,B1,seed(all 3 scenes),30,nan,nan,nan,nan,0.0,0.463071015014588,higher,1.0,4,2
+Ours_vs_baselines/F3,clr_rs,wilcoxon,B2,seed(all 3 scenes),30,nan,nan,nan,nan,0.0,0.7670968684102772,higher,1.0,5,4
+Ours_vs_baselines/F3,rho_avg,wilcoxon,B1,seed(all 3 scenes),30,nan,nan,nan,nan,-9.224256566897626e-05,0.49079849348995086,higher,1.0,20,10
+Ours_vs_baselines/F3,rho_avg,wilcoxon,B2,seed(all 3 scenes),30,nan,nan,nan,nan,-1.1995733387837326e-05,0.34934556237492975,higher,1.0,15,15
+Ours_vs_baselines/F3,max_dev_norm,wilcoxon,B1,seed(all 3 scenes),30,nan,nan,nan,nan,0.05810301711648719,0.007100609066184297,lower,0.10650913599276444,6,23
+Ours_vs_baselines/F3,max_dev_norm,wilcoxon,B2,seed(all 3 scenes),30,nan,nan,nan,nan,0.030341495228755483,0.5235489109355372,lower,1.0,10,19
+scenario_dependence/F1,epi_robot,wilcoxon,Ours_rollout,seed(delta S3 - delta S1),30,nan,nan,nan,nan,-1.0,0.06117365421161519,V2S3 worse,1.0,,
+scenario_dependence/F1,contact_any,wilcoxon,Ours_rollout,seed(delta S3 - delta S1),30,nan,nan,nan,nan,0.0,1.0,V2S3 worse,1.0,,
+scenario_dependence/F1,clr_rs,wilcoxon,Ours_rollout,seed(delta S3 - delta S1),30,nan,nan,nan,nan,0.0,0.07961580146011343,V2S3 worse,1.0,,
+scenario_dependence/F1,max_dev_norm,wilcoxon,Ours_rollout,seed(delta S3 - delta S1),30,nan,nan,nan,nan,-0.00656622757967254,0.3359328511803926,V2S3 worse,1.0,,
+scenario_dependence/F1,arrival,wilcoxon,Ours_rollout,seed(delta S3 - delta S1),30,nan,nan,nan,nan,0.0,1.0,V2S3 worse,1.0,,
+scenario_dependence/F1,reform,wilcoxon,Ours_rollout,seed(delta S3 - delta S1),24,nan,nan,nan,nan,0.0,0.6244923018349465,V2S3 worse,1.0,,
+scenario_dependence/F1,epi_robot,wilcoxon,B1,seed(delta S3 - delta S1),30,nan,nan,nan,nan,0.0,0.233403403074387,V2S3 worse,1.0,,
+scenario_dependence/F1,contact_any,wilcoxon,B1,seed(delta S3 - delta S1),30,nan,nan,nan,nan,0.0,1.0,V2S3 worse,1.0,,
+scenario_dependence/F1,clr_rs,wilcoxon,B1,seed(delta S3 - delta S1),30,nan,nan,nan,nan,0.0,0.6547208460185769,V2S3 worse,1.0,,
+scenario_dependence/F1,max_dev_norm,wilcoxon,B1,seed(delta S3 - delta S1),30,nan,nan,nan,nan,-0.005526647848908828,0.2918755661117355,V2S3 worse,1.0,,
+scenario_dependence/F1,arrival,wilcoxon,B1,seed(delta S3 - delta S1),30,nan,nan,nan,nan,0.0,1.0,V2S3 worse,1.0,,
+scenario_dependence/F1,reform,wilcoxon,B1,seed(delta S3 - delta S1),25,nan,nan,nan,nan,0.0,0.6832863296571666,V2S3 worse,1.0,,
+scenario_dependence/F1,epi_robot,wilcoxon,B2,seed(delta S3 - delta S1),30,nan,nan,nan,nan,0.0,0.9884701090450415,V2S3 worse,1.0,,
+scenario_dependence/F1,contact_any,wilcoxon,B2,seed(delta S3 - delta S1),30,nan,nan,nan,nan,0.0,1.0,V2S3 worse,1.0,,
+scenario_dependence/F1,clr_rs,wilcoxon,B2,seed(delta S3 - delta S1),30,nan,nan,nan,nan,0.0,0.49896229860376107,V2S3 worse,1.0,,
+scenario_dependence/F1,max_dev_norm,wilcoxon,B2,seed(delta S3 - delta S1),30,nan,nan,nan,nan,0.0,0.882352226991577,V2S3 worse,1.0,,
+scenario_dependence/F1,arrival,wilcoxon,B2,seed(delta S3 - delta S1),30,nan,nan,nan,nan,0.0,1.0,V2S3 worse,1.0,,
+scenario_dependence/F1,reform,wilcoxon,B2,seed(delta S3 - delta S1),22,nan,nan,nan,nan,0.0,0.6858304344516057,V2S3 worse,1.0,,
+scenario_dependence/F2,epi_robot,wilcoxon,Ours_rollout,seed(delta S3 - delta S1),30,nan,nan,nan,nan,0.0,0.6992339894142258,V2S3 worse,1.0,,
+scenario_dependence/F2,contact_any,wilcoxon,Ours_rollout,seed(delta S3 - delta S1),30,nan,nan,nan,nan,0.0,1.0,V2S3 worse,1.0,,
+scenario_dependence/F2,clr_rs,wilcoxon,Ours_rollout,seed(delta S3 - delta S1),30,nan,nan,nan,nan,0.0,0.22491588401596185,V2S3 worse,1.0,,
+scenario_dependence/F2,max_dev_norm,wilcoxon,Ours_rollout,seed(delta S3 - delta S1),30,nan,nan,nan,nan,0.005265861613058587,0.8130168513045055,V2S3 worse,1.0,,
+scenario_dependence/F2,arrival,wilcoxon,Ours_rollout,seed(delta S3 - delta S1),30,nan,nan,nan,nan,0.0,1.0,V2S3 worse,1.0,,
+scenario_dependence/F2,reform,wilcoxon,Ours_rollout,seed(delta S3 - delta S1),29,nan,nan,nan,nan,0.0,0.11666446478102344,V2S3 worse,1.0,,
+scenario_dependence/F2,epi_robot,wilcoxon,B1,seed(delta S3 - delta S1),30,nan,nan,nan,nan,0.0,0.6812015825203319,V2S3 worse,1.0,,
+scenario_dependence/F2,contact_any,wilcoxon,B1,seed(delta S3 - delta S1),30,nan,nan,nan,nan,0.0,1.0,V2S3 worse,1.0,,
+scenario_dependence/F2,clr_rs,wilcoxon,B1,seed(delta S3 - delta S1),30,nan,nan,nan,nan,0.0,0.6547208460185769,V2S3 worse,1.0,,
+scenario_dependence/F2,max_dev_norm,wilcoxon,B1,seed(delta S3 - delta S1),30,nan,nan,nan,nan,0.0023347849127842435,0.949372385905016,V2S3 worse,1.0,,
+scenario_dependence/F2,arrival,wilcoxon,B1,seed(delta S3 - delta S1),30,nan,nan,nan,nan,0.0,1.0,V2S3 worse,1.0,,
+scenario_dependence/F2,reform,wilcoxon,B1,seed(delta S3 - delta S1),29,nan,nan,nan,nan,0.0,0.11666446478102344,V2S3 worse,1.0,,
+scenario_dependence/F2,epi_robot,wilcoxon,B2,seed(delta S3 - delta S1),30,nan,nan,nan,nan,0.0,0.4972800818658454,V2S3 worse,1.0,,
+scenario_dependence/F2,contact_any,wilcoxon,B2,seed(delta S3 - delta S1),30,nan,nan,nan,nan,0.0,1.0,V2S3 worse,1.0,,
+scenario_dependence/F2,clr_rs,wilcoxon,B2,seed(delta S3 - delta S1),30,nan,nan,nan,nan,0.0,0.5001842570707944,V2S3 worse,1.0,,
+scenario_dependence/F2,max_dev_norm,wilcoxon,B2,seed(delta S3 - delta S1),30,nan,nan,nan,nan,0.0,0.6384532010547104,V2S3 worse,1.0,,
+scenario_dependence/F2,arrival,wilcoxon,B2,seed(delta S3 - delta S1),30,nan,nan,nan,nan,0.0,1.0,V2S3 worse,1.0,,
+scenario_dependence/F2,reform,wilcoxon,B2,seed(delta S3 - delta S1),29,nan,nan,nan,nan,0.0,0.11666446478102344,V2S3 worse,1.0,,
+scenario_dependence/F3,epi_robot,wilcoxon,Ours_rollout,seed(delta S3 - delta S1),30,nan,nan,nan,nan,-1.0,0.4601142442303615,V2S3 worse,1.0,,
+scenario_dependence/F3,contact_any,wilcoxon,Ours_rollout,seed(delta S3 - delta S1),30,nan,nan,nan,nan,0.0,1.0,V2S3 worse,1.0,,
+scenario_dependence/F3,clr_rs,wilcoxon,Ours_rollout,seed(delta S3 - delta S1),30,nan,nan,nan,nan,0.0,0.6566419342620566,V2S3 worse,1.0,,
+scenario_dependence/F3,max_dev_norm,wilcoxon,Ours_rollout,seed(delta S3 - delta S1),30,nan,nan,nan,nan,0.026677623340227774,0.5962724972882395,V2S3 worse,1.0,,
+scenario_dependence/F3,arrival,wilcoxon,Ours_rollout,seed(delta S3 - delta S1),30,nan,nan,nan,nan,0.0,1.0,V2S3 worse,1.0,,
+scenario_dependence/F3,reform,wilcoxon,Ours_rollout,seed(delta S3 - delta S1),26,nan,nan,nan,nan,0.4499999999999744,0.6114673514537857,V2S3 worse,1.0,,
+scenario_dependence/F3,epi_robot,wilcoxon,B1,seed(delta S3 - delta S1),30,nan,nan,nan,nan,-1.0,0.1738138395141151,V2S3 worse,1.0,,
+scenario_dependence/F3,contact_any,wilcoxon,B1,seed(delta S3 - delta S1),30,nan,nan,nan,nan,0.0,1.0,V2S3 worse,1.0,,
+scenario_dependence/F3,clr_rs,wilcoxon,B1,seed(delta S3 - delta S1),30,nan,nan,nan,nan,0.0,0.6547208460185769,V2S3 worse,1.0,,
+scenario_dependence/F3,max_dev_norm,wilcoxon,B1,seed(delta S3 - delta S1),30,nan,nan,nan,nan,0.013830745432384689,0.5095698444848895,V2S3 worse,1.0,,
+scenario_dependence/F3,arrival,wilcoxon,B1,seed(delta S3 - delta S1),30,nan,nan,nan,nan,0.0,1.0,V2S3 worse,1.0,,
+scenario_dependence/F3,reform,wilcoxon,B1,seed(delta S3 - delta S1),24,nan,nan,nan,nan,0.0,0.9358520318812181,V2S3 worse,1.0,,
+scenario_dependence/F3,epi_robot,wilcoxon,B2,seed(delta S3 - delta S1),30,nan,nan,nan,nan,-0.5,0.5446059443530127,V2S3 worse,1.0,,
+scenario_dependence/F3,contact_any,wilcoxon,B2,seed(delta S3 - delta S1),30,nan,nan,nan,nan,0.0,1.0,V2S3 worse,1.0,,
+scenario_dependence/F3,clr_rs,wilcoxon,B2,seed(delta S3 - delta S1),30,nan,nan,nan,nan,0.0,0.3739447986092539,V2S3 worse,1.0,,
+scenario_dependence/F3,max_dev_norm,wilcoxon,B2,seed(delta S3 - delta S1),30,nan,nan,nan,nan,0.07177225148450478,0.03143608436149796,V2S3 worse,0.5658495185069633,,
+scenario_dependence/F3,arrival,wilcoxon,B2,seed(delta S3 - delta S1),30,nan,nan,nan,nan,0.0,1.0,V2S3 worse,1.0,,
+scenario_dependence/F3,reform,wilcoxon,B2,seed(delta S3 - delta S1),26,nan,nan,nan,nan,-0.949999999999946,0.3461719857306833,V2S3 worse,1.0,,

@@ -1,0 +1,5 @@
+﻿scenario,method,seed,config_id,n_ticks,n_pairs,n_ticks_full_animal,n_dead_track_pairs,n_dead_track_risk,max_pub_pos_err,max_pub_vel_err,max_ttc_pub_vs_truth_instant,max_ttc_logged_vs_truth_instant,max_ttc_logged_vs_truth_near_band,n_logged_pairs,n_logged_inf_boundary,max_onset_shift_s,preempt_ctrl,preempt_truth_log,preempt_truth_instant,preempt_legacy,n_recover_windows,ttc_source,wall_s,ok_A,ok_B,ok_C
+V2S3,Ours_rollout,1000,89fe865b2e1d,2110,690,2110,9,0,0.0,0.0,0.0,56.286131223628125,5.8274481826059965,919,158,0.39999999999997726,1,0,0,0,3,publish_instant,0.0,True,True,False
+V2S2,Ours_rollout,2000,89fe865b2e1d,1286,218,1286,3,0,0.0,0.0,0.0,44.24535608085552,3.106153592055106,479,141,0.29999999999998295,0,0,0,0,1,publish_instant,0.0,True,True,False
+V2S2,B1,2000,89fe865b2e1d,1296,218,1296,3,0,0.0,0.0,0.0,44.24535608085552,1.4349427021970893,514,126,0.29999999999998295,0,0,0,0,0,publish_instant,0.0,True,True,False
+V2S1,Ours_rollout,2000,89fe865b2e1d,1293,0,1293,0,0,0.0,0.0,0.0,0.0,0.0,0,0,0.0,-1,-1,0,0,0,,0.0,True,True,True

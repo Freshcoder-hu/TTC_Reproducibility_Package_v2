@@ -1,0 +1,9 @@
+﻿scenario,method,t_pre_on,t_divert_on,states_fired,switch_count,contact_fraction,success,ended,rho
+V2S1,B1,nan,nan,none,nan,0.0,True,goal,1.0
+V2S1,B2,nan,nan,none,0,0.0,True,goal,1.0
+V2S1,Ours_event,nan,nan,none,0,0.0,True,goal,1.0
+V2S1,Ours_rollout,nan,nan,none,0,0.0,True,goal,1.0
+V2S1N,B1,nan,nan,none,nan,0.0,True,goal,1.0
+V2S1N,B2,nan,nan,none,0,0.0,True,goal,1.0
+V2S1N,Ours_event,nan,nan,none,0,0.0,True,goal,1.0
+V2S1N,Ours_rollout,nan,nan,none,0,0.0,True,goal,1.0

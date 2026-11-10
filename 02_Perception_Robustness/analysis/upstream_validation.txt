@@ -1,0 +1,30 @@
+test_expired_obstacle_never_returns (test_corrections.PhysicalEventTests.test_expired_obstacle_never_returns) ... ok
+test_external_separation_is_not_contact (test_corrections.PhysicalEventTests.test_external_separation_is_not_contact) ... ok
+test_head_on_contact_time (test_corrections.PhysicalEventTests.test_head_on_contact_time) ... ok
+test_inside_body_is_current_contact_for_every_velocity (test_corrections.PhysicalEventTests.test_inside_body_is_current_contact_for_every_velocity) ... ok
+test_triggered_obstacle_is_not_released_by_clock (test_corrections.PhysicalEventTests.test_triggered_obstacle_is_not_released_by_clock) ... ok
+test_candidate_horizon_cannot_falsely_clear_recovery (test_rollout.PredictionTests.test_candidate_horizon_cannot_falsely_clear_recovery) ... ok
+test_controller_requires_no_hidden_sheep_or_future_obstacle_fields (test_rollout.PredictionTests.test_controller_requires_no_hidden_sheep_or_future_obstacle_fields) ... ok
+test_one_second_matches_original_dynamics_at_original_step (test_rollout.PredictionTests.test_one_second_matches_original_dynamics_at_original_step) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.615s
+
+OK
+V2 unit tests
+  [PASS] apply_robot_safety_v2 == robots.apply_robot_safety (guard off)  -- 0/200 trials differ
+  [PASS] advance_sheep_m0 (C3 off) == sheep._advance_sheep  -- 0/20 trials differ
+  [PASS] RobotFleetV2.step == robots.RobotFleet.step (compat)  -- 0/30 trials differ
+  [PASS] (V2) box: projected state always admissible  -- 0 violations over 4000 random cases
+  [PASS] (V2) box: bit-exact no-op when the request is already admissible  -- 0/4000
+  [PASS] (V2) box: C1 lower bound preserved (no spurious C1 violation)  -- 0/4000 below s_min
+  [PASS] (V2) box: near-zero speed -> C1 unreachable is flagged, C3 kept  -- 500/500
+  [PASS] R4 |dw| <= a_ang*dt always  -- 0/6000
+  [PASS] lateral |v*omega| <= a_lat always  -- 0/6000
+  [PASS] R3 |dv| <= a_lin*dt always  -- 0/6000
+  [PASS] R1 0 <= v <= v_max always  -- 0/6000
+  [PASS] counterexample: |v*omega| = 4.5 > a_lat = 2.0 (joint solve required)  -- 4.50 m/s^2
+  [PASS] robot projection repairs an inadmissible (v, omega) state  -- v=0.727, omega=2.750, |v*omega|=2.000
+  [PASS] config id is stable and content-addressed  -- 6514637f25cf / 832a5cb64361
+
+ALL PASS

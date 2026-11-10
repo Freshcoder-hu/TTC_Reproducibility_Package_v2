@@ -1,0 +1,27 @@
+Stage-5 checks: ['A', 'B', 'C', 'D']
+A. inertness
+   A1 V2S2/B2/1000: 183 Stage-4 columns compared, 0 differ
+[PASS] A1/the Stage-5 path reproduces the stored Stage-4 row bit-exactly (183 columns, 0 differences)
+   A2 probe on vs off: 183 columns, 0 differ
+[PASS] A2/the measurement probe is inert (probe on == probe off on every Stage-4 column)
+   A3 V2S3/Ours_rollout/1000: C=0.027778 min_dist=1.435170 ticks=2110 windows=3 first=[69.70,70.70] preempt ctrl/truth/legacy=1/0/0
+[PASS] A3/the Stage-4 test-D case is reproduced bit-exactly (C=1/36, min_dist=1.4351703145, 2110 ticks, first RECOVER window 69.70-70.70)
+[PASS] A3/preemption under the controller information set is True for the D case (the defect is fixed)
+[PASS] A3/the truth-based readings stay False, as Stage 4 documented
+B. counts
+[PASS] B/Ours_rollout: 300 rows, 0 missing cells, 0 extra, 0 duplicates, 0 errors, 0 censored
+[PASS] B/B1: 300 rows, 0 missing cells, 0 extra, 0 duplicates, 0 errors, 0 censored
+[PASS] B/B2: 300 rows, 0 missing cells, 0 extra, 0 duplicates, 0 errors, 0 censored
+[PASS] B/VH-Path: 300 rows, 0 missing cells, 0 extra, 0 duplicates, 0 errors, 39 censored
+[PASS] B/VH-Danger: 300 rows, 0 missing cells, 0 extra, 0 duplicates, 0 errors, 25 censored
+[PASS] B/VH-Danger-path: 300 rows, 0 missing cells, 0 extra, 0 duplicates, 0 errors, 15 censored
+[PASS] B/B-Outmost: 300 rows, 0 missing cells, 0 extra, 0 duplicates, 0 errors, 23 censored
+[PASS] B/B-PCBF: 300 rows, 0 missing cells, 0 extra, 0 duplicates, 0 errors, 275 censored
+[PASS] B/ablation: 240 ladder rows (+60 supplementary probe rows), 0 missing cells
+[PASS] B/formal matrix total: 2400 rows (expected 2400)
+C. determinism
+[PASS] C1/two independent runs of the same cell are bit-identical on every non-timing column (0 diffs)
+[PASS] C2/jobs=1 == jobs=4 on 2 cells x 218 columns (0 differences on non-timing columns)
+D. cross-artefact consistency
+[PASS] D1/the ablation's top rung reproduces the formal Ours_rollout cells bit-exactly (60 cells, 0 differences)
+[PASS] D2/no V1 file changed since the Stage-4 snapshot (20 files checked, 0 moved)

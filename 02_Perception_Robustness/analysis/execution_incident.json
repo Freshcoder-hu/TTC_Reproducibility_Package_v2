@@ -1,0 +1,16 @@
+{
+  "event": "exec-server transport interrupted",
+  "last_progress_before_disconnect": 1192,
+  "complete_records_on_recovery": 1214,
+  "original_writer_observed_continuing": true,
+  "no_duplicate_runner_started": true,
+  "numerical_errors_on_recovery": 0,
+  "records_retained_for_resume": 1219,
+  "original_writer_stalled_seconds": 179.6,
+  "old_file_quarantined": "results/formal_epoch1.jsonl",
+  "resume_policy": "Skip all completed cell keys; identical source and fixed seed matrix; preserve all records.",
+  "final_records": 2340,
+  "final_unique_cells": 2340,
+  "final_errors": 0,
+  "successful_resume": true
+}

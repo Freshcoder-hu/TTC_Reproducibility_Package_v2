@@ -1,0 +1,24 @@
+[
+  {
+    "factor": "exact",
+    "scenario": "V2S3",
+    "method": "Ours_rollout",
+    "seed": 3009,
+    "collision_rate": 0.027777777777777776,
+    "completion": true,
+    "success": true,
+    "min_surface_clearance_rs": -0.37615774975034305,
+    "any_contact_rs": true
+  },
+  {
+    "factor": "blackout_1p0",
+    "scenario": "V2S3",
+    "method": "Ours_rollout",
+    "seed": 3009,
+    "collision_rate": 0.08333333333333333,
+    "completion": false,
+    "success": true,
+    "min_surface_clearance_rs": -0.008162685000545511,
+    "any_contact_rs": true
+  }
+]

@@ -1,0 +1,5 @@
+﻿cell,ticks,values,trace_ok,summary_mismatch,first_bad
+S2_s1000,1244,303536,True,0,
+S3_s1000,2108,522784,True,0,
+S3_s1001,2113,524024,True,0,
+S1_s1002,1188,287496,True,0,

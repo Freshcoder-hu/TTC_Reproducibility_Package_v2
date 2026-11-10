@@ -1,0 +1,162 @@
+[
+  {
+    "name": "A/S3_s200_v2 M0 == Stage-1 (whole trajectory, 496496 values)",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "A/S3_s200_v1compat M0 == Stage-1 (whole trajectory, 523280 values)",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "A/S3_s200_v1compat V1 archive row reproduced (41 of 43 archived columns; ctrl_ms/seed excluded)",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "A/S1_s201_v2 M0 == Stage-1 (whole trajectory, 299112 values)",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "A/S3_s200_v2_seq M0 == Stage-1 (whole trajectory, 520552 values)",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "A/M1(m1_gain=0) == M0, bit-exact",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "A/M2(sigma=0, delay=0, no speed-up) == M1, bit-exact",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "B/M1 beats M0 at every sensing range",
+    "ok": true,
+    "detail": "contact 0.300 -> 0.093, 0.000, 0.000"
+  },
+  {
+    "name": "B/contact rate monotone non-increasing in range",
+    "ok": true,
+    "detail": "R3:0.093, R6:0.000, R9:0.000"
+  },
+  {
+    "name": "B/mean clearance monotone non-decreasing in range",
+    "ok": true,
+    "detail": "R3:2.35, R6:4.54, R9:5.98"
+  },
+  {
+    "name": "B/M1 mean clearance beats M0 at the widest range",
+    "ok": true,
+    "detail": "1.44 -> 5.98"
+  },
+  {
+    "name": "B/no heading-rate explosion (|dtheta|/dt <= omega_s)",
+    "ok": true,
+    "detail": "worst omega 3.000"
+  },
+  {
+    "name": "B/no speed explosion (s <= m_v_max)",
+    "ok": true,
+    "detail": "worst speed 1.000"
+  },
+  {
+    "name": "B/no spatial explosion (finite states, group p95 radius < 25 m)",
+    "ok": true,
+    "detail": "p95 radius max M0:4.9, M1_R3:6.9, M1_R6:4.8, M1_R9:4.8"
+  },
+  {
+    "name": "B/oscillation bounded (heading-rate sign flips < 12 /s)",
+    "ok": true,
+    "detail": "M0:7.8, M1_R3:7.3, M1_R6:7.4, M1_R9:7.5"
+  },
+  {
+    "name": "C/animal-paired first response is shifted by the reaction delay (within 2 ticks)",
+    "ok": true,
+    "detail": "shift-minus-delay=[-0.035, -0.004, -0.076] s, gains=[0.769, 0.988, 0.832]"
+  },
+  {
+    "name": "C/latency monotone non-decreasing in delay",
+    "ok": true,
+    "detail": "[2.541, 2.642, 2.817, 2.834]"
+  },
+  {
+    "name": "C/delay degrades the avoidance outcome (0.45 s vs 0 s)",
+    "ok": true,
+    "detail": "contacts 0.0056 -> 0.0208"
+  },
+  {
+    "name": "C/gain spread is applied (sd > 0, min < 1 < max)",
+    "ok": true,
+    "detail": "sd=0.1889 range=[0.589,1.733]"
+  },
+  {
+    "name": "C/gain mean is 1 (same total gain as M1)",
+    "ok": true,
+    "detail": "mean=1.000000"
+  },
+  {
+    "name": "C/gains are seed-dependent",
+    "ok": true,
+    "detail": "first two animals seed 1000: [1.1803, 1.16] vs [1.2969, 0.9931]"
+  },
+  {
+    "name": "C/removing heterogeneity changes the outcome distribution",
+    "ok": true,
+    "detail": "paired clearance diff -0.0204 m, sd 0.1460, p=0.5582; contact 0.0069 vs 0.0097"
+  },
+  {
+    "name": "D/NumPy engine reproduces the V1 DLL on M0 (8 steps, <=1e-8 rel)",
+    "ok": true,
+    "detail": "max rel=2.671e-14"
+  },
+  {
+    "name": "D/shadow: environment trajectory identical (bit-exact)",
+    "ok": true,
+    "detail": "[]"
+  },
+  {
+    "name": "D/shadow: predictions differ between predictor models",
+    "ok": true,
+    "detail": "26/35 calls differ"
+  },
+  {
+    "name": "D/live: a different predictor model changes the actuated plan",
+    "ok": true,
+    "detail": "20 vs 21 plans"
+  },
+  {
+    "name": "E/repeat run identical (S3, seed 1000, 2911 ticks)",
+    "ok": true,
+    "detail": "[]"
+  },
+  {
+    "name": "E/repeat run identical (S2, seed 1001, 1464 ticks)",
+    "ok": true,
+    "detail": "[]"
+  },
+  {
+    "name": "E/jobs=1 == jobs=4, every non-timing column",
+    "ok": true,
+    "detail": "0 mismatches"
+  },
+  {
+    "name": "F/C3, R4, lateral and C1-band violations are 0 in M1 and M2",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "F/C3 and R4 and the lateral cap still bind (non-vacuous)",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "F/speed policy applied during pre/divert",
+    "ok": true,
+    "detail": "4/4 runs with bounded ticks"
+  }
+]

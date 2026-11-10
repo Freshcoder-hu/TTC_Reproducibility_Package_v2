@@ -1,0 +1,79 @@
+{
+  "status": "frozen_before_evaluation",
+  "evaluation_seeds": [
+    3000,
+    3001,
+    3002,
+    3003,
+    3004,
+    3005,
+    3006,
+    3007,
+    3008,
+    3009,
+    3010,
+    3011,
+    3012,
+    3013,
+    3014,
+    3015,
+    3016,
+    3017,
+    3018,
+    3019,
+    3020,
+    3021,
+    3022,
+    3023,
+    3024,
+    3025,
+    3026,
+    3027,
+    3028,
+    3029
+  ],
+  "pilot_seeds": [
+    1100,
+    1101
+  ],
+  "main_scenarios": [
+    "V2S2R2",
+    "V2S3"
+  ],
+  "methods": [
+    "Ours_rollout",
+    "B1",
+    "B2"
+  ],
+  "planned_main_runs": 1980,
+  "planned_decomposition_runs": 360,
+  "primary_endpoint": "Per-run fraction of distinct animals contacting an obstacle (C).",
+  "secondary_endpoints": [
+    "joint_completion",
+    "arrival",
+    "rho_avg",
+    "min_surface_clearance_so",
+    "any_contact_rs",
+    "min_surface_clearance_rs",
+    "n_contact_events_rs",
+    "violation_rate",
+    "rs_no_safe_candidate"
+  ],
+  "inference": "Within each scenario/factor: paired mean C differences Ours-B1 and Ours-B2; 95% paired bootstrap CI; two-sided paired sign-flip Monte Carlo p, 100000 draws; Holm over 44 main comparisons. Joint completion: exact McNemar, descriptive. Seeds are the resampling units.",
+  "sensitivity": "Compare frozen archive -> strict observations -> strict plus safety at exact sensing with matched evaluation seeds. No retuning on evaluation seeds.",
+  "noise": "Gaussian position noise sigma per coordinate; velocities/IDs/radii remain exact or delayed. Independent robot-target position errors, fixed-shape sample-aligned RNG; same seed gives same exogenous draws across methods.",
+  "delay": "Both animal/obstacle messages delayed. No controller extrapolation. Receive-relative expiry 0.30 s; safety forecast propagates tracks using measured velocity and source age.",
+  "packet_loss": "IID obstacle message per robot/target and whole animal packet per robot; not correlated network outages.",
+  "blackout": "Animal channel unavailable to all robots for 0.5 or 1.0 seconds every 10 seconds after t=20 s, with seeded phase; buffers expire normally. Synthetic correlated outage proxy, not geometric visual occlusion.",
+  "safety": "25 held velocity candidates, horizon 1.20 s, same robot kinematic limits, animal constant-velocity forecast; surface buffer .15 m + 2 sigma + .25*(track_age+forecast_time) m. Also checks forecast robot and obstacle proximity. No safe candidate: maximum clearance compromise. No collision-free guarantee.",
+  "limitations": [
+    "Simulation only; no real animals or sensor recordings",
+    "No velocity measurement error, identity errors or clutter",
+    "Two scenes at 36:12; not full nine-scene validation",
+    "New supervisor not included in the rollout predictor",
+    "30 seeds may not resolve small differences or rare contact events"
+  ],
+  "source_zip_sha256": "d9e858b0d0ac7f2e9fa2b752d44b250284a96e38e58ee6aa33287683d23c547f",
+  "implementation_revision": "R2: post-hoc avoidability diagnostic disabled in strict/safe versions because global animal IDs cannot index partial observation arrays; actual swept contact monitoring remains enabled.",
+  "discard_policy": "Attempt 1 stopped for diagnostic IndexError; all partial rows and traceback retained. Entire evaluation is restarted under R2; no failed trajectory is silently omitted."
+}

@@ -1,0 +1,16 @@
+﻿factor,value,in_full_controller,evidence,note
+position error [m],0.0,yes,results_v2_stage5/matrix/*.csv (8 methods x 10 scenes x 30 seeds); results_v2_stage4/pilot/pilot_runs.csv; results_v2_stage4/B_range_sweep.csv; Stage-3 pilot arms fullvis/exactQ/frozen,the formal matrix and both pilots' reference arms
+position error [m],0.2,yes (confounded),results_v2_stage3/E_pilot.csv,"only inside S3_gated_realQ, together with delay 0.2 s and loss 5 %; 2 seeds x 2 scenes x 2 methods = 8 runs, so the three knobs are not separable"
+position error [m],0.5,no (待确认),V2_STAGE3_REPORT.md §4-5 (analytic argument),no stored full-loop run at any seed; the 0.5 m sigma was never exercised end-to-end
+delay [s],0.0,yes,results_v2_stage5/matrix/*.csv (8 methods x 10 scenes x 30 seeds); results_v2_stage4/pilot/pilot_runs.csv; results_v2_stage4/B_range_sweep.csv,
+delay [s],0.2,yes (confounded),results_v2_stage3/E_pilot.csv,inside S3_gated_realQ only (8 runs)
+delay [s],0.5,no (analytic only),results_v2_stage3/observability/observable_cells_R*_d*_l*.csv,present in the reference-trajectory observable-time sweep (d0.5 files); the controller was never run at 0.5 s delay
+loss,0 %,yes,results_v2_stage5/matrix/*.csv (8 methods x 10 scenes x 30 seeds); results_v2_stage4/pilot/pilot_runs.csv; results_v2_stage4/B_range_sweep.csv,
+loss,5 %,yes (confounded),results_v2_stage3/E_pilot.csv,inside S3_gated_realQ only (8 runs)
+loss,10 %,no (analytic only),results_v2_stage3/observability/observable_cells_R*_d*_l*.csv,present in the observable-time sweep (l0.1 files); the controller was never run at 10 % loss
+range [m],40 / 70 / 100,yes,results_v2_stage4/B_range_sweep.csv,"Stage-4 test B, one seed, V2S2/V2S3/S3"
+range [m],140,no (analytic only),results_v2_stage3/observability/observable_cells_R*_d*_l*.csv,observable-time sweep only; the 140 m cell is a sensitivity point
+predictor model (env M1),M0 (mismatched),yes (shipped arm),results_v2_stage5/matrix/Ours_rollout.csv,the shipped predictor is DLL/M0 while the plant is M1; this is the mismatch the new Check-C experiment isolates
+predictor model (env M1),M1 (matched),yes (this report),results_v2_credibility/check_c/predictor_runs.csv,"new full-controller comparison, 2 scenes x 5 seeds"
+predictor model (env M1),M2 (mismatched),yes (this report) — aliases M1,results_v2_credibility/check_c/predictor_runs.csv,"new run, but the M2 predictor is bit-identical to M1; see report §4.3"
+predictor model,"M0 vs M2 (shadow, environment fixed)",no (predictions only),V2_STAGE2_REPORT.md §6.2,shadow mode records predictions but discards them; no performance delta exists

@@ -1,0 +1,889 @@
+{
+  "directory": "03_\u6570\u636e/\u4e09\u5f2f\u9053_240/traces",
+  "description": "Per-step traces of the confirmatory three-turn panel, written during the same batch that produced confirm_raw_results.jsonl (seed 5000 only, the traced seed of run_confirm_panel.py --mode panel).",
+  "generated_by": "python -X utf8 run_confirm_panel.py --mode panel --jobs 12",
+  "batch": {
+    "confirm_raw_results.jsonl": {
+      "sha256": "1f9ed56d5659f3e6574637c8130ec6e8e526a708a84799181bc1313186fc8fd7",
+      "bytes": 1561925,
+      "rows": 240
+    },
+    "run_meta.json": {
+      "sha256": "1a2ab9f676941e1f201ba4034094fb1de3f93b5c935ebe8e13f9a4ff0cab77eb",
+      "bytes": 9259
+    },
+    "panel": "CONFIRM",
+    "seeds": "5000-5029",
+    "traced_seed": 5000,
+    "scenes": [
+      "V2S5A",
+      "V2S5B"
+    ],
+    "methods": [
+      "Ours_rollout",
+      "B1",
+      "B2",
+      "VH-Path"
+    ]
+  },
+  "consumed_by": {
+    "script": "04_\u4ee3\u7801/\u4e09\u5f2f\u9053/analyze_confirm.py",
+    "usage": "reads <scene>__<method>__seed<seed>__turn.npz (t, s_arc, d_lat, alive, centroid_arc) for the centroid-window D_turn columns of detail.csv and stats_three_turn.json"
+  },
+  "counts": {
+    "files": 16,
+    "bytes": 18330668,
+    "turn_files": 8,
+    "trail_files": 8
+  },
+  "files": [
+    {
+      "name": "V2S5A__B1__seed5000.npz",
+      "bytes": 154724,
+      "sha256": "9994c5fec39618bf5b03bc475b7d743265163478889c369e90f36d9bebf4a2c1",
+      "scene": "V2S5A",
+      "method": "B1",
+      "seed": 5000,
+      "kind": "trail",
+      "arrays": {
+        "sample_times": {
+          "shape": [
+            209
+          ],
+          "dtype": "float64"
+        },
+        "sheep_positions": {
+          "shape": [
+            209,
+            36,
+            2
+          ],
+          "dtype": "float64"
+        },
+        "robot_positions": {
+          "shape": [
+            209,
+            12,
+            2
+          ],
+          "dtype": "float64"
+        },
+        "obstacle_positions": {
+          "shape": [
+            209,
+            0,
+            2
+          ],
+          "dtype": "float64"
+        },
+        "centroid_arc": {
+          "shape": [
+            209
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "name": "V2S5A__B1__seed5000__turn.npz",
+      "bytes": 2094574,
+      "sha256": "a246d3b30eb840c0af13973be98196b2f562b52184b30b8ce78ba47851dae349",
+      "scene": "V2S5A",
+      "method": "B1",
+      "seed": 5000,
+      "kind": "turn",
+      "arrays": {
+        "t": {
+          "shape": [
+            4166
+          ],
+          "dtype": "float32"
+        },
+        "s_arc": {
+          "shape": [
+            4166,
+            36
+          ],
+          "dtype": "float32"
+        },
+        "d_lat": {
+          "shape": [
+            4166,
+            36
+          ],
+          "dtype": "float32"
+        },
+        "alive": {
+          "shape": [
+            4166,
+            36
+          ],
+          "dtype": "uint8"
+        },
+        "centroid_arc": {
+          "shape": [
+            4166
+          ],
+          "dtype": "float32"
+        },
+        "sheep_positions": {
+          "shape": [
+            4166,
+            36,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "obstacle_xy": {
+          "shape": [
+            4166,
+            2
+          ],
+          "dtype": "float32"
+        }
+      }
+    },
+    {
+      "name": "V2S5A__B2__seed5000.npz",
+      "bytes": 154724,
+      "sha256": "9994c5fec39618bf5b03bc475b7d743265163478889c369e90f36d9bebf4a2c1",
+      "scene": "V2S5A",
+      "method": "B2",
+      "seed": 5000,
+      "kind": "trail",
+      "arrays": {
+        "sample_times": {
+          "shape": [
+            209
+          ],
+          "dtype": "float64"
+        },
+        "sheep_positions": {
+          "shape": [
+            209,
+            36,
+            2
+          ],
+          "dtype": "float64"
+        },
+        "robot_positions": {
+          "shape": [
+            209,
+            12,
+            2
+          ],
+          "dtype": "float64"
+        },
+        "obstacle_positions": {
+          "shape": [
+            209,
+            0,
+            2
+          ],
+          "dtype": "float64"
+        },
+        "centroid_arc": {
+          "shape": [
+            209
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "name": "V2S5A__B2__seed5000__turn.npz",
+      "bytes": 2094574,
+      "sha256": "a246d3b30eb840c0af13973be98196b2f562b52184b30b8ce78ba47851dae349",
+      "scene": "V2S5A",
+      "method": "B2",
+      "seed": 5000,
+      "kind": "turn",
+      "arrays": {
+        "t": {
+          "shape": [
+            4166
+          ],
+          "dtype": "float32"
+        },
+        "s_arc": {
+          "shape": [
+            4166,
+            36
+          ],
+          "dtype": "float32"
+        },
+        "d_lat": {
+          "shape": [
+            4166,
+            36
+          ],
+          "dtype": "float32"
+        },
+        "alive": {
+          "shape": [
+            4166,
+            36
+          ],
+          "dtype": "uint8"
+        },
+        "centroid_arc": {
+          "shape": [
+            4166
+          ],
+          "dtype": "float32"
+        },
+        "sheep_positions": {
+          "shape": [
+            4166,
+            36,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "obstacle_xy": {
+          "shape": [
+            4166,
+            2
+          ],
+          "dtype": "float32"
+        }
+      }
+    },
+    {
+      "name": "V2S5A__Ours_rollout__seed5000.npz",
+      "bytes": 154724,
+      "sha256": "9994c5fec39618bf5b03bc475b7d743265163478889c369e90f36d9bebf4a2c1",
+      "scene": "V2S5A",
+      "method": "Ours_rollout",
+      "seed": 5000,
+      "kind": "trail",
+      "arrays": {
+        "sample_times": {
+          "shape": [
+            209
+          ],
+          "dtype": "float64"
+        },
+        "sheep_positions": {
+          "shape": [
+            209,
+            36,
+            2
+          ],
+          "dtype": "float64"
+        },
+        "robot_positions": {
+          "shape": [
+            209,
+            12,
+            2
+          ],
+          "dtype": "float64"
+        },
+        "obstacle_positions": {
+          "shape": [
+            209,
+            0,
+            2
+          ],
+          "dtype": "float64"
+        },
+        "centroid_arc": {
+          "shape": [
+            209
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "name": "V2S5A__Ours_rollout__seed5000__turn.npz",
+      "bytes": 2094574,
+      "sha256": "a246d3b30eb840c0af13973be98196b2f562b52184b30b8ce78ba47851dae349",
+      "scene": "V2S5A",
+      "method": "Ours_rollout",
+      "seed": 5000,
+      "kind": "turn",
+      "arrays": {
+        "t": {
+          "shape": [
+            4166
+          ],
+          "dtype": "float32"
+        },
+        "s_arc": {
+          "shape": [
+            4166,
+            36
+          ],
+          "dtype": "float32"
+        },
+        "d_lat": {
+          "shape": [
+            4166,
+            36
+          ],
+          "dtype": "float32"
+        },
+        "alive": {
+          "shape": [
+            4166,
+            36
+          ],
+          "dtype": "uint8"
+        },
+        "centroid_arc": {
+          "shape": [
+            4166
+          ],
+          "dtype": "float32"
+        },
+        "sheep_positions": {
+          "shape": [
+            4166,
+            36,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "obstacle_xy": {
+          "shape": [
+            4166,
+            2
+          ],
+          "dtype": "float32"
+        }
+      }
+    },
+    {
+      "name": "V2S5A__VH-Path__seed5000.npz",
+      "bytes": 158925,
+      "sha256": "5b582e50cac33585a6503b2a875b382af76557c7f798032fac1162802baff7fa",
+      "scene": "V2S5A",
+      "method": "VH-Path",
+      "seed": 5000,
+      "kind": "trail",
+      "arrays": {
+        "sample_times": {
+          "shape": [
+            215
+          ],
+          "dtype": "float64"
+        },
+        "sheep_positions": {
+          "shape": [
+            215,
+            36,
+            2
+          ],
+          "dtype": "float64"
+        },
+        "robot_positions": {
+          "shape": [
+            215,
+            12,
+            2
+          ],
+          "dtype": "float64"
+        },
+        "obstacle_positions": {
+          "shape": [
+            215,
+            0,
+            2
+          ],
+          "dtype": "float64"
+        },
+        "centroid_arc": {
+          "shape": [
+            215
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "name": "V2S5A__VH-Path__seed5000__turn.npz",
+      "bytes": 2158166,
+      "sha256": "de4181d14f3e053a71d1b4212d7a6b2a6d1366b341e3146bd606d5e8ea1a8e93",
+      "scene": "V2S5A",
+      "method": "VH-Path",
+      "seed": 5000,
+      "kind": "turn",
+      "arrays": {
+        "t": {
+          "shape": [
+            4284
+          ],
+          "dtype": "float32"
+        },
+        "s_arc": {
+          "shape": [
+            4284,
+            36
+          ],
+          "dtype": "float32"
+        },
+        "d_lat": {
+          "shape": [
+            4284,
+            36
+          ],
+          "dtype": "float32"
+        },
+        "alive": {
+          "shape": [
+            4284,
+            36
+          ],
+          "dtype": "uint8"
+        },
+        "centroid_arc": {
+          "shape": [
+            4284
+          ],
+          "dtype": "float32"
+        },
+        "sheep_positions": {
+          "shape": [
+            4284,
+            36,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "obstacle_xy": {
+          "shape": [
+            4284,
+            2
+          ],
+          "dtype": "float32"
+        }
+      }
+    },
+    {
+      "name": "V2S5B__B1__seed5000.npz",
+      "bytes": 158336,
+      "sha256": "90295edbd305b685321582611d6bfabaf55f661e87483488dc31a041a26906d6",
+      "scene": "V2S5B",
+      "method": "B1",
+      "seed": 5000,
+      "kind": "trail",
+      "arrays": {
+        "sample_times": {
+          "shape": [
+            211
+          ],
+          "dtype": "float64"
+        },
+        "sheep_positions": {
+          "shape": [
+            211,
+            36,
+            2
+          ],
+          "dtype": "float64"
+        },
+        "robot_positions": {
+          "shape": [
+            211,
+            12,
+            2
+          ],
+          "dtype": "float64"
+        },
+        "obstacle_positions": {
+          "shape": [
+            211,
+            1,
+            2
+          ],
+          "dtype": "float64"
+        },
+        "centroid_arc": {
+          "shape": [
+            211
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "name": "V2S5B__B1__seed5000__turn.npz",
+      "bytes": 2138570,
+      "sha256": "a1df6755e39859ad23cc1bc6ea3948259a62137b915dd75f694ae77f6166a520",
+      "scene": "V2S5B",
+      "method": "B1",
+      "seed": 5000,
+      "kind": "turn",
+      "arrays": {
+        "t": {
+          "shape": [
+            4209
+          ],
+          "dtype": "float32"
+        },
+        "s_arc": {
+          "shape": [
+            4209,
+            36
+          ],
+          "dtype": "float32"
+        },
+        "d_lat": {
+          "shape": [
+            4209,
+            36
+          ],
+          "dtype": "float32"
+        },
+        "alive": {
+          "shape": [
+            4209,
+            36
+          ],
+          "dtype": "uint8"
+        },
+        "centroid_arc": {
+          "shape": [
+            4209
+          ],
+          "dtype": "float32"
+        },
+        "sheep_positions": {
+          "shape": [
+            4209,
+            36,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "obstacle_xy": {
+          "shape": [
+            4209,
+            2
+          ],
+          "dtype": "float32"
+        }
+      }
+    },
+    {
+      "name": "V2S5B__B2__seed5000.npz",
+      "bytes": 158264,
+      "sha256": "30384e7c2b7269981848083d42fdc5cb38825a291e53f58dcb712964621300bc",
+      "scene": "V2S5B",
+      "method": "B2",
+      "seed": 5000,
+      "kind": "trail",
+      "arrays": {
+        "sample_times": {
+          "shape": [
+            211
+          ],
+          "dtype": "float64"
+        },
+        "sheep_positions": {
+          "shape": [
+            211,
+            36,
+            2
+          ],
+          "dtype": "float64"
+        },
+        "robot_positions": {
+          "shape": [
+            211,
+            12,
+            2
+          ],
+          "dtype": "float64"
+        },
+        "obstacle_positions": {
+          "shape": [
+            211,
+            1,
+            2
+          ],
+          "dtype": "float64"
+        },
+        "centroid_arc": {
+          "shape": [
+            211
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "name": "V2S5B__B2__seed5000__turn.npz",
+      "bytes": 2134501,
+      "sha256": "cf3b2d6e9185258bc1035fd9aefe63f1b91a8fcc7c8db5b4ef60cfc74d24f429",
+      "scene": "V2S5B",
+      "method": "B2",
+      "seed": 5000,
+      "kind": "turn",
+      "arrays": {
+        "t": {
+          "shape": [
+            4208
+          ],
+          "dtype": "float32"
+        },
+        "s_arc": {
+          "shape": [
+            4208,
+            36
+          ],
+          "dtype": "float32"
+        },
+        "d_lat": {
+          "shape": [
+            4208,
+            36
+          ],
+          "dtype": "float32"
+        },
+        "alive": {
+          "shape": [
+            4208,
+            36
+          ],
+          "dtype": "uint8"
+        },
+        "centroid_arc": {
+          "shape": [
+            4208
+          ],
+          "dtype": "float32"
+        },
+        "sheep_positions": {
+          "shape": [
+            4208,
+            36,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "obstacle_xy": {
+          "shape": [
+            4208,
+            2
+          ],
+          "dtype": "float32"
+        }
+      }
+    },
+    {
+      "name": "V2S5B__Ours_rollout__seed5000.npz",
+      "bytes": 156738,
+      "sha256": "0a056ea3c5e47caa1bca590dd43edc0f13f3d4d23ca00b5f8e1d1ae0bfa416f9",
+      "scene": "V2S5B",
+      "method": "Ours_rollout",
+      "seed": 5000,
+      "kind": "trail",
+      "arrays": {
+        "sample_times": {
+          "shape": [
+            209
+          ],
+          "dtype": "float64"
+        },
+        "sheep_positions": {
+          "shape": [
+            209,
+            36,
+            2
+          ],
+          "dtype": "float64"
+        },
+        "robot_positions": {
+          "shape": [
+            209,
+            12,
+            2
+          ],
+          "dtype": "float64"
+        },
+        "obstacle_positions": {
+          "shape": [
+            209,
+            1,
+            2
+          ],
+          "dtype": "float64"
+        },
+        "centroid_arc": {
+          "shape": [
+            209
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "name": "V2S5B__Ours_rollout__seed5000__turn.npz",
+      "bytes": 2120371,
+      "sha256": "d901d1a122ce6c9eb4057c45f843844eb608976d3ba869fc9e06dd45aa96cc2f",
+      "scene": "V2S5B",
+      "method": "Ours_rollout",
+      "seed": 5000,
+      "kind": "turn",
+      "arrays": {
+        "t": {
+          "shape": [
+            4180
+          ],
+          "dtype": "float32"
+        },
+        "s_arc": {
+          "shape": [
+            4180,
+            36
+          ],
+          "dtype": "float32"
+        },
+        "d_lat": {
+          "shape": [
+            4180,
+            36
+          ],
+          "dtype": "float32"
+        },
+        "alive": {
+          "shape": [
+            4180,
+            36
+          ],
+          "dtype": "uint8"
+        },
+        "centroid_arc": {
+          "shape": [
+            4180
+          ],
+          "dtype": "float32"
+        },
+        "sheep_positions": {
+          "shape": [
+            4180,
+            36,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "obstacle_xy": {
+          "shape": [
+            4180,
+            2
+          ],
+          "dtype": "float32"
+        }
+      }
+    },
+    {
+      "name": "V2S5B__VH-Path__seed5000.npz",
+      "bytes": 164761,
+      "sha256": "33f3fa0b38a5e030345863df2d9ee64982f50a19571b3955ba6b970ebab4ba53",
+      "scene": "V2S5B",
+      "method": "VH-Path",
+      "seed": 5000,
+      "kind": "trail",
+      "arrays": {
+        "sample_times": {
+          "shape": [
+            220
+          ],
+          "dtype": "float64"
+        },
+        "sheep_positions": {
+          "shape": [
+            220,
+            36,
+            2
+          ],
+          "dtype": "float64"
+        },
+        "robot_positions": {
+          "shape": [
+            220,
+            12,
+            2
+          ],
+          "dtype": "float64"
+        },
+        "obstacle_positions": {
+          "shape": [
+            220,
+            1,
+            2
+          ],
+          "dtype": "float64"
+        },
+        "centroid_arc": {
+          "shape": [
+            220
+          ],
+          "dtype": "float64"
+        }
+      }
+    },
+    {
+      "name": "V2S5B__VH-Path__seed5000__turn.npz",
+      "bytes": 2234142,
+      "sha256": "c64cde1686f6fa5ae240e5e893d27c5799ed551ca0f83c3440d819d285eb0c69",
+      "scene": "V2S5B",
+      "method": "VH-Path",
+      "seed": 5000,
+      "kind": "turn",
+      "arrays": {
+        "t": {
+          "shape": [
+            4396
+          ],
+          "dtype": "float32"
+        },
+        "s_arc": {
+          "shape": [
+            4396,
+            36
+          ],
+          "dtype": "float32"
+        },
+        "d_lat": {
+          "shape": [
+            4396,
+            36
+          ],
+          "dtype": "float32"
+        },
+        "alive": {
+          "shape": [
+            4396,
+            36
+          ],
+          "dtype": "uint8"
+        },
+        "centroid_arc": {
+          "shape": [
+            4396
+          ],
+          "dtype": "float32"
+        },
+        "sheep_positions": {
+          "shape": [
+            4396,
+            36,
+            2
+          ],
+          "dtype": "float32"
+        },
+        "obstacle_xy": {
+          "shape": [
+            4396,
+            2
+          ],
+          "dtype": "float32"
+        }
+      }
+    }
+  ]
+}

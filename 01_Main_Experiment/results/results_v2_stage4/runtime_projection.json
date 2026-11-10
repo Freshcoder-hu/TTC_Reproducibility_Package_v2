@@ -1,0 +1,943 @@
+{
+  "assumption": "per_run = wall(scene, Ours_rollout) x r_method; r_method = measured per-control-tick cost ratio. Scene and team-size effects are in the measured Ours_rollout wall; the ratio is assumed scene-independent.",
+  "n_runs": 2400,
+  "n_scenes": 10,
+  "n_methods": 8,
+  "seeds": 30,
+  "scenes": [
+    "V2S1",
+    "V2S1N",
+    "V2S2",
+    "V2S2R3",
+    "V2S2R2",
+    "V2S2R1",
+    "V2S3",
+    "V2S4S",
+    "V2S4M",
+    "V2S4L"
+  ],
+  "per_scene_wall_ours_s": {
+    "V2S1": 15.915594799997052,
+    "V2S1N": 9.888713400010602,
+    "V2S2": 17.787352200000896,
+    "V2S2R3": 17.707978200007346,
+    "V2S2R2": 17.606583800006774,
+    "V2S2R1": 17.521974899995257,
+    "V2S3": 30.646551300000283,
+    "V2S4S": 8.93819380000059,
+    "V2S4M": 17.507358500006376,
+    "V2S4L": 37.39665609999793
+  },
+  "per_scene_ctrl_ticks": {
+    "V2S1": 1270,
+    "V2S1N": 771,
+    "V2S2": 1277,
+    "V2S2R3": 1288,
+    "V2S2R2": 1298,
+    "V2S2R1": 1299,
+    "V2S3": 2110,
+    "V2S4S": 1307,
+    "V2S4M": 1277,
+    "V2S4L": 1375
+  },
+  "per_method": {
+    "Ours_rollout": {
+      "wall_140_s": 17.80782285555809,
+      "wall_220_s": 30.646551300000283,
+      "ratio_140": 1.0,
+      "ratio_220": 1.0,
+      "total_h": 1.590974641666859,
+      "n_runs": 300
+    },
+    "B1": {
+      "wall_140_s": 16.996590166839947,
+      "wall_220_s": 29.48868011111033,
+      "ratio_140": 0.9544451505780256,
+      "ratio_220": 0.9622185485878817,
+      "total_h": 1.5204832634389156,
+      "n_runs": 300
+    },
+    "B2": {
+      "wall_140_s": 16.90651921860759,
+      "wall_220_s": 29.19304749349936,
+      "ratio_140": 0.9493872078433669,
+      "ratio_220": 0.9525720270358476,
+      "total_h": 1.5112643371747307,
+      "n_runs": 300
+    },
+    "B3": {
+      "wall_140_s": 17.354284077613592,
+      "wall_220_s": 29.175196890940427,
+      "ratio_140": 0.9745314864358647,
+      "ratio_220": 0.9519895601088452,
+      "total_h": 1.5446979465788564,
+      "n_runs": 300
+    },
+    "VH-Path": {
+      "wall_140_s": 19.8458616637573,
+      "wall_220_s": 34.650432208991475,
+      "ratio_140": 1.1144462646967035,
+      "ratio_220": 1.1306470300621119,
+      "total_h": 1.7771932265233932,
+      "n_runs": 300
+    },
+    "VH-Danger": {
+      "wall_140_s": 17.57805957059395,
+      "wall_220_s": 30.490852325853513,
+      "ratio_140": 0.9870976207014308,
+      "ratio_220": 0.994919527074266,
+      "total_h": 1.5724449038433257,
+      "n_runs": 300
+    },
+    "B-Outmost": {
+      "wall_140_s": 15.719878195409596,
+      "wall_220_s": 27.081087603846207,
+      "ratio_140": 0.8827512674017409,
+      "ratio_220": 0.8836585669541863,
+      "total_h": 1.4046665946877712,
+      "n_runs": 300
+    },
+    "B-PCBF": {
+      "wall_140_s": 37.450065137010526,
+      "wall_220_s": 59.43074615718788,
+      "ratio_140": 2.1030119987588374,
+      "ratio_220": 1.9392311250756404,
+      "total_h": 3.304011103252355,
+      "n_runs": 300
+    }
+  },
+  "total_single_thread_h": 14.225736017166208,
+  "jobs": {
+    "4": {
+      "h": 3.556434004291552,
+      "days": 0.14818475017881466,
+      "ideal_speedup": 4,
+      "measured_speedup": 3.779099571706925,
+      "measured_h": 3.7643189196893263
+    },
+    "12": {
+      "h": 1.1854780014305173,
+      "days": 0.049394916726271554,
+      "ideal_speedup": 12,
+      "measured_speedup": 5.580208363612266,
+      "measured_h": 2.5493198623066085
+    }
+  },
+  "measured_speedup": {
+    "1": 1.0,
+    "4": 3.779099571706925,
+    "12": 5.580208363612266
+  },
+  "v1_cross_check": {
+    "B-Outmost": 0.1745488531613643,
+    "B1": 0.45973603259102497,
+    "B2": 0.48242505742277775,
+    "VH-Danger": 0.8613307106578585,
+    "VH-Danger-path": 0.999661773064068,
+    "Ours_rollout": 1.0,
+    "VH-Path": 1.5888674927098287,
+    "B-PCBF": 8.52398483283892
+  },
+  "cells": [
+    {
+      "scene": "V2S1",
+      "method": "Ours_rollout",
+      "group": "140",
+      "wall_s": 15.915594799997052,
+      "n_ctrl_ticks": 1270,
+      "ratio_to_ours": 1.0,
+      "runs": 30,
+      "total_s": 477.46784399991157
+    },
+    {
+      "scene": "V2S1",
+      "method": "B1",
+      "group": "140",
+      "wall_s": 15.190562275422028,
+      "n_ctrl_ticks": 1270,
+      "ratio_to_ours": 0.9544451505780256,
+      "runs": 30,
+      "total_s": 455.71686826266085
+    },
+    {
+      "scene": "V2S1",
+      "method": "B2",
+      "group": "140",
+      "wall_s": 15.110062108335612,
+      "n_ctrl_ticks": 1270,
+      "ratio_to_ours": 0.9493872078433669,
+      "runs": 30,
+      "total_s": 453.3018632500683
+    },
+    {
+      "scene": "V2S1",
+      "method": "B3",
+      "group": "140",
+      "wall_s": 15.510248257952046,
+      "n_ctrl_ticks": 1270,
+      "ratio_to_ours": 0.9745314864358647,
+      "runs": 30,
+      "total_s": 465.3074477385614
+    },
+    {
+      "scene": "V2S1",
+      "method": "VH-Path",
+      "group": "140",
+      "wall_s": 17.737075175282992,
+      "n_ctrl_ticks": 1270,
+      "ratio_to_ours": 1.1144462646967035,
+      "runs": 30,
+      "total_s": 532.1122552584898
+    },
+    {
+      "scene": "V2S1",
+      "method": "VH-Danger",
+      "group": "140",
+      "wall_s": 15.710245759125154,
+      "n_ctrl_ticks": 1270,
+      "ratio_to_ours": 0.9870976207014308,
+      "runs": 30,
+      "total_s": 471.30737277375465
+    },
+    {
+      "scene": "V2S1",
+      "method": "B-Outmost",
+      "group": "140",
+      "wall_s": 14.049511481149954,
+      "n_ctrl_ticks": 1270,
+      "ratio_to_ours": 0.8827512674017409,
+      "runs": 30,
+      "total_s": 421.48534443449864
+    },
+    {
+      "scene": "V2S1",
+      "method": "B-PCBF",
+      "group": "140",
+      "wall_s": 33.470686831777556,
+      "n_ctrl_ticks": 1270,
+      "ratio_to_ours": 2.1030119987588374,
+      "runs": 30,
+      "total_s": 1004.1206049533266
+    },
+    {
+      "scene": "V2S1N",
+      "method": "Ours_rollout",
+      "group": "140",
+      "wall_s": 9.888713400010602,
+      "n_ctrl_ticks": 771,
+      "ratio_to_ours": 1.0,
+      "runs": 30,
+      "total_s": 296.66140200031805
+    },
+    {
+      "scene": "V2S1N",
+      "method": "B1",
+      "group": "140",
+      "wall_s": 9.438234550096059,
+      "n_ctrl_ticks": 771,
+      "ratio_to_ours": 0.9544451505780256,
+      "runs": 30,
+      "total_s": 283.14703650288175
+    },
+    {
+      "scene": "V2S1N",
+      "method": "B2",
+      "group": "140",
+      "wall_s": 9.388218003999352,
+      "n_ctrl_ticks": 771,
+      "ratio_to_ours": 0.9493872078433669,
+      "runs": 30,
+      "total_s": 281.64654011998056
+    },
+    {
+      "scene": "V2S1N",
+      "method": "B3",
+      "group": "140",
+      "wall_s": 9.636862568650585,
+      "n_ctrl_ticks": 771,
+      "ratio_to_ours": 0.9745314864358647,
+      "runs": 30,
+      "total_s": 289.1058770595175
+    },
+    {
+      "scene": "V2S1N",
+      "method": "VH-Path",
+      "group": "140",
+      "wall_s": 11.020439711298053,
+      "n_ctrl_ticks": 771,
+      "ratio_to_ours": 1.1144462646967035,
+      "runs": 30,
+      "total_s": 330.6131913389416
+    },
+    {
+      "scene": "V2S1N",
+      "method": "VH-Danger",
+      "group": "140",
+      "wall_s": 9.761125468948821,
+      "n_ctrl_ticks": 771,
+      "ratio_to_ours": 0.9870976207014308,
+      "runs": 30,
+      "total_s": 292.83376406846463
+    },
+    {
+      "scene": "V2S1N",
+      "method": "B-Outmost",
+      "group": "140",
+      "wall_s": 8.729274286831938,
+      "n_ctrl_ticks": 771,
+      "ratio_to_ours": 0.8827512674017409,
+      "runs": 30,
+      "total_s": 261.87822860495817
+    },
+    {
+      "scene": "V2S1N",
+      "method": "B-PCBF",
+      "group": "140",
+      "wall_s": 20.796082932509595,
+      "n_ctrl_ticks": 771,
+      "ratio_to_ours": 2.1030119987588374,
+      "runs": 30,
+      "total_s": 623.8824879752879
+    },
+    {
+      "scene": "V2S2",
+      "method": "Ours_rollout",
+      "group": "140",
+      "wall_s": 17.787352200000896,
+      "n_ctrl_ticks": 1277,
+      "ratio_to_ours": 1.0,
+      "runs": 30,
+      "total_s": 533.6205660000269
+    },
+    {
+      "scene": "V2S2",
+      "method": "B1",
+      "group": "140",
+      "wall_s": 16.97705204891423,
+      "n_ctrl_ticks": 1277,
+      "ratio_to_ours": 0.9544451505780256,
+      "runs": 30,
+      "total_s": 509.31156146742694
+    },
+    {
+      "scene": "V2S2",
+      "method": "B2",
+      "group": "140",
+      "wall_s": 16.887084640085423,
+      "n_ctrl_ticks": 1277,
+      "ratio_to_ours": 0.9493872078433669,
+      "runs": 30,
+      "total_s": 506.6125392025627
+    },
+    {
+      "scene": "V2S2",
+      "method": "B3",
+      "group": "140",
+      "wall_s": 17.334334779225124,
+      "n_ctrl_ticks": 1277,
+      "ratio_to_ours": 0.9745314864358647,
+      "runs": 30,
+      "total_s": 520.0300433767537
+    },
+    {
+      "scene": "V2S2",
+      "method": "VH-Path",
+      "group": "140",
+      "wall_s": 19.82304821813569,
+      "n_ctrl_ticks": 1277,
+      "ratio_to_ours": 1.1144462646967035,
+      "runs": 30,
+      "total_s": 594.6914465440707
+    },
+    {
+      "scene": "V2S2",
+      "method": "VH-Danger",
+      "group": "140",
+      "wall_s": 17.557853035199244,
+      "n_ctrl_ticks": 1277,
+      "ratio_to_ours": 0.9870976207014308,
+      "runs": 30,
+      "total_s": 526.7355910559774
+    },
+    {
+      "scene": "V2S2",
+      "method": "B-Outmost",
+      "group": "140",
+      "wall_s": 15.701807698271935,
+      "n_ctrl_ticks": 1277,
+      "ratio_to_ours": 0.8827512674017409,
+      "runs": 30,
+      "total_s": 471.0542309481581
+    },
+    {
+      "scene": "V2S2",
+      "method": "B-PCBF",
+      "group": "140",
+      "wall_s": 37.40701510275129,
+      "n_ctrl_ticks": 1277,
+      "ratio_to_ours": 2.1030119987588374,
+      "runs": 30,
+      "total_s": 1122.2104530825386
+    },
+    {
+      "scene": "V2S2R3",
+      "method": "Ours_rollout",
+      "group": "140",
+      "wall_s": 17.707978200007346,
+      "n_ctrl_ticks": 1288,
+      "ratio_to_ours": 1.0,
+      "runs": 30,
+      "total_s": 531.2393460002204
+    },
+    {
+      "scene": "V2S2R3",
+      "method": "B1",
+      "group": "140",
+      "wall_s": 16.901293919538407,
+      "n_ctrl_ticks": 1288,
+      "ratio_to_ours": 0.9544451505780256,
+      "runs": 30,
+      "total_s": 507.0388175861522
+    },
+    {
+      "scene": "V2S2R3",
+      "method": "B2",
+      "group": "140",
+      "wall_s": 16.811727979856187,
+      "n_ctrl_ticks": 1288,
+      "ratio_to_ours": 0.9493872078433669,
+      "runs": 30,
+      "total_s": 504.3518393956856
+    },
+    {
+      "scene": "V2S2R3",
+      "method": "B3",
+      "group": "140",
+      "wall_s": 17.25698231702705,
+      "n_ctrl_ticks": 1288,
+      "ratio_to_ours": 0.9745314864358647,
+      "runs": 30,
+      "total_s": 517.7094695108115
+    },
+    {
+      "scene": "V2S2R3",
+      "method": "VH-Path",
+      "group": "140",
+      "wall_s": 19.734590160328843,
+      "n_ctrl_ticks": 1288,
+      "ratio_to_ours": 1.1144462646967035,
+      "runs": 30,
+      "total_s": 592.0377048098653
+    },
+    {
+      "scene": "V2S2R3",
+      "method": "VH-Danger",
+      "group": "140",
+      "wall_s": 17.479503148660058,
+      "n_ctrl_ticks": 1288,
+      "ratio_to_ours": 0.9870976207014308,
+      "runs": 30,
+      "total_s": 524.3850944598017
+    },
+    {
+      "scene": "V2S2R3",
+      "method": "B-Outmost",
+      "group": "140",
+      "wall_s": 15.631740199178884,
+      "n_ctrl_ticks": 1288,
+      "ratio_to_ours": 0.8827512674017409,
+      "runs": 30,
+      "total_s": 468.9522059753665
+    },
+    {
+      "scene": "V2S2R3",
+      "method": "B-PCBF",
+      "group": "140",
+      "wall_s": 37.24009062837537,
+      "n_ctrl_ticks": 1288,
+      "ratio_to_ours": 2.1030119987588374,
+      "runs": 30,
+      "total_s": 1117.2027188512611
+    },
+    {
+      "scene": "V2S2R2",
+      "method": "Ours_rollout",
+      "group": "140",
+      "wall_s": 17.606583800006774,
+      "n_ctrl_ticks": 1298,
+      "ratio_to_ours": 1.0,
+      "runs": 30,
+      "total_s": 528.1975140002032
+    },
+    {
+      "scene": "V2S2R2",
+      "method": "B1",
+      "group": "140",
+      "wall_s": 16.80451852616209,
+      "n_ctrl_ticks": 1298,
+      "ratio_to_ours": 0.9544451505780256,
+      "runs": 30,
+      "total_s": 504.13555578486273
+    },
+    {
+      "scene": "V2S2R2",
+      "method": "B2",
+      "group": "140",
+      "wall_s": 16.71546543354869,
+      "n_ctrl_ticks": 1298,
+      "ratio_to_ours": 0.9493872078433669,
+      "runs": 30,
+      "total_s": 501.4639630064607
+    },
+    {
+      "scene": "V2S2R2",
+      "method": "B3",
+      "group": "140",
+      "wall_s": 17.158170281678217,
+      "n_ctrl_ticks": 1298,
+      "ratio_to_ours": 0.9745314864358647,
+      "runs": 30,
+      "total_s": 514.7451084503465
+    },
+    {
+      "scene": "V2S2R2",
+      "method": "VH-Path",
+      "group": "140",
+      "wall_s": 19.62159154998704,
+      "n_ctrl_ticks": 1298,
+      "ratio_to_ours": 1.1144462646967035,
+      "runs": 30,
+      "total_s": 588.6477464996112
+    },
+    {
+      "scene": "V2S2R2",
+      "method": "VH-Danger",
+      "group": "140",
+      "wall_s": 17.37941697766704,
+      "n_ctrl_ticks": 1298,
+      "ratio_to_ours": 0.9870976207014308,
+      "runs": 30,
+      "total_s": 521.3825093300112
+    },
+    {
+      "scene": "V2S2R2",
+      "method": "B-Outmost",
+      "group": "140",
+      "wall_s": 15.54223416407094,
+      "n_ctrl_ticks": 1298,
+      "ratio_to_ours": 0.8827512674017409,
+      "runs": 30,
+      "total_s": 466.2670249221282
+    },
+    {
+      "scene": "V2S2R2",
+      "method": "B-PCBF",
+      "group": "140",
+      "wall_s": 37.02685698856721,
+      "n_ctrl_ticks": 1298,
+      "ratio_to_ours": 2.1030119987588374,
+      "runs": 30,
+      "total_s": 1110.8057096570162
+    },
+    {
+      "scene": "V2S2R1",
+      "method": "Ours_rollout",
+      "group": "140",
+      "wall_s": 17.521974899995257,
+      "n_ctrl_ticks": 1299,
+      "ratio_to_ours": 1.0,
+      "runs": 30,
+      "total_s": 525.6592469998577
+    },
+    {
+      "scene": "V2S2R1",
+      "method": "B1",
+      "group": "140",
+      "wall_s": 16.723763971850357,
+      "n_ctrl_ticks": 1299,
+      "ratio_to_ours": 0.9544451505780256,
+      "runs": 30,
+      "total_s": 501.7129191555107
+    },
+    {
+      "scene": "V2S2R1",
+      "method": "B2",
+      "group": "140",
+      "wall_s": 16.635138826208056,
+      "n_ctrl_ticks": 1299,
+      "ratio_to_ours": 0.9493872078433669,
+      "runs": 30,
+      "total_s": 499.0541647862417
+    },
+    {
+      "scene": "V2S2R1",
+      "method": "B3",
+      "group": "140",
+      "wall_s": 17.07571624458429,
+      "n_ctrl_ticks": 1299,
+      "ratio_to_ours": 0.9745314864358647,
+      "runs": 30,
+      "total_s": 512.2714873375287
+    },
+    {
+      "scene": "V2S2R1",
+      "method": "VH-Path",
+      "group": "140",
+      "wall_s": 19.52729947740911,
+      "n_ctrl_ticks": 1299,
+      "ratio_to_ours": 1.1144462646967035,
+      "runs": 30,
+      "total_s": 585.8189843222733
+    },
+    {
+      "scene": "V2S2R1",
+      "method": "VH-Danger",
+      "group": "140",
+      "wall_s": 17.29589973377551,
+      "n_ctrl_ticks": 1299,
+      "ratio_to_ours": 0.9870976207014308,
+      "runs": 30,
+      "total_s": 518.8769920132653
+    },
+    {
+      "scene": "V2S2R1",
+      "method": "B-Outmost",
+      "group": "140",
+      "wall_s": 15.467545550352305,
+      "n_ctrl_ticks": 1299,
+      "ratio_to_ours": 0.8827512674017409,
+      "runs": 30,
+      "total_s": 464.0263665105692
+    },
+    {
+      "scene": "V2S2R1",
+      "method": "B-PCBF",
+      "group": "140",
+      "wall_s": 36.8489234566412,
+      "n_ctrl_ticks": 1299,
+      "ratio_to_ours": 2.1030119987588374,
+      "runs": 30,
+      "total_s": 1105.4677036992362
+    },
+    {
+      "scene": "V2S3",
+      "method": "Ours_rollout",
+      "group": "220",
+      "wall_s": 30.646551300000283,
+      "n_ctrl_ticks": 2110,
+      "ratio_to_ours": 1.0,
+      "runs": 30,
+      "total_s": 919.3965390000085
+    },
+    {
+      "scene": "V2S3",
+      "method": "B1",
+      "group": "220",
+      "wall_s": 29.48868011111033,
+      "n_ctrl_ticks": 2110,
+      "ratio_to_ours": 0.9622185485878817,
+      "runs": 30,
+      "total_s": 884.6604033333099
+    },
+    {
+      "scene": "V2S3",
+      "method": "B2",
+      "group": "220",
+      "wall_s": 29.19304749349936,
+      "n_ctrl_ticks": 2110,
+      "ratio_to_ours": 0.9525720270358476,
+      "runs": 30,
+      "total_s": 875.7914248049808
+    },
+    {
+      "scene": "V2S3",
+      "method": "B3",
+      "group": "220",
+      "wall_s": 29.175196890940427,
+      "n_ctrl_ticks": 2110,
+      "ratio_to_ours": 0.9519895601088452,
+      "runs": 30,
+      "total_s": 875.2559067282128
+    },
+    {
+      "scene": "V2S3",
+      "method": "VH-Path",
+      "group": "220",
+      "wall_s": 34.650432208991475,
+      "n_ctrl_ticks": 2110,
+      "ratio_to_ours": 1.1306470300621119,
+      "runs": 30,
+      "total_s": 1039.5129662697443
+    },
+    {
+      "scene": "V2S3",
+      "method": "VH-Danger",
+      "group": "220",
+      "wall_s": 30.490852325853513,
+      "n_ctrl_ticks": 2110,
+      "ratio_to_ours": 0.994919527074266,
+      "runs": 30,
+      "total_s": 914.7255697756054
+    },
+    {
+      "scene": "V2S3",
+      "method": "B-Outmost",
+      "group": "220",
+      "wall_s": 27.081087603846207,
+      "n_ctrl_ticks": 2110,
+      "ratio_to_ours": 0.8836585669541863,
+      "runs": 30,
+      "total_s": 812.4326281153863
+    },
+    {
+      "scene": "V2S3",
+      "method": "B-PCBF",
+      "group": "220",
+      "wall_s": 59.43074615718788,
+      "n_ctrl_ticks": 2110,
+      "ratio_to_ours": 1.9392311250756404,
+      "runs": 30,
+      "total_s": 1782.9223847156366
+    },
+    {
+      "scene": "V2S4S",
+      "method": "Ours_rollout",
+      "group": "140",
+      "wall_s": 8.93819380000059,
+      "n_ctrl_ticks": 1307,
+      "ratio_to_ours": 1.0,
+      "runs": 30,
+      "total_s": 268.1458140000177
+    },
+    {
+      "scene": "V2S4S",
+      "method": "B1",
+      "group": "140",
+      "wall_s": 8.531015727337138,
+      "n_ctrl_ticks": 1307,
+      "ratio_to_ours": 0.9544451505780256,
+      "runs": 30,
+      "total_s": 255.93047182011415
+    },
+    {
+      "scene": "V2S4S",
+      "method": "B2",
+      "group": "140",
+      "wall_s": 8.485806854945455,
+      "n_ctrl_ticks": 1307,
+      "ratio_to_ours": 0.9493872078433669,
+      "runs": 30,
+      "total_s": 254.57420564836366
+    },
+    {
+      "scene": "V2S4S",
+      "method": "B3",
+      "group": "140",
+      "wall_s": 8.710551289966405,
+      "n_ctrl_ticks": 1307,
+      "ratio_to_ours": 0.9745314864358647,
+      "runs": 30,
+      "total_s": 261.31653869899213
+    },
+    {
+      "scene": "V2S4S",
+      "method": "VH-Path",
+      "group": "140",
+      "wall_s": 9.961136693545892,
+      "n_ctrl_ticks": 1307,
+      "ratio_to_ours": 1.1144462646967035,
+      "runs": 30,
+      "total_s": 298.8341008063768
+    },
+    {
+      "scene": "V2S4S",
+      "method": "VH-Danger",
+      "group": "140",
+      "wall_s": 8.822869833348863,
+      "n_ctrl_ticks": 1307,
+      "ratio_to_ours": 0.9870976207014308,
+      "runs": 30,
+      "total_s": 264.68609500046585
+    },
+    {
+      "scene": "V2S4S",
+      "method": "B-Outmost",
+      "group": "140",
+      "wall_s": 7.890201905232904,
+      "n_ctrl_ticks": 1307,
+      "ratio_to_ours": 0.8827512674017409,
+      "runs": 30,
+      "total_s": 236.70605715698713
+    },
+    {
+      "scene": "V2S4S",
+      "method": "B-PCBF",
+      "group": "140",
+      "wall_s": 18.79712880863309,
+      "n_ctrl_ticks": 1307,
+      "ratio_to_ours": 2.1030119987588374,
+      "runs": 30,
+      "total_s": 563.9138642589927
+    },
+    {
+      "scene": "V2S4M",
+      "method": "Ours_rollout",
+      "group": "140",
+      "wall_s": 17.507358500006376,
+      "n_ctrl_ticks": 1277,
+      "ratio_to_ours": 1.0,
+      "runs": 30,
+      "total_s": 525.2207550001913
+    },
+    {
+      "scene": "V2S4M",
+      "method": "B1",
+      "group": "140",
+      "wall_s": 16.70981341976206,
+      "n_ctrl_ticks": 1277,
+      "ratio_to_ours": 0.9544451505780256,
+      "runs": 30,
+      "total_s": 501.2944025928618
+    },
+    {
+      "scene": "V2S4M",
+      "method": "B2",
+      "group": "140",
+      "wall_s": 16.62126220303389,
+      "n_ctrl_ticks": 1277,
+      "ratio_to_ours": 0.9493872078433669,
+      "runs": 30,
+      "total_s": 498.6378660910167
+    },
+    {
+      "scene": "V2S4M",
+      "method": "B3",
+      "group": "140",
+      "wall_s": 17.061472102576786,
+      "n_ctrl_ticks": 1277,
+      "ratio_to_ours": 0.9745314864358647,
+      "runs": 30,
+      "total_s": 511.8441630773036
+    },
+    {
+      "scene": "V2S4M",
+      "method": "VH-Path",
+      "group": "140",
+      "wall_s": 19.511010285038186,
+      "n_ctrl_ticks": 1277,
+      "ratio_to_ours": 1.1144462646967035,
+      "runs": 30,
+      "total_s": 585.3303085511455
+    },
+    {
+      "scene": "V2S4M",
+      "method": "VH-Danger",
+      "group": "140",
+      "wall_s": 17.281471920123263,
+      "n_ctrl_ticks": 1277,
+      "ratio_to_ours": 0.9870976207014308,
+      "runs": 30,
+      "total_s": 518.4441576036979
+    },
+    {
+      "scene": "V2S4M",
+      "method": "B-Outmost",
+      "group": "140",
+      "wall_s": 15.45464290473727,
+      "n_ctrl_ticks": 1277,
+      "ratio_to_ours": 0.8827512674017409,
+      "runs": 30,
+      "total_s": 463.63928714211806
+    },
+    {
+      "scene": "V2S4M",
+      "method": "B-PCBF",
+      "group": "140",
+      "wall_s": 36.81818499208593,
+      "n_ctrl_ticks": 1277,
+      "ratio_to_ours": 2.1030119987588374,
+      "runs": 30,
+      "total_s": 1104.545549762578
+    },
+    {
+      "scene": "V2S4L",
+      "method": "Ours_rollout",
+      "group": "140",
+      "wall_s": 37.39665609999793,
+      "n_ctrl_ticks": 1375,
+      "ratio_to_ours": 1.0,
+      "runs": 30,
+      "total_s": 1121.8996829999378
+    },
+    {
+      "scene": "V2S4L",
+      "method": "B1",
+      "group": "140",
+      "wall_s": 35.69305706247716,
+      "n_ctrl_ticks": 1375,
+      "ratio_to_ours": 0.9544451505780256,
+      "runs": 30,
+      "total_s": 1070.7917118743148
+    },
+    {
+      "scene": "V2S4L",
+      "method": "B2",
+      "group": "140",
+      "wall_s": 35.503906917455645,
+      "n_ctrl_ticks": 1375,
+      "ratio_to_ours": 0.9493872078433669,
+      "runs": 30,
+      "total_s": 1065.1172075236693
+    },
+    {
+      "scene": "V2S4L",
+      "method": "B3",
+      "group": "140",
+      "wall_s": 36.44421885686183,
+      "n_ctrl_ticks": 1375,
+      "ratio_to_ours": 0.9745314864358647,
+      "runs": 30,
+      "total_s": 1093.3265657058548
+    },
+    {
+      "scene": "V2S4L",
+      "method": "VH-Path",
+      "group": "140",
+      "wall_s": 41.67656370278988,
+      "n_ctrl_ticks": 1375,
+      "ratio_to_ours": 1.1144462646967035,
+      "runs": 30,
+      "total_s": 1250.2969110836964
+    },
+    {
+      "scene": "V2S4L",
+      "method": "VH-Danger",
+      "group": "140",
+      "wall_s": 36.9141502584976,
+      "n_ctrl_ticks": 1375,
+      "ratio_to_ours": 0.9870976207014308,
+      "runs": 30,
+      "total_s": 1107.424507754928
+    },
+    {
+      "scene": "V2S4L",
+      "method": "B-Outmost",
+      "group": "140",
+      "wall_s": 33.01194556886021,
+      "n_ctrl_ticks": 1375,
+      "ratio_to_ours": 0.8827512674017409,
+      "runs": 30,
+      "total_s": 990.3583670658064
+    },
+    {
+      "scene": "V2S4L",
+      "method": "B-PCBF",
+      "group": "140",
+      "wall_s": 78.6456164917535,
+      "n_ctrl_ticks": 1375,
+      "ratio_to_ours": 2.1030119987588374,
+      "runs": 30,
+      "total_s": 2359.368494752605
+    }
+  ]
+}

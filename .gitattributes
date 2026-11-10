@@ -1,0 +1,14 @@
+# Preserve exact bytes for reproducibility checks
+* -text
+
+# Binary artefacts: never apply end-of-line conversion or textual diffs.
+*.npz binary
+*.npy binary
+*.zip binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.pdf binary
+*.dll binary
+*.so binary
+*.ico binary

@@ -1,0 +1,132 @@
+[
+  {
+    "name": "A/S2_s1000: M0..M1 + V1-equivalent sensing == Stage-2 (303536 values)",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "A/S3_s1000: M0..M1 + V1-equivalent sensing == Stage-2 (522784 values)",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "A/S3_s1001: M0..M1 + V1-equivalent sensing == Stage-2 (524024 values)",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "A/S1_s1002: M0..M1 + V1-equivalent sensing == Stage-2 (287496 values)",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "B/interface assertions hold on a whole S3 run (sense_assert=True, 70 m + err/delay/loss)",
+    "ok": true,
+    "detail": "None"
+  },
+  {
+    "name": "B/R=70 m: first visible tick matches the geometric detection tick within one control period (geo 20.15 s, visible 20.20 s)",
+    "ok": true,
+    "detail": "lag +0.05 s"
+  },
+  {
+    "name": "B/R=40 m: first visible tick matches the geometric detection tick within one control period (geo 28.90 s, visible 28.90 s)",
+    "ok": true,
+    "detail": "lag +0.00 s"
+  },
+  {
+    "name": "B/40 m detects strictly later than 70 m",
+    "ok": true,
+    "detail": "20.20 s -> 28.90 s"
+  },
+  {
+    "name": "B/the gating reaches the controller: the 40 m run's PRE onset is later than the 70 m run's (or absent)",
+    "ok": true,
+    "detail": "PRE 27.70000000000026 s (70 m) vs 28.900000000000276 s (40 m)"
+  },
+  {
+    "name": "B/flip: obstacle invisible beyond R, visible from the tick it enters R, invisible again once it leaves",
+    "ok": true,
+    "detail": "entered at t=0.70 s (d=70.00 m), left at t=4.65 s (d=84.00 m)"
+  },
+  {
+    "name": "B/channel independence: only the animal within 25 m of a robot is published (the 70 m obstacle range does not widen the animal radius)",
+    "ok": true,
+    "detail": "1/3 animals published (1 is within 25 m of a robot)"
+  },
+  {
+    "name": "B/predictor sees the *stale* track, not the current truth",
+    "ok": true,
+    "detail": "|est - truth(t)| = 0.2754 m, |est - truth(t-delay)| = 0.00e+00 m"
+  },
+  {
+    "name": "B/at most one obstacle is published for a one-obstacle scene",
+    "ok": true,
+    "detail": "max published = 1"
+  },
+  {
+    "name": "C/the 3/4/6 m/s rows are all present",
+    "ok": true,
+    "detail": "15 cells"
+  },
+  {
+    "name": "C/frozen T_PRE is below the design-envelope 10th percentile",
+    "ok": true,
+    "detail": "12.0 <= 13.01 s"
+  },
+  {
+    "name": "C/(16,8) is unachievable in the identified cells",
+    "ok": true,
+    "detail": "head_on@3, head_on@4, oblique_3@4, cross_0@6, cross_3@6, cross_6@6, head_on@6, oblique_3@6"
+  },
+  {
+    "name": "D/all calibration gates pass",
+    "ok": true,
+    "detail": "T_PRE <= p10(design envelope)=ok; T_DIVERT <= min(T_obs) over all cells=ok; T_PRE > T_DIVERT > 0=ok; T_REC > T_PRE=ok; T_DIVERT + h < T_PRE=ok; frozen == config_v2.STAGE3_TTC=ok"
+  },
+  {
+    "name": "D/config_v2.STAGE3_TTC == the frozen JSON",
+    "ok": true,
+    "detail": "{'ttc_pre': 12.0, 'ttc_divert': 8.0, 'ttc_rec': 15.0, 'ttc_hyst': 3.0}"
+  },
+  {
+    "name": "D/range binds: first detection is later at 40 m than at 70 m",
+    "ok": true,
+    "detail": "S2 70 m: 0.05, 40 m: 8.499999999999986"
+  },
+  {
+    "name": "D/the anticipation gap (PRE onset - first detection) grows with the range",
+    "ok": true,
+    "detail": "40/70/100 m: 6.10 / 14.55 / 14.55 s"
+  },
+  {
+    "name": "E/report: the Ours-vs-B2 contact advantage is preserved (not reversed) under 70 m + realistic quality",
+    "ok": true,
+    "detail": "gated dC=['+0.000', '-0.014'] vs full-visibility dC=['+0.000', '-0.014']"
+  },
+  {
+    "name": "F/repeat run identical (S3, seed 1000, 2241 ticks)",
+    "ok": true,
+    "detail": "[]"
+  },
+  {
+    "name": "F/repeat run identical (S2, seed 1001, 1261 ticks)",
+    "ok": true,
+    "detail": "[]"
+  },
+  {
+    "name": "F/jobs=1 == jobs=4, every non-timing column",
+    "ok": true,
+    "detail": "0 mismatches"
+  },
+  {
+    "name": "F/C3, R4, lateral, C1 and C2 violations are 0",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "F/the bounds still bind (non-vacuous)",
+    "ok": true,
+    "detail": ""
+  }
+]

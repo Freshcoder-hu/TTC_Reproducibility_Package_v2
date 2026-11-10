@@ -1,0 +1,31 @@
+{
+  "F1_repeat": {
+    "cell": "V2S2/B2/1000",
+    "n_ticks": 2599,
+    "n_values": 634156,
+    "identical": true,
+    "vs_stored_diff": {}
+  },
+  "F2_jobs": {
+    "rows": 1,
+    "columns": 183,
+    "mismatches": 0,
+    "example": null,
+    "wall_s": {
+      "1": 17.86,
+      "4": 18.34
+    }
+  },
+  "F3_limits": {
+    "rows": 8,
+    "all_zero": true,
+    "bindings": {
+      "bind_C3_sheep": 229733,
+      "bind_R4_robot": 312837,
+      "bind_LAT_robot": 104661,
+      "bind_C1_low_sheep": 0,
+      "bind_C1_high_sheep": 0,
+      "bind_C2_sheep": 686579
+    }
+  }
+}

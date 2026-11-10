@@ -1,0 +1,112 @@
+V2 Stage-3 acceptance tests
+python 3.13.7, numpy 2.5.2
+shipped sensing: {"sense_mode": "range", "sense_r_obs": 70.0, "sense_r_animal": 25.0, "sense_err": 0.0, "sense_delay": 0.0, "sense_loss": 0.0, "sense_ttl": 0.3}
+realistic quality: {"sense_err": 0.2, "sense_delay": 0.2, "sense_loss": 0.05}
+frozen tuple: {"ttc_pre": 12.0, "ttc_divert": 8.0, "ttc_rec": 15.0, "ttc_hyst": 3.0}   stage2 tuple: {"ttc_pre": 12.0, "ttc_divert": 6.0, "ttc_rec": 15.0, "ttc_hyst": 2.5}
+==============================================================================
+A. inertness: V1-equivalent sensing + Stage-2 tuple == Stage-2, bit-exactly
+  config_id=6bc790decc06  (sense_mode=range, R_obs=1e+09, R_animal=10, ttl=0.0)
+  [PASS] A/S2_s1000: M0..M1 + V1-equivalent sensing == Stage-2 (303536 values)
+  [PASS] A/S3_s1000: M0..M1 + V1-equivalent sensing == Stage-2 (522784 values)
+  [PASS] A/S3_s1001: M0..M1 + V1-equivalent sensing == Stage-2 (524024 values)
+  [PASS] A/S1_s1002: M0..M1 + V1-equivalent sensing == Stage-2 (287496 values)
+  [info] the same arm with sense_ttl=0.30 s (a tracker that coasts a vanished obstacle): identical on this cell
+         The shipped inert arm uses sense_ttl=0.0 because V1's obstacle list is memoryless.  A positive TTL is tracker *memory*; where it coincides here it is because the coasted track sits far behind the flock and changes no command -- we do not rely on that.
+==============================================================================
+B. gating is real: first visible tick vs geometric detection
+  [PASS] B/interface assertions hold on a whole S3 run (sense_assert=True, 70 m + err/delay/loss)  -- None
+  asserted run: 1121 control ticks, 1121 published ticks, max track age 0.30 s
+  [PASS] B/R=70 m: first visible tick matches the geometric detection tick within one control period (geo 20.15 s, visible 20.20 s)  -- lag +0.05 s
+    obstacle starts 120.4 m away -> invisible until t=20.20 s; controller saw it on 486 ticks; PRE on 27.70000000000026, DIVERT on 32.20000000000031, min_dist 2.17 m
+  [PASS] B/R=40 m: first visible tick matches the geometric detection tick within one control period (geo 28.90 s, visible 28.90 s)  -- lag +0.00 s
+    obstacle starts 120.4 m away -> invisible until t=28.90 s; controller saw it on 284 ticks; PRE on 28.900000000000276, DIVERT on 31.600000000000314, min_dist 0.32 m
+  [PASS] B/40 m detects strictly later than 70 m  -- 20.20 s -> 28.90 s
+  [PASS] B/the gating reaches the controller: the 40 m run's PRE onset is later than the 70 m run's (or absent)  -- PRE 27.70000000000026 s (70 m) vs 28.900000000000276 s (40 m)
+  [PASS] B/flip: obstacle invisible beyond R, visible from the tick it enters R, invisible again once it leaves  -- entered at t=0.70 s (d=70.00 m), left at t=4.65 s (d=84.00 m)
+  [PASS] B/channel independence: only the animal within 25 m of a robot is published (the 70 m obstacle range does not widen the animal radius)  -- 1/3 animals published (1 is within 25 m of a robot)
+  [PASS] B/predictor sees the *stale* track, not the current truth  -- |est - truth(t)| = 0.2754 m, |est - truth(t-delay)| = 0.00e+00 m
+  live predictor: 23 plans; captured at t=38.00 s with 1 published obstacle(s); truth moved 0.275 m in 0.3 s
+  [PASS] B/at most one obstacle is published for a one-obstacle scene  -- max published = 1
+==============================================================================
+C. observable warning time per speed x geometry (R = 70 m, exact)
+  | geometry | v [m/s] | first detect [s] | corridor [s] | flock contact [s] | T_obs mean [s] | p10 [s] | max achievable T_PRE [s] |
+  |---|---|---|---|---|---|---|---|
+  | cross_0 | 3 | 3.41 | 24.60 | 26.08 | 22.67 | 22.30 | 22.30  |
+  | cross_3 | 3 | 4.42 | 25.80 | 27.05 | 22.63 | 22.20 | 22.20  |
+  | cross_6 | 3 | 5.01 | 26.60 | 27.70 | 22.68 | 22.20 | 22.20  |
+  | head_on | 3 | 11.00 | 0.05 | 26.48 | 15.49 | 15.25 | 15.25 <- 16 s FAILS |
+  | oblique_3 | 3 | 10.11 | 24.60 | 27.05 | 16.93 | 16.50 | 16.50  |
+  | cross_0 | 4 | 8.69 | 25.20 | 26.27 | 17.58 | 17.15 | 17.15  |
+  | cross_3 | 4 | 9.60 | 26.10 | 27.05 | 17.45 | 17.00 | 17.00  |
+  | cross_6 | 4 | 10.20 | 26.70 | 27.56 | 17.36 | 16.93 | 16.93  |
+  | head_on | 4 | 14.23 | 0.05 | 26.60 | 12.37 | 12.25 | 12.25 <- 16 s FAILS |
+  | oblique_3 | 4 | 13.63 | 25.20 | 27.03 | 13.41 | 13.10 | 13.10 <- 16 s FAILS |
+  | cross_0 | 6 | 14.71 | 25.80 | 26.50 | 11.79 | 11.55 | 11.55 <- 16 s FAILS |
+  | cross_3 | 6 | 15.28 | 26.40 | 27.04 | 11.76 | 11.55 | 11.55 <- 16 s FAILS |
+  | cross_6 | 6 | 15.67 | 26.80 | 27.39 | 11.73 | 11.55 | 11.55 <- 16 s FAILS |
+  | head_on | 6 | 17.93 | 0.05 | 26.72 | 8.79 | 8.70 | 8.70 <- 16 s FAILS |
+  | oblique_3 | 6 | 17.54 | 25.80 | 27.04 | 9.50 | 9.30 | 9.30 <- 16 s FAILS |
+  [PASS] C/the 3/4/6 m/s rows are all present  -- 15 cells
+  [PASS] C/frozen T_PRE is below the design-envelope 10th percentile  -- 12.0 <= 13.01 s
+  [PASS] C/(16,8) is unachievable in the identified cells  -- head_on@3, head_on@4, oblique_3@4, cross_0@6, cross_3@6, cross_6@6, head_on@6, oblique_3@6
+  reading: a cell's 10th percentile is the largest T_PRE that cell alone could support.
+==============================================================================
+D. threshold freezing and the 40/70/100 m sensitivity
+  frozen tuple (T_PRE, T_DIVERT, T_REC, h) = (12.0, 8.0, 15.0, 3.0) s   [config_v2.STAGE3_TTC]
+  rules: guard_PRE=1.0, t_react=0.20 s, t_lat=2.449 s, B_DIV=3.65 s, median RECOVER duration=1.10 s
+  measured margins: T_PRE vs p10 +1.01 s; T_DIVERT vs min(T_obs) +0.70 s; T_PRE vs the 16 s proposal +4.00 s
+  required range: 12 s needs <= 69.2 m (3-4 m/s), 16 s needs <= 88.9 m (3-4 m/s) / 121.2 m (6 m/s)
+  [PASS] D/all calibration gates pass  -- T_PRE <= p10(design envelope)=ok; T_DIVERT <= min(T_obs) over all cells=ok; T_PRE > T_DIVERT > 0=ok; T_REC > T_PRE=ok; T_DIVERT + h < T_PRE=ok; frozen == config_v2.STAGE3_TTC=ok
+  [PASS] D/config_v2.STAGE3_TTC == the frozen JSON  -- {'ttc_pre': 12.0, 'ttc_divert': 8.0, 'ttc_rec': 15.0, 'ttc_hyst': 3.0}
+  R=   40 m S2: first detect 8.499999999999986, PRE 14.600000000000072, DIVERT 19.500000000000142, contacts 0.000, min_dist 3.17 m, rho 0.989, max_dev 3.26 m, goal
+  R=   40 m S3: first detect 10.85000000000002, PRE 17.20000000000011, DIVERT 21.40000000000017, contacts 0.028, min_dist 1.54 m, rho 0.983, max_dev 3.92 m, goal
+  R=   70 m S2: first detect 0.05, PRE 14.600000000000072, DIVERT 19.500000000000142, contacts 0.000, min_dist 3.17 m, rho 0.989, max_dev 3.26 m, goal
+  R=   70 m S3: first detect 2.000000000000001, PRE 17.20000000000011, DIVERT 21.40000000000017, contacts 0.028, min_dist 1.54 m, rho 0.983, max_dev 3.92 m, goal
+  R=  100 m S2: first detect 0.05, PRE 14.600000000000072, DIVERT 19.500000000000142, contacts 0.000, min_dist 3.17 m, rho 0.989, max_dev 3.26 m, goal
+  R=  100 m S3: first detect 2.000000000000001, PRE 17.20000000000011, DIVERT 21.40000000000017, contacts 0.028, min_dist 1.54 m, rho 0.983, max_dev 3.92 m, goal
+  [PASS] D/range binds: first detection is later at 40 m than at 70 m  -- S2 70 m: 0.05, 40 m: 8.499999999999986
+  [PASS] D/the anticipation gap (PRE onset - first detection) grows with the range  -- 40/70/100 m: 6.10 / 14.55 / 14.55 s
+==============================================================================
+E. honest-sensing pilot: does the anticipation benefit survive gating?
+  arm               scenario  alg                C  min_dist     rho  max_dev  PRE on  detect
+  S2_fullvis        S2        B2             0.000      3.53   0.949     5.19     nan     nan
+  S2_fullvis        S3        B2             0.014      1.96   0.921     5.94     nan     nan
+  S2_fullvis        S2        Ours_rollout   0.000      2.51   0.988     3.85   14.70     nan
+  S2_fullvis        S3        Ours_rollout   0.000      2.34   0.979     4.05   16.75     nan
+  S3_gated_exactQ   S2        B2             0.000      2.95   0.935     5.86     nan    0.05
+  S3_gated_exactQ   S3        B2             0.042      1.08   0.860     9.60     nan    2.00
+  S3_gated_exactQ   S2        Ours_rollout   0.000      3.09   0.969     4.47   15.10    0.05
+  S3_gated_exactQ   S3        Ours_rollout   0.014      1.57   0.931     5.48   17.10    2.00
+  S3_gated_frozen   S2        B2             0.000      2.95   0.935     5.86     nan    0.05
+  S3_gated_frozen   S3        B2             0.042      1.08   0.860     9.60     nan    2.00
+  S3_gated_frozen   S2        Ours_rollout   0.000      3.08   0.990     3.28   15.10    0.05
+  S3_gated_frozen   S3        Ours_rollout   0.014      1.87   0.976     4.08   17.10    2.00
+  S3_gated_realQ    S2        B2             0.000      3.25   0.958     4.67     nan    0.05
+  S3_gated_realQ    S3        B2             0.014      1.56   0.867     7.39     nan    2.00
+  S3_gated_realQ    S2        Ours_rollout   0.000      2.79   0.992     3.36   15.25    0.05
+  S3_gated_realQ    S3        Ours_rollout   0.000      1.67   0.937     5.45   17.15    2.00
+
+  Ours - B2 margin (negative = Ours has fewer contacts):
+    S2_fullvis        S2  dC = +0.000
+    S2_fullvis        S3  dC = -0.014
+    S3_gated_exactQ   S2  dC = +0.000
+    S3_gated_exactQ   S3  dC = -0.028
+    S3_gated_realQ    S2  dC = +0.000
+    S3_gated_realQ    S3  dC = -0.014
+    S3_gated_frozen   S2  dC = +0.000
+    S3_gated_frozen   S3  dC = -0.028
+  [PASS] E/report: the Ours-vs-B2 contact advantage is preserved (not reversed) under 70 m + realistic quality  -- gated dC=['+0.000', '-0.014'] vs full-visibility dC=['+0.000', '-0.014']
+  NOTE: n = 2 seeds X 2 scenarios per cell.  This is a *pilot*; it cannot establish significance (see §9 of the report).
+==============================================================================
+F. determinism and joint limits under the Stage-3 interface
+  [PASS] F/repeat run identical (S3, seed 1000, 2241 ticks)  -- []
+  [PASS] F/repeat run identical (S2, seed 1001, 1261 ticks)  -- []
+  jobs=1 vs jobs=4: 2 rows x 164 columns (ctrl_ms excluded), mismatches=0
+  [PASS] F/jobs=1 == jobs=4, every non-timing column  -- 0 mismatches
+  S2/1000: C3=0 R4=0 lat=0 C1lo=0 C1hi=0 | bind C3=12690 R4=14541 lat=5090 | ro clr 1.65 m, so clr 1.01 m, rr 1.24 m | rho 0.985 | goal
+  S3/1000: C3=0 R4=0 lat=0 C1lo=0 C1hi=0 | bind C3=19808 R4=25031 lat=11371 | ro clr 1.90 m, so clr -0.46 m, rr 1.06 m | rho 0.957 | goal
+  S3/1001: C3=0 R4=0 lat=0 C1lo=0 C1hi=0 | bind C3=20270 R4=25351 lat=12121 | ro clr 1.81 m, so clr 0.36 m, rr 1.15 m | rho 0.918 | goal
+  [PASS] F/C3, R4, lateral, C1 and C2 violations are 0
+  [PASS] F/the bounds still bind (non-vacuous)
+==============================================================================
+SUMMARY: 26/26 checks passed (914.9 s)

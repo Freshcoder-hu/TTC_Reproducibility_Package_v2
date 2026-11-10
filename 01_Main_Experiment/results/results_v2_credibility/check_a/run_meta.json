@@ -1,0 +1,25 @@
+{
+  "design": "2x2 bias x robots + 3-point bias sweep",
+  "scenes": [
+    "V2S1",
+    "V2S2"
+  ],
+  "seeds": [
+    1005,
+    1006,
+    1007,
+    1008,
+    1009
+  ],
+  "bias_on": 0.25,
+  "bias_off": 0.0,
+  "bias_sweep": [
+    0.0,
+    0.1,
+    0.25
+  ],
+  "jobs": 4,
+  "runs": 50,
+  "wall_s": 586.9155964851379,
+  "note": "diagnostics only; evaluation seeds 2000-2029 untouched"
+}

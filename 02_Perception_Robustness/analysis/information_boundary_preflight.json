@@ -1,0 +1,49 @@
+{
+  "status": "pass",
+  "audit_kind": "post_evaluation_counterfactual_acceptance_not_new_performance_runs",
+  "frozen_source_sha256": "1d77b886e81a5138efb01b92bb20c7cbbdc3d216082fc2dda96b5b25b024f34f",
+  "current_source_sha256": "1d77b886e81a5138efb01b92bb20c7cbbdc3d216082fc2dda96b5b25b024f34f",
+  "source_unchanged": true,
+  "strict_safe_pairs": 144,
+  "strict_safe_world_replays": 192,
+  "steps_per_replay": 30,
+  "hidden_variants": [
+    "far_reposition",
+    "near_intercept",
+    "reverse_velocity"
+  ],
+  "comparison_rule": "bit-exact np.array_equal, no numerical tolerance",
+  "failed_pairs": 0,
+  "max_execution_abs_delta": 0.0,
+  "positive_archive_control": {
+    "robot_before_max_abs_delta": 0.0,
+    "robot_before_exact_equal": true,
+    "robot_after_max_abs_delta": 0.5,
+    "robot_after_exact_equal": false,
+    "pending_max_abs_delta": 0.0,
+    "pending_exact_equal": true,
+    "feasibility_max_abs_delta": 6.6090953379455915,
+    "feasibility_exact_equal": false,
+    "rs_safety_max_abs_delta": 0.0,
+    "rs_safety_exact_equal": true,
+    "execution_max_abs_delta": 6.6090953379455915,
+    "execution_exact_equal": false,
+    "controller_max_abs_delta": 0.0,
+    "controller_exact_equal": true,
+    "same_observations": true,
+    "detected_truth_sensitive_execution": true
+  },
+  "total_native_rollout_predictions": 0,
+  "safe_supervisor_changed_ticks": 912,
+  "wall_s": 39.09503793716431,
+  "scope": "2 scenes x 3 controllers x 2 repaired execution versions x 4 observation profiles x 3 hidden interventions; fixed population 36, 12 robots",
+  "limits": [
+    "Finite regression evidence, not a universal noninterference proof",
+    "Fixed sensor-stream and hidden-state interventions are causal test fixtures, not physical trial trajectories",
+    "Robot states and pending lower-layer commands are reset to the reference at each tick; actual outputs are checked before reset",
+    "No claim that stopping prevents all contacts with unobserved animals",
+    "This audit was added after the 2340-run evaluation; it was not a pre-evaluation gate"
+  ],
+  "acceptance": "not_accepted_for_rollout_coverage",
+  "reason": "Test fixture obstacle not activated; native rollout branch had zero calls. Final audit requires active native prediction."
+}

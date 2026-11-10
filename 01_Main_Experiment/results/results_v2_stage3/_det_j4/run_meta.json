@@ -1,0 +1,18 @@
+{
+  "config_id": "5565e07f36c1",
+  "config_sha256": "5565e07f36c17ff498835def7217f6e3aad2e3717f8ed08c99b71eddc7f7d13a",
+  "compat": false,
+  "projection": "joint",
+  "scenarios": [
+    "S3"
+  ],
+  "algs": [
+    "Ours_rollout"
+  ],
+  "seeds": 2,
+  "seed_offset": 1000,
+  "jobs": 4,
+  "wall_s": 24.02312684059143,
+  "python": "3.13.7",
+  "numpy": "2.5.2"
+}

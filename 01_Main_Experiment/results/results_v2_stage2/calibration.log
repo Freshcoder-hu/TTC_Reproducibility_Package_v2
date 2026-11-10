@@ -1,0 +1,58 @@
+==============================================================================
+M1 calibration: gain x decay shape, R = 6 m, seeds 1000,1001,1002,1003,1004
+  linear    k=0.5  J= 28.481  contact=0.150  clear_mean=  2.45  worst= -1.35  lat=1.158  eff=0.91
+  linear    k=1.0  J= 12.585  contact=0.056  clear_mean=  3.20  worst= -0.70  lat=1.703  eff=0.89
+  linear    k=2.0  J=  0.556  contact=0.006  clear_mean=  3.80  worst=  0.61  lat=1.929  eff=0.85
+  linear    k=3.0  J=  0.000  contact=0.000  clear_mean=  4.63  worst=  1.40  lat=1.517  eff=0.86
+  quadratic k=0.5  J= 33.797  contact=0.189  clear_mean=  2.02  worst= -1.46  lat=2.158  eff=0.86
+  quadratic k=1.0  J= 26.040  contact=0.122  clear_mean=  2.53  worst= -1.19  lat=2.941  eff=0.84
+  quadratic k=2.0  J= 19.599  contact=0.083  clear_mean=  2.67  worst= -0.84  lat=3.417  eff=0.85
+  quadratic k=3.0  J=  3.288  contact=0.000  clear_mean=  3.48  worst=  0.45  lat=3.644  eff=0.85
+  exp1      k=0.5  J= 38.781  contact=0.222  clear_mean=  1.84  worst= -1.39  lat=3.337  eff=0.92
+  exp1      k=1.0  J= 38.971  contact=0.222  clear_mean=  1.83  worst= -1.37  lat=3.502  eff=0.91
+  exp1      k=2.0  J= 35.426  contact=0.167  clear_mean=  2.12  worst= -1.38  lat=4.494  eff=0.84
+  exp1      k=3.0  J= 29.688  contact=0.139  clear_mean=  2.32  worst= -1.16  lat=4.086  eff=0.85
+  exp3      k=0.5  J= 31.314  contact=0.172  clear_mean=  2.25  worst= -1.41  lat=1.040  eff=0.90
+  exp3      k=1.0  J= 11.824  contact=0.061  clear_mean=  3.18  worst= -0.57  lat=1.373  eff=0.90
+  exp3      k=2.0  J=  0.556  contact=0.006  clear_mean=  3.95  worst=  0.42  lat=1.714  eff=0.89
+  exp3      k=3.0  J=  0.000  contact=0.000  clear_mean=  4.77  worst=  1.55  lat=1.592  eff=0.86
+  -> best J=0.000; 2 cell(s) within 0.5; shipped by parsimony: decay=linear gain=3.0 (J=0.000)
+==============================================================================
+M2 calibration (coordinate search on the chosen M1 values)
+  delay=0.15  J=  0.000 contact=0.000 lat=1.704 worst=  1.98
+  delay=0.30  J=  0.000 contact=0.000 lat=1.518 worst=  1.88
+  delay=0.45  J=  0.000 contact=0.000 lat=1.661 worst=  1.94
+  sigma=0.10  J=  0.000 contact=0.000 worst=  2.01
+  sigma=0.20  J=  0.000 contact=0.000 worst=  1.98
+  sigma=0.30  J=  0.000 contact=0.000 worst=  2.07
+  v_max=1.50  J=  0.000 contact=0.000 speed_mean=1.075 max=1.48
+  v_max=1.80  J=  0.000 contact=0.000 speed_mean=1.098 max=1.74
+  v_max=2.00  J=  0.000 contact=0.000 speed_mean=1.118 max=1.96
+  slow=1.00  J=  0.000 contact=0.000 speed_min=1.075 speed_max=1.48
+  slow=0.50  J=  0.552 contact=0.000 speed_min=0.933 speed_max=1.46
+  slow=0.00  J=  0.568 contact=0.000 speed_min=0.856 speed_max=1.45
+  -> chosen: {'m2_react_delay': 0.15, 'm2_gain_sigma': 0.1, 'm_v_max': 1.5, 'm2_slow_gain': 1.0}
+==============================================================================
+Sensitivity around the chosen values (one factor at a time)
+  M1 R=3.0  J= 19.694 contact=0.111 mean_clr=  2.26 worst= -0.86
+  M1 R=6.0  J=  0.000 contact=0.000 mean_clr=  4.63 worst=  1.40
+  M1 R=9.0  J=  0.000 contact=0.000 mean_clr=  6.03 worst=  2.50
+  M1 m1_gain         =   1.5  J=  2.222 contact=0.022
+  M1 m1_gain         =   3.0  J=  0.000 contact=0.000
+  M1 m1_gain         =   4.5  J=  0.000 contact=0.000
+  M1 m1_decay        =linear  J=  0.000 contact=0.000
+  M1 m1_decay        =quadratic  J=  3.288 contact=0.000
+  M1 m1_decay        =  exp1  J= 29.688 contact=0.139
+  M1 m1_decay        =  exp3  J=  0.000 contact=0.000
+  M1 m1_sense_range  =   3.0  J= 19.694 contact=0.111
+  M1 m1_sense_range  =   6.0  J=  0.000 contact=0.000
+  M1 m1_sense_range  =   9.0  J=  0.000 contact=0.000
+  M2 m2_react_delay  =   0.0  J=  0.000 contact=0.000
+  M2 m2_react_delay  =  0.15  J=  0.000 contact=0.000
+  M2 m2_react_delay  =   0.3  J=  0.000 contact=0.000
+  M2 m2_gain_sigma   =   0.0  J=  0.000 contact=0.000
+  M2 m2_gain_sigma   =   0.1  J=  0.000 contact=0.000
+  M2 m2_gain_sigma   =   0.2  J=  0.000 contact=0.000
+  M2 m_v_max         =   1.5  J=  0.000 contact=0.000
+  M2 m_v_max         =   1.5  J=  0.000 contact=0.000
+budget: 230 corridor runs, 218.6 core-s, 218.6 s wall

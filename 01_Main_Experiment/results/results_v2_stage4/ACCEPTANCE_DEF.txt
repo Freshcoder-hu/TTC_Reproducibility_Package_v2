@@ -1,0 +1,98 @@
+V2 Stage-4 acceptance tests D / E / F (completion run)
+python 3.13.7, numpy 2.5.2
+shipped configuration: config_id=89fe865b2e1d
+A, B and C are *not* re-run: their evidence is the stored ACCEPTANCE.txt / A_inertness.csv / B_range_sweep.csv.
+==============================================================================
+D. sequential-recovery case: does a NEW threat arrive while RECOVER is active?
+  config_id=89fe865b2e1d  T_PRE=12.0 s  T_DIVERT=8.0 s  T_REC=15.0 s
+
+  D1 stored trace seq_trace_V2S3_Ours_rollout_1000.csv (2077 control ticks)
+     first detection per obstacle: o1=49.10, o2=65.80, o3=128.00
+     risk onset (TTC<=T_PRE, visibility-gated): o1=54.00, o2=68.50, o3=132.10
+     RECOVER windows: [86.10, 87.10]; [148.20, 149.10]
+     new threat's risk onset inside a RECOVER window: NO
+     new threat detected inside a RECOVER window: NO
+     -> the stored trace CANNOT establish D: its o2 arrival (65.80 s) precedes its first RECOVER window (86.10 s).
+
+  D2 one seed on the shipped scene: V2S3 / Ours_rollout / seed 1000 (fresh run -- the only simulation in test D)
+     ended goal, C=0.028, min_dist=1.44 m, rho=1.000, 2110 control ticks
+     first detection per obstacle: o1=49.10, o2=70.20, o3=128.50
+     risk onset (TTC<=T_PRE, visibility-gated): o1=54.00, o2=70.20, o3=132.90
+     RECOVER windows: [69.70, 70.70] (1.0 s); [82.70, 92.20] (9.5 s); [149.20, 151.20] (2.0 s)
+     release order (onset 1<2<3): True, (detect 1<2<3): True
+     o2 detected at 70.20 s in state 'recover'; risk onset 70.20 s in state 'recover'
+     o2 onset inside a RECOVER window: YES (69.69999999999818, 70.69999999999813)
+     state path after the onset: recover -> pre  => preemption by the new threat: True
+
+     state trace excerpt (full table: 01_Main_Experiment/results/results_v2_stage4\geometry\D_state_trace_seed1000.csv)
+       t=  49.10  normal   rho=1.000 ttc=( 15.48,   nan,   nan) vis=(1,0,0) detect_o1
+       t=  54.00  normal   rho=1.000 ttc=( 11.71,   nan,   nan) vis=(1,0,0) onset_o1
+       t=  69.70  recover  rho=1.000 ttc=(   nan, 10.00,   nan) vis=(1,0,0) 
+       t=  70.20  recover  rho=0.972 ttc=(   nan,  9.71,   nan) vis=(1,1,0) detect_o2,onset_o2
+       t=  70.80  pre      rho=0.972 ttc=(   nan,  9.09,   nan) vis=(1,1,0) 
+       t=  71.80  divert   rho=1.000 ttc=(   nan,  8.02,   nan) vis=(1,1,0) 
+       t=  82.70  recover  rho=1.000 ttc=(   nan,   nan,   nan) vis=(0,1,0) 
+       t=  92.30  normal   rho=1.000 ttc=(   nan,   nan,   nan) vis=(0,0,0) 
+       t= 128.50  normal   rho=1.000 ttc=(   nan,   nan, 16.61) vis=(0,0,1) detect_o3
+       t= 132.90  pre      rho=1.000 ttc=(   nan,   nan, 11.59) vis=(0,0,1) onset_o3
+
+  D3 stored s3_spacing_sweep.csv (e2=83, seeds 1000-1004): risk-onset overlap 5/5, detection overlap 5/5
+       seed 1000: recover=69.70-70.70;82.70-92.20;149.20-151.20    det2=70.20 onset2=70.20 overlap=True order=True
+       seed 1001: recover=70.60-71.60;83.20-86.30;150.00-153.30    det2=70.90 onset2=70.90 overlap=True order=True
+       seed 1002: recover=69.70-70.70;82.20-83.20;148.50-151.40    det2=70.30 onset2=70.30 overlap=True order=True
+       seed 1003: recover=70.30-71.30;82.50-83.50;148.70-150.80    det2=70.50 onset2=70.50 overlap=True order=True
+       seed 1004: recover=69.50-70.50;83.80-87.60;148.90-152.50    det2=70.30 onset2=70.30 overlap=True order=True
+
+  [PASS] D/a new threat (o2) reaches its risk onset inside the first RECOVER window and preempts it; release order 1<2<3 reproduced from the trajectory
+==============================================================================
+E. censoring: runs that hit the horizon without reaching the goal
+  36 pilot runs; 0 censored (0.0 %)
+  horizon (scene T_max) and reference-kinematics support:
+    no_obstacle            V2S1_normal_path_140x16            T_max=200.0 s   reference capture T_max=200.0 s   last sim  127.9 s   ended=['goal']
+    single_obstacle        V2S2_single_obstacle               T_max=200.0 s   reference capture T_max=200.0 s   last sim  133.2 s   ended=['goal']
+    sequential_obstacle    V2S3_sequential_risk_220x16        T_max=320.0 s   reference capture T_max=320.0 s   last sim  227.5 s   ended=['goal']
+  (the Stage-3 hook asked for a >=120 s reference window; 140 m scenes run 200 s, 220 m run 320 s)
+
+  censored / runs, per (case, method) -- denominator is ALL runs:
+    no_obstacle            B1            : 0/3
+    no_obstacle            B2            : 0/3
+    no_obstacle            Ours_event    : 0/3
+    no_obstacle            Ours_rollout  : 0/3
+    sequential_obstacle    B1            : 0/3
+    sequential_obstacle    B2            : 0/3
+    sequential_obstacle    Ours_event    : 0/3
+    sequential_obstacle    Ours_rollout  : 0/3
+    single_obstacle        B1            : 0/3
+    single_obstacle        B2            : 0/3
+    single_obstacle        Ours_event    : 0/3
+    single_obstacle        Ours_rollout  : 0/3
+  censored-with-a-completion-time or uncensored-but-unsuccessful: 0 rows
+  [PASS] E/the pilot has 0 censored runs and every run (36) is kept in its cell's denominator (n=3, from pilot_summary.json)
+
+  positive control (V2S3 truncated at 100 s): ended=time, success=False, exec_time=nan
+  [PASS] E/the censoring machinery works (a horizon-truncated run is flagged and keeps no completion time)
+==============================================================================
+F. determinism and joint limits (Stage-4 geometry)
+
+  F1 repeat one pilot cell twice: V2S2 / B2 / seed 1000
+    2599 ticks, 634156 state values: IDENTICAL
+    against the stored pilot row: all columns identical
+    exec_time stored=127.59999999999489 rerun=127.59999999999489
+
+  F2 the same cell through runner_s4 at jobs=1 and jobs=4
+    1 row x 183 columns (ctrl_ms excluded), mismatches=0
+    [PASS] F1+F2 repeat run and jobs=1 == jobs=4, every non-timing value
+
+  F3 limit violations and binding counts, read from the stored 01_Main_Experiment/results/results_v2_stage4\_smoke\detail.csv
+    V2S2/Ours_rollout : C1_low=0 C1_high=0 C2=0 C3=0 R4=0 lat=0 | bind C3=21383 R4=29203 lat=10224 C1lo=0 C1hi=0 C2=64457 | so clr +0.18 m, rr 0.65 m, rho 1.000
+    V2S2/B1           : C1_low=0 C1_high=0 C2=0 C3=0 R4=0 lat=0 | bind C3=22031 R4=29735 lat=9818 C1lo=0 C1hi=0 C2=65001 | so clr -0.47 m, rr 1.30 m, rho 1.000
+    V2S2/B2           : C1_low=0 C1_high=0 C2=0 C3=0 R4=0 lat=0 | bind C3=21940 R4=29886 lat=10100 C1lo=0 C1hi=0 C2=66374 | so clr +0.07 m, rr 1.33 m, rho 1.000
+    V2S2/Ours_event   : C1_low=0 C1_high=0 C2=0 C3=0 R4=0 lat=0 | bind C3=22227 R4=30141 lat=9701 C1lo=0 C1hi=0 C2=65787 | so clr -0.38 m, rr 1.05 m, rho 0.999
+    V2S3/Ours_rollout : C1_low=0 C1_high=0 C2=0 C3=0 R4=0 lat=0 | bind C3=37241 R4=46984 lat=15449 C1lo=0 C1hi=0 C2=105137 | so clr +1.20 m, rr 1.33 m, rho 1.000
+    V2S3/B1           : C1_low=0 C1_high=0 C2=0 C3=0 R4=0 lat=0 | bind C3=33153 R4=48175 lat=14994 C1lo=0 C1hi=0 C2=103981 | so clr -1.42 m, rr 1.25 m, rho 0.995
+    V2S3/B2           : C1_low=0 C1_high=0 C2=0 C3=0 R4=0 lat=0 | bind C3=35274 R4=50319 lat=17577 C1lo=0 C1hi=0 C2=108487 | so clr -1.26 m, rr 1.20 m, rho 0.996
+    V2S3/Ours_event   : C1_low=0 C1_high=0 C2=0 C3=0 R4=0 lat=0 | bind C3=36484 R4=48394 lat=16798 C1lo=0 C1hi=0 C2=107355 | so clr -1.55 m, rr 1.00 m, rho 0.994
+    total binding counts over 8 stored runs: {'bind_C3_sheep': 229733, 'bind_R4_robot': 312837, 'bind_LAT_robot': 104661, 'bind_C1_low_sheep': 0, 'bind_C1_high_sheep': 0, 'bind_C2_sheep': 686579}
+    [PASS] F3/C3, R4, lateral, C1 and C2 violations are 0 in all 8 stored runs, and the bounds still bind (4/6 binding counters > 0)
+==============================================================================
+SUMMARY: 3/3 of D/E/F passed (149.0 s)

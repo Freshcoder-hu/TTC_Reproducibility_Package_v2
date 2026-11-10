@@ -1,0 +1,2 @@
+﻿case,method,seed,horizon_s,ended,success,exec_time,sim_time_s,rho_at_horizon
+sequential_obstacle,Ours_rollout,1000,100.0,time,False,nan,99.99999999999646,1.0

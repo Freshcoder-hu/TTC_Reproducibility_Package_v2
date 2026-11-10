@@ -1,0 +1,1553 @@
+{
+  "closure": {
+    "status": "measurement_evidence_complete_within_declared_sample",
+    "primary_performance_N": 2340,
+    "measurement_event_replays": 132,
+    "independent_serial_timing_replays": 24,
+    "targeted_low_allocation_timing_replays": 2,
+    "controller_or_execution_changes": false,
+    "source_hash_unchanged": true,
+    "evidence": "Online_Evidence_Measurement_ZH.txt",
+    "limits": [
+      "Two seeds per event cell; one seed per serial timing cell",
+      "Latency measured only for exact, animal_pos_0p5, delay_0p5, blackout_1p0",
+      "No hardware real-time or real-animal guarantee",
+      "Residual robot-animal contacts and animal-obstacle safety tradeoffs remain"
+    ],
+    "previous_acceptance_status": "The earlier acceptance_status.json describes the pre-measurement stage and is not rewritten retrospectively"
+  },
+  "source_sha256": "1d77b886e81a5138efb01b92bb20c7cbbdc3d216082fc2dda96b5b25b024f34f",
+  "formal_data_sha256": "d8523bd9e2349cc68576454429ffd3638c4b5f1f918649b2fcee5ef8d062496d",
+  "files": [
+    {
+      "path": "Online_Evidence_Measurement_ZH.txt",
+      "size": 9585,
+      "sha256": "102a4374cba94c93566d6805d44f733f6ee0c2f4fd488d2968aaf05b08bf1957"
+    },
+    {
+      "path": "README_ZH.txt",
+      "size": 3138,
+      "sha256": "9d6b4d1e27e21849887860ae9dea3988da2ea631a5f9cf69a3c3a40fd5a2b399"
+    },
+    {
+      "path": "analysis/analyze_online_evidence.py",
+      "size": 31154,
+      "sha256": "84ba0979371ce5b0c296fccef87066c71659ce12a5326f717c8f35005b63bade"
+    },
+    {
+      "path": "analysis/check_timing_overhead.py",
+      "size": 6666,
+      "sha256": "2678a6df101b66337294a4208692bfca80db8ac8c0f6d82828a09347768a1ed3"
+    },
+    {
+      "path": "analysis/measure_online_evidence.py",
+      "size": 25456,
+      "sha256": "51930a310e89da846dce18c7d298d63ac42017a585c840c136f3a0fd248c044d"
+    },
+    {
+      "path": "analysis/online_measurement/README_ZH.txt",
+      "size": 3138,
+      "sha256": "9d6b4d1e27e21849887860ae9dea3988da2ea631a5f9cf69a3c3a40fd5a2b399"
+    },
+    {
+      "path": "analysis/online_measurement/analysis_log.json",
+      "size": 6406,
+      "sha256": "ae730ab4eb42692d6433eabbe44a3edc637d57269bd1401143704352fb1b0e2e"
+    },
+    {
+      "path": "analysis/online_measurement/analysis_validation.json",
+      "size": 551,
+      "sha256": "18f696212d1b9de467cbfed61fd9e283a0ef6b55c9dbb2659fc212298d892a16"
+    },
+    {
+      "path": "analysis/online_measurement/closure_status.json",
+      "size": 800,
+      "sha256": "689d3f99f5f0e4aaf42c41d4a3fc2782abcb1bb39a26ae1ffff1492fd66e2a2e"
+    },
+    {
+      "path": "analysis/online_measurement/detection_by_run.csv",
+      "size": 27041,
+      "sha256": "dffd147f85880e7692ab7934f582a52aa4adf3fd3ebd1d6aa4f8b09a8d8bc1cb"
+    },
+    {
+      "path": "analysis/online_measurement/detection_summary.csv",
+      "size": 6651,
+      "sha256": "07133e063b7ba1f9089b51805de7d1554cff1ad5450e76934030c850c15234e7"
+    },
+    {
+      "path": "analysis/online_measurement/environment.json",
+      "size": 532,
+      "sha256": "a9d35131c510bd583afc2069d77c960892d937548b48f1abd64dc601e3f0e17f"
+    },
+    {
+      "path": "analysis/online_measurement/execution_status.json",
+      "size": 432,
+      "sha256": "64fdd96b1f678e49d4370e58e33bd4697a5a280a85f170201b55ec1db58ee2b9"
+    },
+    {
+      "path": "analysis/online_measurement/latency_by_run.csv",
+      "size": 5960,
+      "sha256": "1dd07d82202741363d516a7d432bde28f9fe065d3d7ba2ee4c1e5006058fe033"
+    },
+    {
+      "path": "analysis/online_measurement/legacy_warning_audit.json",
+      "size": 269,
+      "sha256": "c85bcbc5a88bea712c401941d2770480e04f03e4f4aa395cdd5a378b1761ff2b"
+    },
+    {
+      "path": "analysis/online_measurement/measurement_summary.png",
+      "size": 168521,
+      "sha256": "29ff9606e3630c85f257086f35c7db1c0f358c2442f0a00b56b2babfd3e4f4ef"
+    },
+    {
+      "path": "analysis/online_measurement/method_overview.csv",
+      "size": 582,
+      "sha256": "85d4ceae8a5660685d1651c8384d531f1c379b51b59dcd72a7953b312faf648f"
+    },
+    {
+      "path": "analysis/online_measurement/overhead_check_run.log",
+      "size": 1679,
+      "sha256": "0387436d1145274bc758acc23c08fae530b98c8382cefd8f7d910c6188a109cb"
+    },
+    {
+      "path": "analysis/online_measurement/overhead_checks/B2.npz",
+      "size": 173811,
+      "sha256": "c6d9c0f920f9fcdf32555ce54d106135e4182d582f3d825ecfd2acea5630e954"
+    },
+    {
+      "path": "analysis/online_measurement/overhead_checks/Ours_rollout.npz",
+      "size": 179409,
+      "sha256": "263f4e3a899f430cb5dfb15d7ec920dffa2ff5c314134ae3106f45b9b5279609"
+    },
+    {
+      "path": "analysis/online_measurement/overhead_checks/summary.json",
+      "size": 2593,
+      "sha256": "9889c8a9ec737b6082042e23e6ab98e00410e9c8796d054bcd51bc6870784c0e"
+    },
+    {
+      "path": "analysis/online_measurement/parity_references.json",
+      "size": 72187,
+      "sha256": "e22bc8941407e7c8dfba66c0059b7d8e96bfdeebd22f30b0978582e248560c29"
+    },
+    {
+      "path": "analysis/online_measurement/phase_timing_by_run.csv",
+      "size": 22633,
+      "sha256": "34a245057de3d95f99bed9ec8cd5220f277558872f6b9bb16241c58dacf81048"
+    },
+    {
+      "path": "analysis/online_measurement/protocol.json",
+      "size": 15458,
+      "sha256": "dfb19a0ab4c2802f10e4bb1b38c0b24ba71fc1d7ccc0555b6a8050781f83782b"
+    },
+    {
+      "path": "analysis/online_measurement/runs.jsonl",
+      "size": 879918,
+      "sha256": "1124be434d1bfe964a606ae1e703deb8149a5303f98a2aa25cdf45a78e1624f3"
+    },
+    {
+      "path": "analysis/online_measurement/smoke_validation.json",
+      "size": 1009,
+      "sha256": "8e58763a47a6aafd6c0f4bac7c1c8e7ef27ab229fe64e98318def44792c5c1de"
+    },
+    {
+      "path": "analysis/online_measurement/summary.json",
+      "size": 6405,
+      "sha256": "c57dde1c74d2405606144a8afc523cbef7a14b8e39268b55deeea60b2c3a1746"
+    },
+    {
+      "path": "analysis/online_measurement/timing_runs.jsonl",
+      "size": 160005,
+      "sha256": "2ef7881279151dcf5a6c72325f6ec87d7a70d995c8b371d92356b70203b10835"
+    },
+    {
+      "path": "analysis/online_measurement/timing_summary.csv",
+      "size": 4570,
+      "sha256": "1ec180212158663e23fb34d44064449e46fa872e9ac00633a120237a656d7de4"
+    },
+    {
+      "path": "analysis/online_measurement/timing_traces/V2S2R2__B1__animal_pos_0p5__3000.npz",
+      "size": 184762,
+      "sha256": "81c2019051251679c30ad1a54b90ee9c9728473246cf561bf4124e72792f539f"
+    },
+    {
+      "path": "analysis/online_measurement/timing_traces/V2S2R2__B1__blackout_1p0__3000.npz",
+      "size": 180680,
+      "sha256": "fe4c6ed72253e974fbba8116af3a9d376a1156c03889b22c02d6b13d044a4d18"
+    },
+    {
+      "path": "analysis/online_measurement/timing_traces/V2S2R2__B1__delay_0p5__3000.npz",
+      "size": 241098,
+      "sha256": "0ebde2ac109971591215d4d677cd029031e894e77395da51a0987465454103e6"
+    },
+    {
+      "path": "analysis/online_measurement/timing_traces/V2S2R2__B1__exact__3000.npz",
+      "size": 180399,
+      "sha256": "976bbb9bf9f87c3f24590e43a4927cfe039e6cb0d3da5fcfa5141af9a929208a"
+    },
+    {
+      "path": "analysis/online_measurement/timing_traces/V2S2R2__B2__animal_pos_0p5__3000.npz",
+      "size": 186862,
+      "sha256": "85b888700a34a871f880597cb751918219014b004a4141a37f9e1671a6319df9"
+    },
+    {
+      "path": "analysis/online_measurement/timing_traces/V2S2R2__B2__blackout_1p0__3000.npz",
+      "size": 182539,
+      "sha256": "2f87b021023b8ec294fb3788d849b6a234ac0df22ffea85ab4e00590ca3d9e94"
+    },
+    {
+      "path": "analysis/online_measurement/timing_traces/V2S2R2__B2__delay_0p5__3000.npz",
+      "size": 243141,
+      "sha256": "7226ef61b006deb250dcf7aeb1955c877263a047fe3783f59bc99dd159372975"
+    },
+    {
+      "path": "analysis/online_measurement/timing_traces/V2S2R2__B2__exact__3000.npz",
+      "size": 186356,
+      "sha256": "daba2e68f867411f3cbff4dbab9d380b097e4256aa804da18e167b8d9cfbbf61"
+    },
+    {
+      "path": "analysis/online_measurement/timing_traces/V2S2R2__Ours_rollout__animal_pos_0p5__3000.npz",
+      "size": 184173,
+      "sha256": "4155d6ca614d6b6ca07265777728b04f6291997eb0f2f59342adaa115f03256c"
+    },
+    {
+      "path": "analysis/online_measurement/timing_traces/V2S2R2__Ours_rollout__blackout_1p0__3000.npz",
+      "size": 180235,
+      "sha256": "7e5101af30d748f23dc39a69406da48364d0c77f127f9bc0d5be2eda027948b0"
+    },
+    {
+      "path": "analysis/online_measurement/timing_traces/V2S2R2__Ours_rollout__delay_0p5__3000.npz",
+      "size": 242313,
+      "sha256": "b3d4fe51a13c1938d8009c9c0b9a9e28bf427330df29c13a20872fd1f5c94ad5"
+    },
+    {
+      "path": "analysis/online_measurement/timing_traces/V2S2R2__Ours_rollout__exact__3000.npz",
+      "size": 180869,
+      "sha256": "0c5e7bc9c36a229fc517b1a16b4ba82ea1e045ddb40ebdaba91dbb3067dab1ea"
+    },
+    {
+      "path": "analysis/online_measurement/timing_traces/V2S3__B1__animal_pos_0p5__3000.npz",
+      "size": 306896,
+      "sha256": "2710b3b32b68b7cf459be0106d5717a759afa3d4ac86bf0921bd3d1bb68bfb99"
+    },
+    {
+      "path": "analysis/online_measurement/timing_traces/V2S3__B1__blackout_1p0__3000.npz",
+      "size": 299557,
+      "sha256": "884295c0794d6edceef792c760e43c31ffdd22be3c2f0e73d922604d59344a54"
+    },
+    {
+      "path": "analysis/online_measurement/timing_traces/V2S3__B1__delay_0p5__3000.npz",
+      "size": 309598,
+      "sha256": "b3f066ab6baad12a475de8ec80bd4dc2369ee611d90a6b4b2be2eebe225d677e"
+    },
+    {
+      "path": "analysis/online_measurement/timing_traces/V2S3__B1__exact__3000.npz",
+      "size": 318277,
+      "sha256": "31fbeb4080be6ddca48fb03e8f79b319e0f237cd1e559ffffd8df870ed3c4b39"
+    },
+    {
+      "path": "analysis/online_measurement/timing_traces/V2S3__B2__animal_pos_0p5__3000.npz",
+      "size": 304639,
+      "sha256": "c3f8d87be0fcc6d69feb84d6ba6b0f4e3b300bb63ec87a57e7a40cf259e41f4d"
+    },
+    {
+      "path": "analysis/online_measurement/timing_traces/V2S3__B2__blackout_1p0__3000.npz",
+      "size": 296823,
+      "sha256": "190d6ec51ad90e8114b56960f0ef9b8596e0a996c0a09ab70c8b5c4a79eeb068"
+    },
+    {
+      "path": "analysis/online_measurement/timing_traces/V2S3__B2__delay_0p5__3000.npz",
+      "size": 314343,
+      "sha256": "442f136fbe9cafe50e3f433f7bac22ecd34f9cb812abca4984ae9face73f93db"
+    },
+    {
+      "path": "analysis/online_measurement/timing_traces/V2S3__B2__exact__3000.npz",
+      "size": 302041,
+      "sha256": "eda0b5e933c36893cd5eee20d59299ec002afbcbf33363ea2faf2816612ec84f"
+    },
+    {
+      "path": "analysis/online_measurement/timing_traces/V2S3__Ours_rollout__animal_pos_0p5__3000.npz",
+      "size": 312673,
+      "sha256": "bab9265868320f1fa6a15fb799ee7e7daa7fe8f2bc7b8910e64b3ff6de7ae9ea"
+    },
+    {
+      "path": "analysis/online_measurement/timing_traces/V2S3__Ours_rollout__blackout_1p0__3000.npz",
+      "size": 304536,
+      "sha256": "499dd292a895a23ebad6111d484ba3e31e06650685b57691f58caaef27648059"
+    },
+    {
+      "path": "analysis/online_measurement/timing_traces/V2S3__Ours_rollout__delay_0p5__3000.npz",
+      "size": 314719,
+      "sha256": "1ecd0a8e70022a54dcc2403e46e0d2825c5c392ead911c3733f3508d737da611"
+    },
+    {
+      "path": "analysis/online_measurement/timing_traces/V2S3__Ours_rollout__exact__3000.npz",
+      "size": 299352,
+      "sha256": "2555c49a7b950062cf886b191462787b110ee46d1388644e5fd41811f6fd6a98"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B1__animal_pos_0p2__3000.npz",
+      "size": 181843,
+      "sha256": "c87df8e16aa69165a7f842e7364e37788f2378d3989532875a3d23e036073870"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B1__animal_pos_0p2__3029.npz",
+      "size": 185734,
+      "sha256": "e6f7c900dff7a0b9d8f12cfcb7f8d62e8f891e52b02da3e9b21a88a73a9a90b3"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B1__animal_pos_0p5__3000.npz",
+      "size": 185782,
+      "sha256": "fdb62aba927dc22eb417281dcee4cb32cb928229e7464aea9850d6b8b463cd99"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B1__animal_pos_0p5__3029.npz",
+      "size": 185717,
+      "sha256": "da8146aab378dd26b7b02e37a8ebc739295566d8d5120c9ffbfa24df15dc4cfc"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B1__blackout_0p5__3000.npz",
+      "size": 184227,
+      "sha256": "9c1a16ca4bd054c69f8cb4113aadcd06c56fa2a7ee03d131f2bacb2c5f986438"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B1__blackout_0p5__3029.npz",
+      "size": 185000,
+      "sha256": "c91e608db902c9cbcf5b290756cae72b7ed5e1626e5ca0408a6b2b9b00f7ddd1"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B1__blackout_1p0__3000.npz",
+      "size": 181934,
+      "sha256": "05c22ff202094726c4c51ed8b8072559f03b9fc8eeab74a81fba9dbd50263876"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B1__blackout_1p0__3029.npz",
+      "size": 182015,
+      "sha256": "bdb068ac3edd3e34ca3c64a6176ac2849436188c6e7507f185df744a9f49d465"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B1__delay_0p2__3000.npz",
+      "size": 183716,
+      "sha256": "0ada1e254cb52c6426f8c77f108c8d0dedce48e2f5be9c02a8b7de33c25b57e3"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B1__delay_0p2__3029.npz",
+      "size": 184477,
+      "sha256": "783b70654fc054ab339247ee7a7ec15e06ac20f63af9d0eb3f37bf64b125fa9b"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B1__delay_0p5__3000.npz",
+      "size": 245763,
+      "sha256": "9ad64d0ed4eb6e11f6cf1abd3c9a59cd73f435b8934f123c4bedd146020ca6c4"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B1__delay_0p5__3029.npz",
+      "size": 194172,
+      "sha256": "0a4a44681b32491b3f7058d4eff0ab4db876d1caf0c8d8d397203ada5de1031b"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B1__exact__3000.npz",
+      "size": 183745,
+      "sha256": "722a24a7b8be694cf1c685a7725adff8854b63c341a233df7de7cda8f9b27fb9"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B1__exact__3029.npz",
+      "size": 185984,
+      "sha256": "06adde76133b69125915656c5c04b3817b3ee4e58ad7388f28f0207ab68fbe3b"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B1__loss_0p05__3000.npz",
+      "size": 183687,
+      "sha256": "2bdcf0d40c481a7e0bed47a6c922072d777046b817d7d28beb1865c408fea544"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B1__loss_0p05__3029.npz",
+      "size": 186771,
+      "sha256": "7ce35f9e91bfa2d33c9e14c72df582e7a8702aeae7411a5d37a95178bbb6c7e6"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B1__loss_0p10__3000.npz",
+      "size": 185470,
+      "sha256": "76b9d9aae332a9dbb13ec16277a2084e8cd83505c526b20e390063827dc60bcc"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B1__loss_0p10__3029.npz",
+      "size": 187184,
+      "sha256": "51fea553c886b518af2dee88e5d7dd0b2b03ea281e6d36350a91fa91e068d374"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B1__obs_pos_0p2__3000.npz",
+      "size": 183116,
+      "sha256": "4bbb7b783d939f92ba069cc140e6639cba7de907816a43228ba6d5594db201c4"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B1__obs_pos_0p2__3029.npz",
+      "size": 186221,
+      "sha256": "9bb354733eb0fbab1b9bd683112dc83427904144deead66882ccec0eac20d437"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B1__obs_pos_0p5__3000.npz",
+      "size": 183630,
+      "sha256": "7cf252af26f12fe8c830c1b8eaef24d4cf041f2c852dc8f8a153250b62b377b3"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B1__obs_pos_0p5__3029.npz",
+      "size": 186069,
+      "sha256": "f6690f597c5a0ab3fe3f1de27fcd46e35c9bfd14c6d854891fc34e1fd4938a53"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B2__animal_pos_0p2__3000.npz",
+      "size": 183438,
+      "sha256": "abc8688c20053b8aa130b42cc145164e97629ac94e585c216436bb5678df82f6"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B2__animal_pos_0p2__3029.npz",
+      "size": 187977,
+      "sha256": "26b9641adaa6b0810bda76fed5cdfc8d1d635c00b2b27e7c7a4f5f6bf875633e"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B2__animal_pos_0p5__3000.npz",
+      "size": 188904,
+      "sha256": "4f207e442e0f3f4ccad1a8ea1ab181c768eac3b4e0ae052155fcdb3274b7c810"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B2__animal_pos_0p5__3029.npz",
+      "size": 188805,
+      "sha256": "315e4dcd0f590aabe6e84997e15302dbeb22bc270d51d417cd13dc44a842c93f"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B2__blackout_0p5__3000.npz",
+      "size": 185850,
+      "sha256": "f5d4cb4310a9b584d07071d06aaa07d5dff9204f9544577e348aa46b7accb6b3"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B2__blackout_0p5__3029.npz",
+      "size": 184494,
+      "sha256": "0b6cdf59de9ac66410ba0f19fbcbc1448909501a4450bf9d9cdfe850103ddb9e"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B2__blackout_1p0__3000.npz",
+      "size": 183358,
+      "sha256": "4601b581abdf0f7ad861f471e7256a97e8e3ef539b51b63da769013d88f0bca8"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B2__blackout_1p0__3029.npz",
+      "size": 184473,
+      "sha256": "8d5b0808c9c471715bd252a46f4e18d2df0b27d82209d1b17e8aeaf19aebdae1"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B2__delay_0p2__3000.npz",
+      "size": 186976,
+      "sha256": "451f6eabed9b32cbbb9038f2c4078808a7df4efb27b87cabb8adbeca726cef9f"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B2__delay_0p2__3029.npz",
+      "size": 184535,
+      "sha256": "ade34b2b493d5230f78102cf8d6608dfc10837e790a44da23e24f5a80730b0a9"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B2__delay_0p5__3000.npz",
+      "size": 244917,
+      "sha256": "845c057ab2c14a2688fd804865f50eb16725c85e9ee3bf6e9aba011b39542460"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B2__delay_0p5__3029.npz",
+      "size": 191639,
+      "sha256": "7f20f2236dafdbd063850356f557359deb66f5623ebdc96440bcd7a1be92ccf7"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B2__exact__3000.npz",
+      "size": 185847,
+      "sha256": "104401be4bc8383147767a0402a16a4073b628a275ad443413a9ad03ccec0c4e"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B2__exact__3029.npz",
+      "size": 188168,
+      "sha256": "2a63b3ca70850e3adf38d99c0ef88bc770bf3be89bae6406538ab4798b866ab3"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B2__loss_0p05__3000.npz",
+      "size": 188321,
+      "sha256": "d59e3bfbd9526f712f9dac8ea0f95434b99d426d40a4625c9c181dfab53e85c9"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B2__loss_0p05__3029.npz",
+      "size": 189845,
+      "sha256": "614d5f6e1cbf0170b40a95f5510d70daae8f01eec62afd13766833a5709e7e6d"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B2__loss_0p10__3000.npz",
+      "size": 189188,
+      "sha256": "d8fec9e269514f7b7340aa21fa8d304cd8d647e50a469987c7ab3944f3d418d5"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B2__loss_0p10__3029.npz",
+      "size": 189669,
+      "sha256": "7b171b34f7fad7d4b9fc742e0137e52490dc87cde8f6a9c2b3fbeb50caf9bcb3"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B2__obs_pos_0p2__3000.npz",
+      "size": 185748,
+      "sha256": "77175c49daab1f79c9e5b5e842461b216f6ad659553beeb83f29135eb5e8c4a8"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B2__obs_pos_0p2__3029.npz",
+      "size": 185322,
+      "sha256": "4046a4f5dbe50204b2c350ee501ff193b0df7c5797d9309297e7276209e94ebd"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B2__obs_pos_0p5__3000.npz",
+      "size": 184201,
+      "sha256": "b09d0f040162bcc76b4ce00d1394ef40397bb8c37cc131859dc7af51f8a9af1f"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__B2__obs_pos_0p5__3029.npz",
+      "size": 184735,
+      "sha256": "98230927b851d8254e71200440c2fd30bde97c3efd40dd72f15853763ad55eab"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__Ours_rollout__animal_pos_0p2__3000.npz",
+      "size": 182225,
+      "sha256": "510f364e527b325e2c1d0e5fbed0ce637f35e56152579c98f26ea68f31bb105e"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__Ours_rollout__animal_pos_0p2__3029.npz",
+      "size": 187322,
+      "sha256": "4ae47a7b10b51866d378b2494842a6a536d46afbec3cd4958ae10e61de81b658"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__Ours_rollout__animal_pos_0p5__3000.npz",
+      "size": 186544,
+      "sha256": "a4a87dad7df49fdbc458118244239e5eb64c7d86c8669c1ad2ccbaffa071e928"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__Ours_rollout__animal_pos_0p5__3029.npz",
+      "size": 190176,
+      "sha256": "c19f3920dd28dc40e61b62f25f53a7ae4564e72e32e9606e9a3835cab6fdd035"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__Ours_rollout__blackout_0p5__3000.npz",
+      "size": 183679,
+      "sha256": "4611d3d3dee65a3ebe17bdc0268c765b8f9f5ead706f055abdf79b7b48bd905c"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__Ours_rollout__blackout_0p5__3029.npz",
+      "size": 184530,
+      "sha256": "7c57403b9e679a6b59640b854e5f93bde4535b8c6a45374db3f90278913a1671"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__Ours_rollout__blackout_1p0__3000.npz",
+      "size": 180459,
+      "sha256": "c21dccb0dd036b30b1895812df71218cdcc925adc3c2b7ae4144cdd29ebf2748"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__Ours_rollout__blackout_1p0__3029.npz",
+      "size": 184642,
+      "sha256": "13d87dde1a3994e09257c896f814b76df5be0495c174772ad78c0d54f9e3d6f1"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__Ours_rollout__delay_0p2__3000.npz",
+      "size": 184752,
+      "sha256": "2aa7b2ae4dd8c0878a128aebcb1cb4ecf706b1d208e801f634053a165300555c"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__Ours_rollout__delay_0p2__3029.npz",
+      "size": 185495,
+      "sha256": "a8847cc9a35a2f1ac63dbb09e3eff3715fa86b6d79fc8abd91b62bbe2bc92122"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__Ours_rollout__delay_0p5__3000.npz",
+      "size": 243964,
+      "sha256": "70ecc2232ca43785fb101b1f4e1615bf1d57be48d095c656912124196c20a99b"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__Ours_rollout__delay_0p5__3029.npz",
+      "size": 196005,
+      "sha256": "769e84d933b7faa2bfd3bb8b0623c8ef6db2bae00f6a4abbdc79cacb6890d0cc"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__Ours_rollout__exact__3000.npz",
+      "size": 183280,
+      "sha256": "b639cb7685a1d648b3648d22551ad40709022c58f69c732b6f8ae9c9a09b0872"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__Ours_rollout__exact__3029.npz",
+      "size": 187075,
+      "sha256": "478fa9116e74acdd1133c2e8d3068ecc5aefbd45727f458dc79eae37096c1081"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__Ours_rollout__loss_0p05__3000.npz",
+      "size": 184083,
+      "sha256": "5c248ba7e1a60cdd3b00ddfed346a389e1e7ec5049851804c120c7dee0c671d0"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__Ours_rollout__loss_0p05__3029.npz",
+      "size": 188700,
+      "sha256": "eb302b04c4bbe75cc507d58d2c3b6b6d075a33d94bd2be315ade119284cbe6af"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__Ours_rollout__loss_0p10__3000.npz",
+      "size": 184602,
+      "sha256": "6336b2ea50728849fb4a6eaa9470eabed7673883eacf5b4aa69ffcb36310bcee"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__Ours_rollout__loss_0p10__3029.npz",
+      "size": 188091,
+      "sha256": "1cb47a610a8623290603e7b5de25e9c2dff8a3db016538282b30e3b79b4195e2"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__Ours_rollout__obs_pos_0p2__3000.npz",
+      "size": 185471,
+      "sha256": "6317c34fecc089d959bfa4e2f2f463b0bac9ba31fcc274f931bcb79c7c4b0582"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__Ours_rollout__obs_pos_0p2__3029.npz",
+      "size": 186286,
+      "sha256": "540f5da235f9eb289f9f6a95e6163e0ad3b0b09501f40f83f945178fda092a43"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__Ours_rollout__obs_pos_0p5__3000.npz",
+      "size": 183712,
+      "sha256": "89d8faca82cab40b026bf2db518b35404c68b6d943232e8be48e017366ae884e"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S2R2__Ours_rollout__obs_pos_0p5__3029.npz",
+      "size": 186779,
+      "sha256": "789949ad75bb4f3bccb40aede95ffaea945d0b0865c5a8994ca7b487ab46f65f"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B1__animal_pos_0p2__3000.npz",
+      "size": 300195,
+      "sha256": "695e8690b21b51e6f2da924b0873374776d21840305b236f122c584c901445ff"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B1__animal_pos_0p2__3029.npz",
+      "size": 301775,
+      "sha256": "a2727aed727ebddbe8913704e0003b77a43b20d80fb2c0c10914af2cf4e15d46"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B1__animal_pos_0p5__3000.npz",
+      "size": 309187,
+      "sha256": "f4b2736f26372f9ea1e7d884a24cb1bee512797a128a7abe8eb131406c8760f1"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B1__animal_pos_0p5__3029.npz",
+      "size": 309407,
+      "sha256": "59df523ea718543daf139ed1e2f0764119053e8427b6ef2c9b5ef5d8777b89bb"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B1__blackout_0p5__3000.npz",
+      "size": 302178,
+      "sha256": "437a47f9104c76ce8f63bcb7fb63487fbac50fd6311b9c57424ba0d40aeeb2ed"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B1__blackout_0p5__3029.npz",
+      "size": 300009,
+      "sha256": "b50b7e0e48dc87d8ee28b4cd9420a9b78dcc0f3bb9bee6a6aa1ba0e7bbef72d1"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B1__blackout_1p0__3000.npz",
+      "size": 304557,
+      "sha256": "7e98e22b62f64ff2b5cec83cec75884ebaca796eb55a93aa0596be1e098ab865"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B1__blackout_1p0__3029.npz",
+      "size": 302459,
+      "sha256": "b78a44c0e3f235ac4d5b8a290ce63b50c099f7230c81c31089d6c0401c92308b"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B1__delay_0p2__3000.npz",
+      "size": 336899,
+      "sha256": "c990935c051183a9b67a5036f218849a7aceb30a5f162619c8715fa73f82b1c7"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B1__delay_0p2__3029.npz",
+      "size": 305904,
+      "sha256": "a8272ba33ee4087dec6321b3c01fea9f0f1913642801bcb84a2caf43b54cd6a4"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B1__delay_0p5__3000.npz",
+      "size": 311974,
+      "sha256": "3e16688739b75e28ff8f635f59cfd6e984feb6e8f87ee36beff54f442051c8ae"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B1__delay_0p5__3029.npz",
+      "size": 315104,
+      "sha256": "c165d35bad1970ce2e89cf57c9e6d66ad80bd83972eaa8069e24a2611251f32c"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B1__exact__3000.npz",
+      "size": 318592,
+      "sha256": "8e637ed6ec5f63a0177b13b27da22e88de04eae844d4a79e41a7946a72c021f0"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B1__exact__3029.npz",
+      "size": 298505,
+      "sha256": "ce7675402681abcdf73a4f7765cc6983e008118b41093b3668c913a3d82e9717"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B1__loss_0p05__3000.npz",
+      "size": 321768,
+      "sha256": "cdb1b72dd18b8f000fa6d20da21558ffb82a001d3fe7390f6f2c84cd0d0caec5"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B1__loss_0p05__3029.npz",
+      "size": 302027,
+      "sha256": "10a0dd97b7af362f15f4c10a8cddc6052d924eed952fc4a8ac24ebdfdc040ece"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B1__loss_0p10__3000.npz",
+      "size": 322381,
+      "sha256": "a631dc6d8911710896b3dcacbd6cd1fdcdb3bf6b49031b8c5b914c0dbb6b83b4"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B1__loss_0p10__3029.npz",
+      "size": 302265,
+      "sha256": "6e826970b489d7402a0f1b0c8c4b4b2b44c482e9f15660917c35268daca1326f"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B1__obs_pos_0p2__3000.npz",
+      "size": 301898,
+      "sha256": "84e344f4a3809c45af734d83ffbf61fa242e38e1c6159a9804d034b03d291986"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B1__obs_pos_0p2__3029.npz",
+      "size": 306032,
+      "sha256": "3455037fa5e0d52ae3b771db9b7a2db24362f1be285aae5f676bdb645ba9c8d2"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B1__obs_pos_0p5__3000.npz",
+      "size": 300629,
+      "sha256": "fd8e2f650ace1ee979e09ef1369e393d6d6f7422aa80539d9455114f36eab31d"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B1__obs_pos_0p5__3029.npz",
+      "size": 299808,
+      "sha256": "ac8ab8bb87e1a7275de2b45e529a4194aef4b8d42e1a6eb3a026b95bc4549f6b"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B2__animal_pos_0p2__3000.npz",
+      "size": 298987,
+      "sha256": "0aa1c4a26373bb908f58bcbd61a2695cbbf1b87f62aaef8213e2d77faef76e1f"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B2__animal_pos_0p2__3029.npz",
+      "size": 320510,
+      "sha256": "16d50bbaa514c7f65211108987ba2f295d1a5025bfe1a6f4f90aa428ef2331bc"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B2__animal_pos_0p5__3000.npz",
+      "size": 309859,
+      "sha256": "43f81c7d39c4e44b659af5a0342f0dc2a0dd1461392501a1bff1e43013f597ae"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B2__animal_pos_0p5__3029.npz",
+      "size": 313596,
+      "sha256": "0b60b2e60038e7562f7c625d82f1eade3c98a826d5c9f933bee767d22cab0a6c"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B2__blackout_0p5__3000.npz",
+      "size": 299115,
+      "sha256": "8919300faa00213df7a0d9a09ed3723910b130e03820bbe916c07e06f1156024"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B2__blackout_0p5__3029.npz",
+      "size": 301104,
+      "sha256": "479197d3b396e707bb820f982552f8342afdef28b802d3f3e8ce653de69aa859"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B2__blackout_1p0__3000.npz",
+      "size": 301595,
+      "sha256": "07ad25f51d28d3dc845dec7cd127bf3e0d40ed629e6470497e9c81ff33ee674c"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B2__blackout_1p0__3029.npz",
+      "size": 299276,
+      "sha256": "06e5dfacd2d6c2276e6261302b81515a7e0185fe5e08d893b8baaec16133cf00"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B2__delay_0p2__3000.npz",
+      "size": 334503,
+      "sha256": "ccec43591bb421bb3e4ee6a6fd6108a1c44c5fda1659bf4d3692c5915596dca4"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B2__delay_0p2__3029.npz",
+      "size": 320342,
+      "sha256": "3c7e1150e97652ea95556cf675c1bd8f54b32dcb835501c21190868766ee2288"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B2__delay_0p5__3000.npz",
+      "size": 317469,
+      "sha256": "edca778930b2aeb43af76c6abdb82d82e01dccb9c43e63719ac93c71c3b9ebfd"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B2__delay_0p5__3029.npz",
+      "size": 318652,
+      "sha256": "0a9177f3f0369165609ca35279f70da2d876de74693504a4ae6277aece45e741"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B2__exact__3000.npz",
+      "size": 306799,
+      "sha256": "94a05f1a2f1b08b59b0ff9acb7f5ad87fe3b342ea3962ddfffe9a0187814537d"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B2__exact__3029.npz",
+      "size": 297096,
+      "sha256": "fe93e0b8a5373362c7247e2bd14e90fc11552b933d7a20f06365d89785505639"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B2__loss_0p05__3000.npz",
+      "size": 309352,
+      "sha256": "ab2959fc2d1ea7f0d779eeec0d51de4b2564be128fd4013131ae9c03d9a6081e"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B2__loss_0p05__3029.npz",
+      "size": 301357,
+      "sha256": "9a13243851cf95c4da847dccd992fd449ebafe19fce22fb126f8d44ffe747fc3"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B2__loss_0p10__3000.npz",
+      "size": 310373,
+      "sha256": "0a613c9224a7aafc96c812e459b150dbe74a591c546a89bbcd0fcadfe28609c1"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B2__loss_0p10__3029.npz",
+      "size": 301883,
+      "sha256": "ed78bb7ea60af7952cf4ad4274b6959429c3785714331539f8e7c08892f63be8"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B2__obs_pos_0p2__3000.npz",
+      "size": 303460,
+      "sha256": "bc06ddee0f5170f32b9a1106e255168cec2b4ff974159df46fbf18623af409b5"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B2__obs_pos_0p2__3029.npz",
+      "size": 300728,
+      "sha256": "b2b4f12fa1c3e6638155af8305f90cc6e98dd35aff52ae29926a6b2506519780"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B2__obs_pos_0p5__3000.npz",
+      "size": 304228,
+      "sha256": "df7276baa17e48eaf609ab60b84ea213b11a15c4f610128fb29a86332a1ea3b3"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__B2__obs_pos_0p5__3029.npz",
+      "size": 317860,
+      "sha256": "a9794e83fc4dfe273e482cd32d68a1782eb9a2e02f5b0db3d3f2f2b4880113ba"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__Ours_rollout__animal_pos_0p2__3000.npz",
+      "size": 305799,
+      "sha256": "2f49fa02f1b7d9571efcf593abdebba5d2618274043478acadd5bd52c72e07a7"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__Ours_rollout__animal_pos_0p2__3029.npz",
+      "size": 306353,
+      "sha256": "859b4009c06e252e332edb2de0ccd7d852c03d0333016b27fedc24cda50d3ce0"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__Ours_rollout__animal_pos_0p5__3000.npz",
+      "size": 317802,
+      "sha256": "3b8354ffb64fa65eedbc973c027782c4e67a53dd1beee13fdefb8a4d36790323"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__Ours_rollout__animal_pos_0p5__3029.npz",
+      "size": 304089,
+      "sha256": "6496d9dc612ac9d1555fa7385dff26fcb5c9bec8ab82a6fe4fe1e78ce8b4ef7f"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__Ours_rollout__blackout_0p5__3000.npz",
+      "size": 304032,
+      "sha256": "8bbc4b75329d67a441f43b8688e0a9f1e58ec3781f765c4773b10982f2140e96"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__Ours_rollout__blackout_0p5__3029.npz",
+      "size": 306912,
+      "sha256": "85538e895c45ac3223d86868d96a7a9198688450ec049511c05b51cf950dd893"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__Ours_rollout__blackout_1p0__3000.npz",
+      "size": 305998,
+      "sha256": "bc18870611660ff18adb5895646ba41ae233cb40eb16abbba5e28366ad03b207"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__Ours_rollout__blackout_1p0__3029.npz",
+      "size": 300499,
+      "sha256": "435198184f3c1847c379846b6ac9ed1250d0182b8a3a1f066355c4c322339248"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__Ours_rollout__delay_0p2__3000.npz",
+      "size": 334408,
+      "sha256": "06a281e07d4bedd9161bcbf79354b0ad5322843a8d4e44f9c67cbd32b8b5115d"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__Ours_rollout__delay_0p2__3029.npz",
+      "size": 304566,
+      "sha256": "1b0759e880f92aa0b884964e3a1c457e67c53e60479fdaf60b1cf3809d5e2fee"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__Ours_rollout__delay_0p5__3000.npz",
+      "size": 318976,
+      "sha256": "86ed64815323d6e9e02093c3be2bb940e7cc97dc6ca0b4b458b7349f3de4eb77"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__Ours_rollout__delay_0p5__3029.npz",
+      "size": 308488,
+      "sha256": "376789809fd35629af8d0837b6468e186b2fca39d9daa08127e06da8521ddb38"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__Ours_rollout__exact__3000.npz",
+      "size": 302705,
+      "sha256": "3fd41ab6ddaae0e8df38add147ce735e57621269001ea3ff87302db970da0468"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__Ours_rollout__exact__3029.npz",
+      "size": 303140,
+      "sha256": "c6ef7ce75cf97004609de00e8fe7b62eaf252040c1e5dd000ebb56c7356785c4"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__Ours_rollout__loss_0p05__3000.npz",
+      "size": 304759,
+      "sha256": "9bad2731eac18301a82b2c53f0cf822be4db0207618cccc7357ceee93e01785a"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__Ours_rollout__loss_0p05__3029.npz",
+      "size": 306846,
+      "sha256": "c3a11afa94f353e315c68410cb20d184be20ec1456ce4cadf83444bb53974d27"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__Ours_rollout__loss_0p10__3000.npz",
+      "size": 306810,
+      "sha256": "701b98b6cd58261b4a9dce1792059ad2e6579871b920c8f7bfd329c8bcc59c15"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__Ours_rollout__loss_0p10__3029.npz",
+      "size": 306460,
+      "sha256": "930cd63a03e52e389ec75f15b77bf3d3dc21bbbad81e95f44e3b75fadcf41fe0"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__Ours_rollout__obs_pos_0p2__3000.npz",
+      "size": 303039,
+      "sha256": "2695b36cf342e4cf38f4b0001f926a6980c8fc13d29fce77c550b2408ea16b5b"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__Ours_rollout__obs_pos_0p2__3029.npz",
+      "size": 303355,
+      "sha256": "06f5b5e1a882891483ac3f282aff66c0948b2a228aa88985328c29997a767895"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__Ours_rollout__obs_pos_0p5__3000.npz",
+      "size": 301808,
+      "sha256": "cc13f8956798f45a41d631757ac37ac4e2de3f21588ca9738825ca4a4fafadd2"
+    },
+    {
+      "path": "analysis/online_measurement/traces/V2S3__Ours_rollout__obs_pos_0p5__3029.npz",
+      "size": 302392,
+      "sha256": "750944af489729f7feabb932cac3284846d55a53441566cbfbf9699bd48e80d6"
+    },
+    {
+      "path": "analysis/online_measurement/warning_events.csv",
+      "size": 86526,
+      "sha256": "bfa52ad764f1de822d3679d639c2e26ba85c9f48174f608e5b01abbdc040a48c"
+    },
+    {
+      "path": "analysis/online_measurement/warning_summary.csv",
+      "size": 3892,
+      "sha256": "02aad4fafe7d9c3b140fc1c56d998a05233ec606a88f67bffd3391c61053f9b9"
+    },
+    {
+      "path": "analysis/online_measurement/worst_steps.csv",
+      "size": 3282,
+      "sha256": "f1af9e9a5b58622e858fde84ae1b09c6ab584fb96e9f595812541205b32ad6dd"
+    },
+    {
+      "path": "analysis/online_measurement_serial_precheck/environment.json",
+      "size": 462,
+      "sha256": "587ada86e1692145242a5f25a39d547463d5cb64bc12bb929096e0b210addc51"
+    },
+    {
+      "path": "analysis/online_measurement_serial_precheck/parity_references.json",
+      "size": 72187,
+      "sha256": "e22bc8941407e7c8dfba66c0059b7d8e96bfdeebd22f30b0978582e248560c29"
+    },
+    {
+      "path": "analysis/online_measurement_serial_precheck/protocol.json",
+      "size": 13156,
+      "sha256": "03becd943e76bb8228b88e72f87756ad2b00f6c4f8372513a04e7858734745ec"
+    },
+    {
+      "path": "analysis/online_measurement_serial_precheck/runs.jsonl",
+      "size": 27024,
+      "sha256": "209881b4c7559c6de9ef144dec1aae82ce1f133d9888ad71d3f9b1793c3b1f98"
+    },
+    {
+      "path": "analysis/online_measurement_serial_precheck/scheduling_note.json",
+      "size": 418,
+      "sha256": "8258b7867604f8686c04bca4c60355c6de97d65167b5c630c1943f0676380c46"
+    },
+    {
+      "path": "analysis/online_measurement_serial_precheck/smoke_validation.json",
+      "size": 1009,
+      "sha256": "8e58763a47a6aafd6c0f4bac7c1c8e7ef27ab229fe64e98318def44792c5c1de"
+    },
+    {
+      "path": "analysis/online_measurement_serial_precheck/traces/V2S2R2__Ours_rollout__delay_0p5__3029.npz",
+      "size": 194395,
+      "sha256": "a1def94b1255641ba1f26302ed89894565f5b8dbb47621d8a0b50988aed37825"
+    },
+    {
+      "path": "analysis/online_measurement_serial_precheck/traces/V2S3__B2__loss_0p10__3029.npz",
+      "size": 297078,
+      "sha256": "c7198aadd88f6237c9063803d71c0df2d89821fdb7c4e22fe809ebd3c6cd5c33"
+    },
+    {
+      "path": "analysis/online_measurement_serial_precheck/traces/V2S3__Ours_rollout__blackout_1p0__3029.npz",
+      "size": 296331,
+      "sha256": "ca45c63161bd2e5c1ef7fc653ca2bf2f9cd3e0f29d56069e857d56ac1d31d686"
+    },
+    {
+      "path": "analysis/online_measurement_serial_precheck/traces/V2S3__Ours_rollout__exact__3029.npz",
+      "size": 299610,
+      "sha256": "1bed3c2dbb01fd04d71c18174fd73d8a3ba315a375dea56274c40441517cd127"
+    },
+    {
+      "path": "analysis/package_online_evidence.py",
+      "size": 6523,
+      "sha256": "89c1446109074fe845dc23c680f2dda33dec4999a0091db6f40c6d257a40b283"
+    },
+    {
+      "path": "analysis/plot_online_evidence.py",
+      "size": 3553,
+      "sha256": "fc13d50dff1c25aacbae8dce6dd663245814deb4bd41ce0e9f552b68be345401"
+    },
+    {
+      "path": "analysis/requirements.txt",
+      "size": 93,
+      "sha256": "6315e94839024fea3256cb7d5e2c65a07efd16f1cef45d9ff2047bf3748507a8"
+    },
+    {
+      "path": "code/BUILD_ROLLOUT_WINDOWS.md",
+      "size": 626,
+      "sha256": "cf6a54bc461ab6e7f3b181a98dd13f483853fefaf543c340764c943c678164e6"
+    },
+    {
+      "path": "code/WINDOWS_PORT.md",
+      "size": 8866,
+      "sha256": "5d6824a0d331a471cd5c72e5dab73f82a73bee049f5dd1cbbc6408870c5ffcb0"
+    },
+    {
+      "path": "code/_rollout.so",
+      "size": 34248,
+      "sha256": "5d1dbf6c4c52f8badd3f0da72d06812a58388bcc490bde14343f0b05ba7add5e"
+    },
+    {
+      "path": "code/_rs_safety.so",
+      "size": 24120,
+      "sha256": "20a0f70f00f75b229b6679ce30e39e58d9001fce7459ca27f3051d3ccf298a57"
+    },
+    {
+      "path": "code/_tmp_show.py",
+      "size": 426,
+      "sha256": "cebe56a5bc80799cba74d4e8eacbcb8ebf3a17db2e248bec84fb55d3a833e23f"
+    },
+    {
+      "path": "code/analyze_ablation_30m.py",
+      "size": 5437,
+      "sha256": "4cb546c2ce94bd13f1d7f60956e5ff31f88ced93a9ccd823cd9697f9273cd286"
+    },
+    {
+      "path": "code/analyze_cea_ablation.py",
+      "size": 4639,
+      "sha256": "afd3d9eee2f252b78bf52a9e8f75f2f5d8a915872b3fa408adbf517659703bac"
+    },
+    {
+      "path": "code/analyze_improvement.py",
+      "size": 3878,
+      "sha256": "0167f5e478ad1cc3880b70287becf223ba17746edc3f05e6b92a1b7034dc308c"
+    },
+    {
+      "path": "code/analyze_timing_30m.py",
+      "size": 2556,
+      "sha256": "6ffcb41315f7ef812d8e3d0e1c53565582fcbb9ce16b9ce3eaa8ba50639a7007"
+    },
+    {
+      "path": "code/audit_controller.py",
+      "size": 1890,
+      "sha256": "db77adf729ae88f66d07768b325295c39ec381ba6793e6ab873588421aea3f2f"
+    },
+    {
+      "path": "code/baselines_outmost.py",
+      "size": 9251,
+      "sha256": "2d452e149f66b3700367b34e452fa2ac3095607e1d38b562a15c15bc910ba695"
+    },
+    {
+      "path": "code/baselines_pcbf.py",
+      "size": 16082,
+      "sha256": "b4c42db420d51e4459ef407443a3e91fbf8f9b585d7438de2055e881391bb760"
+    },
+    {
+      "path": "code/baselines_vh.py",
+      "size": 29185,
+      "sha256": "c84ed1e815e4eaa4acc19ab022c95f3756e04b97ca1f57562aa8f0e539e3a7bc"
+    },
+    {
+      "path": "code/build_review_report.py",
+      "size": 21093,
+      "sha256": "3edb2c55adc8e5363e86fdce2de19aecbdaa159d48368df6168937b6c2a38158"
+    },
+    {
+      "path": "code/cea_report_tables.py",
+      "size": 10860,
+      "sha256": "5db950a1c6e29a3b97d4335db2e265c34e052f3603eb035157eec3d00a580ee5"
+    },
+    {
+      "path": "code/config.py",
+      "size": 3997,
+      "sha256": "c50f79fe714abac53c892d15ad0d2c8463042d6fa9243ec3e00ecc7cba227dfc"
+    },
+    {
+      "path": "code/corrections.py",
+      "size": 1121,
+      "sha256": "47ea6a57cde49c5e0dfe474d0c37c2436c0e74d2574ad054c82f46dc3fa05ccb"
+    },
+    {
+      "path": "code/drive_matrix_30m.py",
+      "size": 6231,
+      "sha256": "6c698c6c7935370b000a2e7d7d635edaeb9e259ecfc119b5fef5cde1e5dfdc2b"
+    },
+    {
+      "path": "code/fast_numpy.py",
+      "size": 1019,
+      "sha256": "5fa2e44e8e60fae5140d21757c80ecdc48f95b9ea6d3485eb711bf58984eb8a9"
+    },
+    {
+      "path": "code/gate_rampup_30m.py",
+      "size": 9320,
+      "sha256": "9f07fb880a43c13c1de7b91c288f04c4acdc1873f2b3beac33ecb0ff8702ea52"
+    },
+    {
+      "path": "code/merge_cea_matrix.py",
+      "size": 7452,
+      "sha256": "790fd15639c1878d1cde54a40af36c2669e729751040c988495ceccd12fe9f4b"
+    },
+    {
+      "path": "code/metrics.py",
+      "size": 10735,
+      "sha256": "f7880f5c354b7739f4fc356a011f9205c35dc5fcb370e92a29f7b9195681fd6e"
+    },
+    {
+      "path": "code/obstacle.py",
+      "size": 3050,
+      "sha256": "d48bbdaf76a07ffcf9a6dcb8e515acac698f962904a948a711ada31f9308c6ba"
+    },
+    {
+      "path": "code/path.py",
+      "size": 4965,
+      "sha256": "90e52e48c12869395de1bd62563cd509f0ea871dfd49efcc94bdb62e741f6f7a"
+    },
+    {
+      "path": "code/proposed.py",
+      "size": 18673,
+      "sha256": "230586e288172feb7268edf8671435a8b7555c55b2accef4cee116243b26c52b"
+    },
+    {
+      "path": "code/proposed_event.py",
+      "size": 9190,
+      "sha256": "6c839da2b602ef372e7e7687a501cbaa00f7c8b4c1f13263dbc784a77c312ad1"
+    },
+    {
+      "path": "code/proposed_improved.py",
+      "size": 2569,
+      "sha256": "f771aeb3a4918635c11fea5a7c4419a09f5deab81150098c56878fe3f7e883f9"
+    },
+    {
+      "path": "code/proposed_rollout.py",
+      "size": 5199,
+      "sha256": "1ba4672082395e7257f3f39a2a7a1cfeac6adb52e8ced854732b5ae8e89259a3"
+    },
+    {
+      "path": "code/proposed_rollout_ablation.py",
+      "size": 3152,
+      "sha256": "de485ccb7baa38f3d2f374019ce24f2d5804065293913d3b42e4a85e3e3c1c18"
+    },
+    {
+      "path": "code/reproduce_stage5.py",
+      "size": 8854,
+      "sha256": "fdbbe433c3e8084c486f13b4c2f426b436d9190d40de52e85d571d55b7c63ef3"
+    },
+    {
+      "path": "code/requirements.txt",
+      "size": 42,
+      "sha256": "a02bbf14236a842ca78efc065a7f3af4a6b9b12f1ffcc72d6702405c67f84577"
+    },
+    {
+      "path": "code/robots.py",
+      "size": 19255,
+      "sha256": "f50d549d0cc17e92cf75303173027d5cff02d708dab25c3bdf77b291d1909a65"
+    },
+    {
+      "path": "code/rollout.cpp",
+      "size": 7557,
+      "sha256": "490db8b3cc11abfa326fda36f51136d6a5470901c3c6c1260c9d4d521b9e5ec0"
+    },
+    {
+      "path": "code/rs_safety.cpp",
+      "size": 4406,
+      "sha256": "9246c23ec9b1078536e2db9d6eb1e9e8990d87f8e7317733204357693c476ae7"
+    },
+    {
+      "path": "code/run_cea_ablation.py",
+      "size": 6319,
+      "sha256": "257b10cf60b23847b785f9b13246e4e72ee59d7b638aca23acc2e0cf0e2a23de"
+    },
+    {
+      "path": "code/run_experiments.py",
+      "size": 14234,
+      "sha256": "fd5597b5b98b5733475f22b19525f35c6a675a69520ff7dda2ef9b912a56e4aa"
+    },
+    {
+      "path": "code/run_improvement.py",
+      "size": 7555,
+      "sha256": "dc9276b09c25065c90bb8a822d084e07c2cd62ec48a3618c5b13fee3b72ea2c4"
+    },
+    {
+      "path": "code/run_interval_robustness.py",
+      "size": 2295,
+      "sha256": "7840100d9413d5f23c5ab85fba621ef3f2f5dfe8b2b179779a85837142a1235d"
+    },
+    {
+      "path": "code/run_revised_experiments.py",
+      "size": 789,
+      "sha256": "fd921fc558aaed11e5460be67682b7f7f8ce76d6df695c9407a8276d98fe3147"
+    },
+    {
+      "path": "code/run_robustness.py",
+      "size": 5528,
+      "sha256": "f6d5c7b6201e4c6580e6ffe0f22a8eca3ea743ff59551c8b254943d03d7374e6"
+    },
+    {
+      "path": "code/scenarios.py",
+      "size": 10172,
+      "sha256": "fa40d2f86a72bfcac1c63d9cbbdf09bd57163070830e577a727f40a4879ec96d"
+    },
+    {
+      "path": "code/sensing_gate.py",
+      "size": 9088,
+      "sha256": "5c6937dca2ab28155661b267d52d91fecfc8a194ed1196a336f7dfab933c86ef"
+    },
+    {
+      "path": "code/sheep.py",
+      "size": 5908,
+      "sha256": "2df906756debe21101fe298c09dc9f58a56591458aa96aadf0b697e18425f8da"
+    },
+    {
+      "path": "code/simulation.py",
+      "size": 16258,
+      "sha256": "11d44c0c45b246df75abe2b6ebb8d3c21fdeec86834df043982cb806873a8de9"
+    },
+    {
+      "path": "code/stats_cea_family.py",
+      "size": 12678,
+      "sha256": "407f7dcd13a40aca5f40e263499ae860b12d3dd04508ca6764e26335fd4f79f4"
+    },
+    {
+      "path": "code/test_corrections.py",
+      "size": 1551,
+      "sha256": "383946ad806f97f52fc83649bcea4fcaca98b30d9feb7905aa4f1956df3d5e0c"
+    },
+    {
+      "path": "code/test_rollout.py",
+      "size": 5141,
+      "sha256": "5945bd0ee6b51513d48cdf053695899e4b7cf1cb024f6dd5cb667ed038d33e75"
+    },
+    {
+      "path": "code/test_rollout_ablation.py",
+      "size": 1759,
+      "sha256": "4cd5d24e02839dfd0bc58c5ff10186f62c674351f4dea4904b61329092c8d15b"
+    },
+    {
+      "path": "code/ttc.py",
+      "size": 3343,
+      "sha256": "9406068c512bbe051940325151ea9e5d7428e19539e38d83bb667c255d846877"
+    },
+    {
+      "path": "code/v2/__init__.py",
+      "size": 2592,
+      "sha256": "cdfca8539c8a4b489e180ac82133b979884ab002a6334495fedafe5c936d66b7"
+    },
+    {
+      "path": "code/v2/acceptance_def_s4.py",
+      "size": 26137,
+      "sha256": "37f5564f16e7d895aeb4d810c7cc1748084f50d825d9f97977f93a59c3cc786b"
+    },
+    {
+      "path": "code/v2/acceptance_s2.py",
+      "size": 39246,
+      "sha256": "32bfbc41fb91d2eda3225365b2e9536cb075b75e6e6537951b5ecfbe92e93189"
+    },
+    {
+      "path": "code/v2/acceptance_s3.py",
+      "size": 34824,
+      "sha256": "35d5d5b00a8e65cda92f1462d15b241d4f4d0294e07359f87e7cc3d300e9f18c"
+    },
+    {
+      "path": "code/v2/acceptance_s4.py",
+      "size": 32332,
+      "sha256": "cc3ec89a045573250b1e6887cdabc12a11671451e0fb6df8cc849d4f7c406542"
+    },
+    {
+      "path": "code/v2/acceptance_v2.py",
+      "size": 31052,
+      "sha256": "a5480f46e664b33739956039b97f06f4e1e25730c1c5d999d54b584136c9e01c"
+    },
+    {
+      "path": "code/v2/animal_m0.py",
+      "size": 7557,
+      "sha256": "26c56b8068299a955cc301af83ad8468cd45b4c42791fce113ba645172b6f904"
+    },
+    {
+      "path": "code/v2/animal_models.py",
+      "size": 24658,
+      "sha256": "7fc56b87a03928d49b86b7e8c562660484dcf9532e0d4849ff4cdf3e6d61547d"
+    },
+    {
+      "path": "code/v2/calibrate_geometry_s4.py",
+      "size": 12813,
+      "sha256": "bb812e61e7cb434b7b8a42f9a9adbe7eb6408f32c66ca03c81eda554a6a2b9f3"
+    },
+    {
+      "path": "code/v2/calibrate_s3_spacing_s4.py",
+      "size": 7506,
+      "sha256": "dec21a743980524fee4341b6d13c8d657aa3a907befd8cb87ab40a29f00491ad"
+    },
+    {
+      "path": "code/v2/calibrate_ttc_v2.py",
+      "size": 16218,
+      "sha256": "310a70e21a6d01bd63fd6d39bca25c55863776e56c71f40ea117058982e0bb60"
+    },
+    {
+      "path": "code/v2/calibrate_v2.py",
+      "size": 18170,
+      "sha256": "8654f6ab549fdf5ab527e07caef253eb9f0db72c4e2ecfcac4787aa94646eaa2"
+    },
+    {
+      "path": "code/v2/capture_reference.py",
+      "size": 3445,
+      "sha256": "ceef5cddffe43c4063eabc975b55bd0a132927485c7dc323d180cb78e75ef223"
+    },
+    {
+      "path": "code/v2/capture_reference_s3.py",
+      "size": 6115,
+      "sha256": "dc426aa716e2676755312682f89831da22857a77dd2dacfa767990d22e06113c"
+    },
+    {
+      "path": "code/v2/capture_reference_s4.py",
+      "size": 6509,
+      "sha256": "ddc98df6fa7ad73a358fb6aefb0edd4c4772e3914cfd9a9a86b18e1915c8b356"
+    },
+    {
+      "path": "code/v2/compare_v1_v2.py",
+      "size": 4384,
+      "sha256": "adc33fdd9f7f96b51195f7a9a277974f1222ed4fa8ec18a500734d563120eecb"
+    },
+    {
+      "path": "code/v2/config_v2.py",
+      "size": 33518,
+      "sha256": "1404b389154047786f8985fb8c38990cd3fe3d22a3a59cd82b3ece91720f928d"
+    },
+    {
+      "path": "code/v2/contacts_v2.py",
+      "size": 11948,
+      "sha256": "684180422e0f4c2e0470f06f42ce12050c64e504834e656a193e240faf5dcda3"
+    },
+    {
+      "path": "code/v2/controller_v2.py",
+      "size": 15656,
+      "sha256": "894cc399fb67eab1e8c9b8a8e2a6486b33e074df80c95fa1b2cd70d2bd510973"
+    },
+    {
+      "path": "code/v2/corridor_v2.py",
+      "size": 11434,
+      "sha256": "feedba18924ba6ac0ac0bd5d7140981ace5a7014706e0251d4aaa18f76439e8d"
+    },
+    {
+      "path": "code/v2/diag_v2.py",
+      "size": 2967,
+      "sha256": "83c018009cf520d772050a54b7d193b9fb9533f7332c24e3fa82bcf17300c719"
+    },
+    {
+      "path": "code/v2/extract_docx.py",
+      "size": 2444,
+      "sha256": "017b9732cad225712e26b13c1dde98bfe420fecc09e1de8361e8f5ae797906c4"
+    },
+    {
+      "path": "code/v2/feasibility_v2.py",
+      "size": 23438,
+      "sha256": "979235cacd0be319b3773f0a54201073f1b13b103cd1c03595472dc98921eb31"
+    },
+    {
+      "path": "code/v2/fleet_v2.py",
+      "size": 3924,
+      "sha256": "e3fc4d66c267e105bdd54c2f6cd915717580912458de93d2b27979ab719f571e"
+    },
+    {
+      "path": "code/v2/limits_v2.py",
+      "size": 13167,
+      "sha256": "1d7374d1b2e10ccaba47d68a23400fe1ada7cbe9d8f43f492671d6b532fe263e"
+    },
+    {
+      "path": "code/v2/metrics_v2.py",
+      "size": 5518,
+      "sha256": "fd23b1b23edf9bc066910ed5ba7746367eda0f027706126666b0b9922758ec92"
+    },
+    {
+      "path": "code/v2/observability_v2.py",
+      "size": 16956,
+      "sha256": "eb54e627275bd7d75a7d8c7c8d0c743012cef8cdfacd0f99666289e75663dc6b"
+    },
+    {
+      "path": "code/v2/parallel_efficiency_s4.py",
+      "size": 2781,
+      "sha256": "aa9fdd7f1b5714504ada09c8493fae8c536d53ba75cb4116e55b298e1bffd425"
+    },
+    {
+      "path": "code/v2/pilot_s4.py",
+      "size": 12558,
+      "sha256": "9205108db7ca49a59062f00f0ce4eaeb0e5a846e6405498deba30eda18a7dbe1"
+    },
+    {
+      "path": "code/v2/plots_s2.py",
+      "size": 9081,
+      "sha256": "19648a9d0321420132602c1f3436afa8785f2885388223368cfa8c5b634c203e"
+    },
+    {
+      "path": "code/v2/plots_s3.py",
+      "size": 4996,
+      "sha256": "f20d9a8052f9b24cd8372920177473fe6ad0a161aec47fee80a4310798ffdbb4"
+    },
+    {
+      "path": "code/v2/predictor_v2.py",
+      "size": 15766,
+      "sha256": "2a9a9ee196c32249bd0949b312ede46319346ad2f83f3c0571bed7c4147a7c46"
+    },
+    {
+      "path": "code/v2/probe_geometry_s4.py",
+      "size": 4577,
+      "sha256": "216570bee4666d4b8d5c2d7116d5039b1721449a787a555dd6f96a9275af538b"
+    },
+    {
+      "path": "code/v2/probe_v1_repro.py",
+      "size": 4361,
+      "sha256": "abda639b54b233aa79c6ccf1a94249006a20708a67d13d98f02a39262477183e"
+    },
+    {
+      "path": "code/v2/project_runtime_s4.py",
+      "size": 6950,
+      "sha256": "02565f9b111b37f84314d031843b993f79f7b818dcefccd5c5465764641a8045"
+    },
+    {
+      "path": "code/v2/regress_s2_readonly.py",
+      "size": 1582,
+      "sha256": "5797cf2b14aadb09509411fa779389717a008f5cbcd72dec2c2c526a25e61e52"
+    },
+    {
+      "path": "code/v2/robot_safety_v2.py",
+      "size": 5157,
+      "sha256": "cf83a49642219d71390090395abd6dec17956398792ea8024140b7b4c0b9bd62"
+    },
+    {
+      "path": "code/v2/robust_sensing.py",
+      "size": 7014,
+      "sha256": "e9649f9943ed543f3725376646c3d5f478f54e3d3508df942d05278f96abfb22"
+    },
+    {
+      "path": "code/v2/rs_safety.py",
+      "size": 1685,
+      "sha256": "5371e0bb149751c0979933dc6ddc37935b8a705882448745c3fa2a9383f5b8a6"
+    },
+    {
+      "path": "code/v2/runner_s4.py",
+      "size": 9203,
+      "sha256": "31188badd12c3685b27a30a5b913b8f5747a23cc7f164aa6d7efe245e4d61cc5"
+    },
+    {
+      "path": "code/v2/runner_v2.py",
+      "size": 7141,
+      "sha256": "aa624ca7bdd74055b896e3db48d52e602e1eacb53e7a1a497bf24a5c3bfccb59"
+    },
+    {
+      "path": "code/v2/runtime_methods_s4.py",
+      "size": 5256,
+      "sha256": "68f3075f1f72e541a8fbc5b29c212984e1056b63f54069e3fd691c1701e8813d"
+    },
+    {
+      "path": "code/v2/runtime_s4.py",
+      "size": 4937,
+      "sha256": "37d9da87c1aae1390225faede4e65c50a88a4e7b16513e89a2ca6cabb63699ec"
+    },
+    {
+      "path": "code/v2/scenarios_v2.py",
+      "size": 17622,
+      "sha256": "f9ffdc915640da0b4b788a236a52c1d337a5511440b68d3d4544a1cb8cf1e954"
+    },
+    {
+      "path": "code/v2/sensing_v2.py",
+      "size": 20590,
+      "sha256": "b756977dc4e50ac266a6bca18af07c2d4804d1b621b83ecef4a735953cae0f00"
+    },
+    {
+      "path": "code/v2/seq_trace_s4.py",
+      "size": 8938,
+      "sha256": "ac06428164545e9c620925a25b2bc32f8a14e59b3d2f05def74b076550d30cb4"
+    },
+    {
+      "path": "code/v2/sim_v2.py",
+      "size": 22159,
+      "sha256": "932de70f9a343a2b251439b75cc2124f7040220cf0e3c96982744f192f901184"
+    },
+    {
+      "path": "code/v2/speed_policy_ab.py",
+      "size": 5754,
+      "sha256": "adc2698d3ed4ac6f6d323e2703e32a7e0850cf37995d419378ca8ab0afd8a9d2"
+    },
+    {
+      "path": "code/v2/speed_policy_v2.py",
+      "size": 6109,
+      "sha256": "7b2503da6758dc8a6c079595d1ee90a3ca8942a277960e492debb9de13fb727c"
+    },
+    {
+      "path": "code/v2/unit_tests_v2.py",
+      "size": 9818,
+      "sha256": "df5177b06dc08a5dab0913067381fda3e831349f2f5dd9eece5af39d56111729"
+    },
+    {
+      "path": "code/v2/verify_report_s3.py",
+      "size": 5581,
+      "sha256": "fdae9d591a34d150eab18b462f7979af441f4bdd00ceed4a4932dcb952005795"
+    },
+    {
+      "path": "code/verify_gate_30m.py",
+      "size": 8012,
+      "sha256": "f91cc5721a2548228289bfaf78456414b5e99c2268cdd01358fc789ac992a171"
+    },
+    {
+      "path": "protocol.json",
+      "size": 3311,
+      "sha256": "b8458905c58d0a58861d1988f14d8cce18a5bcfe80c256f6a353ac44b7f7313f"
+    },
+    {
+      "path": "results/formal.jsonl",
+      "size": 13985382,
+      "sha256": "d8523bd9e2349cc68576454429ffd3638c4b5f1f918649b2fcee5ef8d062496d"
+    },
+    {
+      "path": "results/formal.manifest.json",
+      "size": 235348,
+      "sha256": "aa9489cc472b10e0d4ae6a76236c9b3f77e14bc29d03ab30d35e4d4f989b8b18"
+    },
+    {
+      "path": "source_changes.patch",
+      "size": 25626,
+      "sha256": "c7111ea5175644fe50086a4dc20e3be08d5a262a3f05f64578b1ea82582e1944"
+    }
+  ]
+}

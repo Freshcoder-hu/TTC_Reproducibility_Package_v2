@@ -1,0 +1,4 @@
+﻿test,cell,source,n_columns,n_diff,first_diff,detail
+A1,V2S2/B2/1000,results_v2_stage4/_det_j1/detail.csv,183,0,,[]
+A2,V2S2/B2/1000,probe on vs off,183,0,,[]
+A3,V2S3/Ours_rollout/1000,Stage-4 D transcript,6,0,,"{""collision_rate"": 0.027777777777777776, ""min_dist"": 1.4351703145229284, ""n_ctrl_ticks"": 2110, ""n_recover_windows"": 3, ""recover_first_start"": 69.69999999999818, ""recover_first_end"": 70.69999999999813, ""preempt_ctrl"": 1, ""preempt_truth"": 0, ""preempt_legacy"": 0}"

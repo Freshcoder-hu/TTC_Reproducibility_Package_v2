@@ -1,0 +1,17 @@
+{
+  "scene": "V2S1N",
+  "seeds": [
+    1005,
+    1006,
+    1007,
+    1008,
+    1009
+  ],
+  "biases": [
+    0.25,
+    0.0
+  ],
+  "runs": 10,
+  "wall_s": 71.99371862411499,
+  "note": "diagnostic only; evaluation seeds untouched"
+}

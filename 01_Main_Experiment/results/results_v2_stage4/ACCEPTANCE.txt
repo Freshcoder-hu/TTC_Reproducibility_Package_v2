@@ -1,0 +1,17 @@
+V2 Stage-4 acceptance tests
+python 3.12.14, numpy 2.3.5
+shipped Stage-3 configuration (reused unchanged): config_id=89fe865b2e1d
+geometry: W=8 m half-width (16 m total), 140 m / 220 m, R_obs=70 m
+==============================================================================
+C. false-trigger control on the no-obstacle scenes
+  V2S1   B1            : PRE=nan, DIVERT=nan, states fired: none, switches=nan, C=0.000, goal
+  V2S1   B2            : PRE=nan, DIVERT=nan, states fired: none, switches=0, C=0.000, goal
+  V2S1   Ours_event    : PRE=nan, DIVERT=nan, states fired: none, switches=0, C=0.000, goal
+  V2S1   Ours_rollout  : PRE=nan, DIVERT=nan, states fired: none, switches=0, C=0.000, goal
+  V2S1N  B1            : PRE=nan, DIVERT=nan, states fired: none, switches=nan, C=0.000, goal
+  V2S1N  B2            : PRE=nan, DIVERT=nan, states fired: none, switches=0, C=0.000, goal
+  V2S1N  Ours_event    : PRE=nan, DIVERT=nan, states fired: none, switches=0, C=0.000, goal
+  V2S1N  Ours_rollout  : PRE=nan, DIVERT=nan, states fired: none, switches=0, C=0.000, goal
+  [PASS] C/PRE/DIVERT/RECOVER never fire on the 140 m no-obstacle scenes (8 runs: 2 scenes x 4 methods)
+==============================================================================
+SUMMARY: 1/1 checks passed (281.1 s)
