@@ -24,6 +24,7 @@ Everything that is executed or built:
 | `**/_stage2_code_snapshot/**`, `**/_stage3_code_snapshot/**` | archived code snapshots inside the results trees |
 | `01_Main_Experiment/paper/scripts/**` | `build_data.py`, `build_figures.py` |
 | `05_Curved_Path_240/reproduce_table11.py`, `06_Robot_Loss_1080/reproduce_table12.py` | panel recomputation scripts |
+| `07_Figure_Source/**/*.py` | `fig_body.py`, `fig_loss.py`, `fig_si.py`, `make_graphical_abstract.py`, `v9style.py`, `pkgpaths.py`, `compare_figures.py` |
 | `02_Perception_Robustness/analysis/**/*.py`, `03_Online_Warning_and_Timing/analysis/**/*.py` | analysis scripts |
 | `tools/**/*.py`, `verify_package.py` | hygiene gate, spot-check, standardiser, verifier |
 | `*.py`, `*.cpp`, `*.cu`, `*.h`, `*.hpp`, `*.dll`, `*.so` | all source and compiled native kernels |
@@ -41,7 +42,7 @@ Everything that is measured, tabulated, drawn or written:
 | `01_Main_Experiment/paper/data/**`, `01_Main_Experiment/paper/tables/**` | `numbers.json`, table CSVs |
 | `05_Curved_Path_240/**`, `06_Robot_Loss_1080/**` | panel detail/summary/table CSVs and `traces/*.npz` (the two `reproduce_*.py` scripts are MIT, above) |
 | `04_Quick_Access/**` | submitted figures (`.pdf`, `.png`), key tables and reports |
-| `*.pdf`, `*.png`, `*.svg`, `*.eps` | figures and rendered documents |
+| `*.pdf`, `*.png`, `*.svg`, `*.eps` | figures and rendered documents, including anything a run writes under `07_Figure_Source/build/` |
 | `*.md`, `*.txt` | READMEs, stage reports, documentation (except the two licence files themselves) |
 | `PACKAGE_FILE_INDEX.csv`, `PACKAGE_SHA256_MANIFEST.json`, `SHA256SUMS.txt` | package metadata and checksums |
 

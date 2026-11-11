@@ -14,7 +14,7 @@ contain the article itself, and it does not contain any earlier draft.
 | Numbered tables | **12** (Tables 1–12) |
 | Numbered equations | **8** |
 | Algorithms | **1** |
-| References | **40** |
+| References | **41** (40 journal articles + the `[dataset]` entry) |
 | Frozen configuration | `config_id = 89fe865b2e1d` (main matrix; the two extra panels use their own recorded ids) |
 
 These counts are not copied from a report; they were measured directly on the
@@ -25,8 +25,12 @@ grep -c '\\label{fig:'   sections/*.tex   -> 9
 grep -c '\\label{tab:'   sections/*.tex   -> 12
 grep -c '\\label{eq:'    sections/*.tex   -> 8
 grep -c '\\label{alg:'   sections/*.tex   -> 1
-grep -c '^@'             refs.bib         -> 40
+grep -c '^@'             refs.bib         -> 41   (40 articles + wang2026ttc_repro)
 ```
+
+`refs.bib` belongs to the manuscript source, which is submitted separately and
+is not redistributed here; the same URL is in `CITATION.cff` and in §10 of the
+package README.
 
 **The article is submitted to the journal separately and is deliberately not
 redistributed here.** Cite and read it from the journal; this package is the

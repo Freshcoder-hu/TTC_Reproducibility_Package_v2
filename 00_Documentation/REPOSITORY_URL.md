@@ -1,106 +1,88 @@
-# Repository URL — the one slot to fill before submission
+# Repository URL — the two slots, filled
 
-**Status: TODO. No URL has been invented here.** Every occurrence of
-`<URL>` and `<DOI-or-URL>` below is a placeholder that the corresponding
-author must replace with the final public repository URL and the archival
-DOI (or archived URL) once they exist.
+**Status: FILLED (2026-11-10).** The canonical public repository is
 
-This file is the single place that records the two edits required outside the
-package. The package itself contains no repository URL; `CITATION.cff` carries
-the same slot as `repository-code: "TODO(URL)"`.
+> **https://github.com/Freshcoder-hu/TTC_Reproducibility_Package_v2**
 
-## Place 1 — the manuscript's data-availability sentence
+No placeholder token remains in this package. No archival
+DOI has been assigned, so the repository URL is the identifier everywhere and
+the `[dataset]` reference carries `url` but not `doi`.
 
-The manuscript currently says the materials "are provided as supplementary
-material". Replace that sentence with exactly:
+## Slot 1 — the manuscript's data-availability sentence (FILLED)
 
-> The simulation code, the archived per-run results and the scripts that
-> regenerate all tables and figures are available at `<URL>` (archived at
-> `<DOI-or-URL>`).
+The manuscript now ends with exactly one data-availability sentence, and the
+repository is cited from it:
 
-LaTeX source (if the manuscript uses `\url`):
+> **Data availability.** The simulation code, the archived per-run results and
+> the scripts that regenerate all tables and figures are available at
+> https://github.com/Freshcoder-hu/TTC_Reproducibility_Package_v2 (Wang et al.,
+> 2026a).
+
+LaTeX source in `02_论文源文件/英文_LaTeX/cas/main.tex`:
 
 ```latex
+\section*{Data availability}\label{sec:data}
+{\raggedright
 The simulation code, the archived per-run results and the scripts that
-regenerate all tables and figures are available at \url{<URL>}
-(archived at \url{<DOI-or-URL>}).
+regenerate all tables and figures are available at
+{\scriptsize\mbox{\url{https://github.com/Freshcoder-hu/TTC_Reproducibility_Package_v2}}}
+\mbox{\citep{wang2026ttc_repro}}.\par}
 ```
 
-If the journal requires a separate "Code availability" and "Data
-availability" statement, split the same sentence in two and keep both URLs
-identical:
+The URL is set in a `\mbox` so that it is never broken by line wrapping or
+hyphenation; it is checked in the built PDF. "Provided as supplementary
+material" no longer appears anywhere in the manuscript.
 
-> **Code availability.** The simulation code and the scripts that regenerate
-> all tables and figures are available at `<URL>` (archived at
-> `<DOI-or-URL>`).
->
-> **Data availability.** The archived per-run results are available at
-> `<URL>` (archived at `<DOI-or-URL>`).
-
-## Place 2 — the submission system's repository / data-availability field
-
-In the submission system, open the field labelled **"Data availability"**,
-**"Code availability"**, **"Repository URL"**, or **"Supplementary material
-URL"** (the label differs by journal) and paste exactly this block:
-
-```text
-Repository: <URL>
-Archived copy: <DOI-or-URL>
-```
-
-If the form accepts a single URL only, paste `<URL>` in the URL field and put
-the full sentence from Place 1 in the accompanying data-availability text
-box. Do not also upload the package as "supplementary material" unless the
-journal explicitly requires a file upload; the sentence must point to the
-repository instead.
-
-## Also update — `CITATION.cff` (package metadata, not a third manuscript place)
-
-The two places that matter for the submission are above. For completeness,
-`CITATION.cff` at the package root also carries the same slot:
+## Slot 2 — package metadata `CITATION.cff` (FILLED)
 
 ```yaml
-repository-code: "TODO(URL)"
+repository-code: "https://github.com/Freshcoder-hu/TTC_Reproducibility_Package_v2"
 ```
 
-Replace `TODO(URL)` with the same `<URL>` used in Places 1 and 2, then update
-the checksum manifests (§ below).
+The four authors (Shuaihu Wang, Gaowei Zhang, Zehao Xu, Yun Huang) and the year
+2026 are unchanged.
 
-## BibTeX entry skeleton for `refs.bib`
+## Submission system — the field to paste (prepared, author action)
 
-Add this entry to `refs.bib` and cite it from the data-availability sentence
-if the journal's style asks for a reference. Replace `<URL>` and
-`<DOI-or-URL>`; if the archive is a Zenodo deposit, `<DOI-or-URL>` is normally
-`https://doi.org/<DOI>`.
+In the field labelled **Data availability**, **Code availability**,
+**Repository URL** or **Supplementary material URL**, paste:
+
+```text
+Repository: https://github.com/Freshcoder-hu/TTC_Reproducibility_Package_v2
+```
+
+The same sentence as Slot 1 goes in the accompanying text box. The repository
+is public, so the code and results are not attached as supplementary material;
+the Supplementary Material slot carries only the 14-page supplement.
+
+## `[dataset]` reference added to `refs.bib`
+
+`02_论文源文件/英文_LaTeX/cas/refs.bib` now ends with the activated skeleton,
+cited from the data-availability sentence. The list is **41 entries** (40
+journal articles with a DOI + this one dataset entry):
 
 ```bibtex
-@dataset{wang2026ttc_repro,
+@misc{wang2026ttc_repro,
   author       = {Wang, Shuaihu and Zhang, Gaowei and Xu, Zehao and Huang, Yun},
-  title        = {{Animal contact-risk prediction and action-conditioned rollout
-                   for multi-robot shepherding}: reproducibility package (v2)},
+  title        = {{[dataset] Animal contact-risk prediction and action-conditioned
+                   rollout for multi-robot shepherding: reproducibility package (v2)}},
   year         = {2026},
-  publisher    = {Zenodo},
-  version      = {v2},
-  doi          = {<DOI>},
-  url          = {<URL>},
-  note         = {Code: MIT License; data and results: CC BY 4.0}
+  howpublished = {GitHub repository},
+  url          = {https://github.com/Freshcoder-hu/TTC_Reproducibility_Package_v2},
+  note         = {{Code: MIT License; data and results: CC BY 4.0. Accessed 10 November 2026}}
 }
 ```
 
-If the archive is not on Zenodo, replace `publisher` and `doi` with the
-actual archive (for example an institutional repository) and keep `url`
-pointing at `<URL>`.
+## Checklist — all satisfied on 2026-11-10
 
-## Checklist before the package is published
-
-- [ ] `<URL>` is the final public repository URL (no trailing slash surprises;
-      use the canonical URL that resolves without login).
-- [ ] `<DOI-or-URL>` is the archival identifier of the exact uploaded version.
-- [ ] Place 1 sentence replaced in the manuscript; "supplementary material"
-      no longer appears in the data-availability statement.
-- [ ] Place 2 field filled in the submission system with the same two values.
-- [ ] `CITATION.cff` `repository-code` updated from `TODO(URL)`.
-- [ ] `python verify_package.py` still reports `errors = 0` after the edit
-      (the manifest must be regenerated if `CITATION.cff` changes size).
-- [ ] No `URL` placeholder remains anywhere: search the tree for `<URL>` and
-      `TODO(URL)` after the edit.
+- [x] The manuscript URL is the final public repository URL, with no trailing
+      slash.
+- [x] Slot 1 replaced in the manuscript; "provided as supplementary material"
+      is gone from the data-availability statement.
+- [x] `CITATION.cff` `repository-code` carries the repository URL.
+- [x] `refs.bib` carries the `[dataset]` entry and the manuscript cites it.
+- [x] Reference count updated from 40 to 41 wherever the current paper is
+      described (manuscript source comment, submission README, package READMEs).
+- [x] Integrity manifests regenerated after the edit; `verify_package.py`
+      reports `errors = 0`.
+- [x] No placeholder token remains in the package tree.

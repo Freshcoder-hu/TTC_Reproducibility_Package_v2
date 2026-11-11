@@ -6,7 +6,7 @@
     "TTC_Robustness_Experiment.zip": true,
     "TTC_Online_Evidence_Supplement.zip": true
   },
-  "file_count": 1032,
+  "file_count": 1040,
   "files": [
     {
       "path": ".gitattributes",
@@ -25,8 +25,8 @@
     },
     {
       "path": "00_Documentation/FIGURES_TO_EVIDENCE_MAP.md",
-      "sha256": "69fe517f47c7837ce92a46ef59d9f25dc660ad7a2677c64d840932eee8175949",
-      "bytes": 6704
+      "sha256": "80ec92e53628ae7c47296d89d09a8576a7adee84e062b870620de88f9969fa68",
+      "bytes": 7614
     },
     {
       "path": "00_Documentation/ORIGINAL_SOURCE_ARCHIVE_HASHES.json",
@@ -35,23 +35,23 @@
     },
     {
       "path": "00_Documentation/PAPER_VERSION.md",
-      "sha256": "21f384383cc36944259145e66a00ee50480f475dcbbb4827b6c309ca098befe3",
-      "bytes": 5966
+      "sha256": "f1ee4d1f243ca58a6b90441d74d6ae1833775c2d35602387647d0a1cfac19cea",
+      "bytes": 6224
     },
     {
       "path": "00_Documentation/README_EN.md",
-      "sha256": "b529f4e4aebc0773e4fb9ed7e2c741ad3a24d1a6ed0ed2c1513467d8c71813ab",
-      "bytes": 25375
+      "sha256": "3c4eed6cc4a65cbaa6125bfdd282798012a1f4bc89064f1dfb5c33b189bf5205",
+      "bytes": 30795
     },
     {
       "path": "00_Documentation/REPOSITORY_URL.md",
-      "sha256": "82a6597dcaf43e57cd6d8914a732faa45bb2e7167c034741870c1027c0d986dc",
-      "bytes": 4319
+      "sha256": "e2ce34c23f79f52e37b0ce38f3a775523fb20cb3808dccc6d790f857b472cd61",
+      "bytes": 3674
     },
     {
       "path": "00_Documentation/REPRODUCE_GUIDE.md",
-      "sha256": "85b7ee3730ada0edf7f6f1ea05d92ca5a643d1ea2b623788d0818296e810d1e9",
-      "bytes": 10533
+      "sha256": "57bfcd3370ecdee4717d72ece30a1038d927659369218437a8240652771f44c8",
+      "bytes": 13149
     },
     {
       "path": "00_Documentation/SOURCE_PROVENANCE.md",
@@ -60,7 +60,7 @@
     },
     {
       "path": "00_Documentation/STATISTICAL_SCOPE_AND_LIMITATIONS.md",
-      "sha256": "6eeef56d3b3b843a9241f2452847dea7e80d1ee776ab66559168f9cd730932fa",
+      "sha256": "5426f84d3b1833f0d794a3b8433aed760a2873d12c52d0d816b1c45a561aeda1",
       "bytes": 2128
     },
     {
@@ -5114,9 +5114,49 @@
       "bytes": 7433
     },
     {
+      "path": "07_Figure_Source/README.md",
+      "sha256": "1d1be375ee7385d2c646450bc3e27cc90fac76e8193a3942a033476f4af28832",
+      "bytes": 8542
+    },
+    {
+      "path": "07_Figure_Source/compare_figures.py",
+      "sha256": "8279c6abba29cbea7a63b9f69a1adfc1b30fc80e5575479e80b95c31aa57af2f",
+      "bytes": 11626
+    },
+    {
+      "path": "07_Figure_Source/fig_body.py",
+      "sha256": "e30848aa00057c9565336603e5484f2a1c69b7182de4696d0636d61bb0566efb",
+      "bytes": 39539
+    },
+    {
+      "path": "07_Figure_Source/fig_loss.py",
+      "sha256": "5143a03d4a1e39de0dd70df5004083d3088f1acd08a4fdd779571c2cdeaa8be7",
+      "bytes": 7421
+    },
+    {
+      "path": "07_Figure_Source/fig_si.py",
+      "sha256": "04835f2398aa9e1101bb686c145d2e56a1769f5fbb08503cbbbd289f735901d0",
+      "bytes": 12563
+    },
+    {
+      "path": "07_Figure_Source/make_graphical_abstract.py",
+      "sha256": "789634534fafe95d56c2518b152b984d3ab3059e9162ff258670da08d3270564",
+      "bytes": 20083
+    },
+    {
+      "path": "07_Figure_Source/pkgpaths.py",
+      "sha256": "e8ceaf18f96ccfd7b6952aa38298ca6a64c34cab51098c9d5b114716ffb5ebbd",
+      "bytes": 3915
+    },
+    {
+      "path": "07_Figure_Source/v9style.py",
+      "sha256": "0fd6ee55c8abe98dff23e444e7abf8627c15c117b7928a013d480e53f785c27e",
+      "bytes": 9077
+    },
+    {
       "path": "CITATION.cff",
-      "sha256": "19de948028811b8bc87fe217348720d6f5a66c13c59618e454bd60ab149ad649",
-      "bytes": 921
+      "sha256": "f40684560ef2f72b7517223ac4af970687d587e84eb2c0e7f6fddec89fe0bf87",
+      "bytes": 975
     },
     {
       "path": "LICENSE",
@@ -5130,13 +5170,13 @@
     },
     {
       "path": "LICENSING.md",
-      "sha256": "2d9c2c856609d9d5027afb63288402538c90e603581e317d33e95a52df873cc9",
-      "bytes": 3772
+      "sha256": "251c09bd0d5284bc91bc3132e1c4ee4e7f82fda5ac9790ab1fc8546ed1f8b97d",
+      "bytes": 3993
     },
     {
       "path": "README.md",
-      "sha256": "f695ad678d5f65e9f5fb91b369f246cdee2fa9ca217fe500cd80f3a3f717654f",
-      "bytes": 14403
+      "sha256": "61f6be856b0bac7e7e4c34ddb5d82a1549987a44cca73c46973bf1171f22e761",
+      "bytes": 19198
     },
     {
       "path": "tools/check_hygiene.py",

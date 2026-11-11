@@ -6,6 +6,9 @@
 [`FIGURES_TO_EVIDENCE_MAP.md`](FIGURES_TO_EVIDENCE_MAP.md)，
 `formal.jsonl` 的 `NaN`/`Infinity` 问题见 [`DATA_NOTES.md`](DATA_NOTES.md)。
 
+本包的规范公开仓库：**https://github.com/Freshcoder-hu/TTC_Reproducibility_Package_v2**；
+论文的 Data availability 一句即指向该地址。
+
 包内所有命令均在**本包这一份目录**上实际执行过，运行时间取自本机实测。
 跑不通的命令不写进本指南，统一列在 `README_EN.md` 第 7 节。
 
@@ -46,15 +49,24 @@ $env:OMP_NUM_THREADS=1; $env:OPENBLAS_NUM_THREADS=1; $env:MKL_NUM_THREADS=1
 | `python 03_Online_Warning_and_Timing/analysis/analyze_online_evidence.py` | stdout 输出 JSON，退出码 0 | 5.9 s |
 | `python tools/stage_online_inputs.py --clean` | `removed …/results/formal.jsonl` | 0.1 s |
 | `python verify_package.py` | `Verified N files; errors = 0` | 见 README_EN §9 |
+| `python 07_Figure_Source/fig_body.py` | 8 行 `Fig1 … Fig8  183.60 mm  texts=…` + `wrote 8 figure(s) to …` | 5.2 s |
+| `python 07_Figure_Source/fig_loss.py` | `Fig9  183.60 mm  texts=60  min 7.5 pt` | 1.6 s |
+| `python 07_Figure_Source/fig_si.py` | `FigS1 … FigS4` + `wrote 4 figure(s) to …` | 2.6 s |
+| `python 07_Figure_Source/make_graphical_abstract.py` | `canvas 130.00 x 66.00 mm` … `written …/graphical_abstract.pdf` | 1.4 s |
+| `python 07_Figure_Source/compare_figures.py` | 逐图判定表，末行 `RESULT: BYTE-IDENTICAL=1, PIXEL-IDENTICAL=9, VISUALLY-EQUIVALENT=4` | 12 s |
 
 说明：`build_data.py` / `build_figures.py` 会重写
 `results_v2_stage5/reproduced/` 与 `paper/figures/`；同一环境下重复执行结果
 字节一致，跨环境则可能只差换行符或浮点最后一位，此时用
 `tools/verify_numbers.py` 比较数字（见下）。
 `paper/figures/` **不随包提供**：投稿用的 9 张图在
-`04_Quick_Access/Submitted_Figures/Figure_1…9`（`03_图表/正文图/` 原样复制）；
+`04_Quick_Access/Submitted_Figures/Figure_1…9`（`03_图表/正文图/` 原样复制），
+并由 `07_Figure_Source/` **真正重绘**：图 1–8 出自 `fig_body.py`，图 9 出自
+`fig_loss.py`，重绘结果与随包 PDF 逐像素一致（600 dpi PNG 连字节都相同）。
 `build_figures.py` 只按需重建 V7 时期的辅助排列，其中 `fig07–fig09`
 **不是**投稿的图 7–9。
+`07_Figure_Source/build/` 是绘图输出目录，已被 `.gitignore` 覆盖，不会污染
+随包文件或校验清单。
 `stage_online_inputs.py` 用硬链接临时挂载共享语料，`--clean` 后目录恢复原状。
 
 ## 两类验证（Two kinds of verification）
@@ -153,14 +165,37 @@ t=0 接触与零长度恢复。
 
 各自的实测重算入口见第二节，输出与耗时以英文 README 第 3、4.7、4.8 节为准。
 
+## 七之二、投稿图的绘制流水线（`07_Figure_Source/`）
+
+投稿的 9 张图过去只随包给出成品，现在**连绘制脚本一并给出**：即投稿包的
+`06_图表源码/`，只改了路径解析（`pkgpaths.py`），绘图代码原样不动。投稿包里的
+结果表原本放在一个内层压缩包里
+（`TTC_Shepherding_Complete_Reproducibility_Package.zip`，与投稿树并列存放），
+本仓库直接以文件形式提供，且逐字节相同（清单见
+`07_Figure_Source/README.md`）。
+
+| 脚本 | 产出 | 与本包成品的比对 |
+|---|---|---|
+| `fig_body.py` | 图 1–8 | **逐像素一致**：600 dpi PNG 字节相同；PDF 仅 `/CreationDate` 一行不同 |
+| `fig_loss.py` | 图 9 | **逐像素一致**，同上 |
+| `fig_si.py` | 补充图 S1–S4 | **视觉等价**：成品是早期 190 mm 画布，现行设计宽度冻结在 183.6 mm（文本逐字符相同，宽度差 3.49 %），故不能逐字节复现 |
+| `make_graphical_abstract.py` | 图形摘要 | **逐字节一致**（脚本固定了 `SOURCE_DATE_EPOCH`） |
+
+一键重绘并判定：`python 07_Figure_Source/compare_figures.py`，末行
+`RESULT: BYTE-IDENTICAL=1, PIXEL-IDENTICAL=9, VISUALLY-EQUIVALENT=4`。
+输出写入 `07_Figure_Source/build/`（已被 `.gitignore` 覆盖）。`fig_body.py --only 9`
+需要旧 Word 稿的百秒规模数据（两个包都未提供），脚本会直接说明并退出，而不是
+抛 `FileNotFoundError`；投稿的图 9 是 `fig_loss.py`。
+
 ## 八、论文版本
 
 本包对应**已投稿**版本：Elsevier *Computers and Electronics in Agriculture*，
-LaTeX `cas-dc` 双栏，**9 图、12 表、8 个公式、1 个算法、40 篇参考文献**。
+LaTeX `cas-dc` 双栏，**9 图、12 表、8 个公式、1 个算法、41 篇参考文献**。
 旧版包内的 40 篇参考文献 Word 稿（Fig. 1–12）、V7 草稿及其 9 图排列
 （`fig01_observability`…`fig09_radar`，两处副本）均已删除；投稿用的 9 张图
-按原样放在 `04_Quick_Access/Submitted_Figures/Figure_1…9`。论文正文另行投稿，
-不在本包内。详情见 `PAPER_VERSION.md`。
+按原样放在 `04_Quick_Access/Submitted_Figures/Figure_1…9`，并由
+`07_Figure_Source/` 重绘到逐像素一致。论文正文另行投稿，不在本包内。
+详情见 `PAPER_VERSION.md`。
 
 ## 九、适用范围与限制
 
